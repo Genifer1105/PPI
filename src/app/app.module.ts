@@ -10,6 +10,8 @@ import { ReportesComponent } from './Components/reportes/reportes.component';
 import { MenuComponent } from './Components/menu/menu.component';
 import { RegistroComponent } from './Components/registro/registro.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,13 +20,14 @@ import { RegistroComponent } from './Components/registro/registro.component';
     FooterComponent,
     ReportesComponent,
     MenuComponent,
-    RegistroComponent
+    RegistroComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
   ],
+ 
   providers: [],
   bootstrap: [AppComponent]
 })
