@@ -5,13 +5,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReportesComponent} from './Components/reportes/reportes.component';
 import { RegistroComponent } from './Components/registro/registro.component';
 import { LoginComponent } from './login/login.component';
-import { MenuComponent } from './Components/menu/menu.component';
-
+import {MenuComponent} from './Components/menu/menu.component' 
 const routes: Routes = [
- 
-  { path: 'menu', component: MenuComponent },
-  { path: 'reportes', component: ReportesComponent },
-  { path: 'registro', component: RegistroComponent },
+
+  { path: 'menu', component: MenuComponent},
+  { path: 'reportes', component: ReportesComponent}, 
+  { path: 'registro', component: RegistroComponent},
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: LoginComponent }
