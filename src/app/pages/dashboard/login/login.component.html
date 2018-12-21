@@ -1,26 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
 
 <body>
 
-  <div id="container">
+      <img  src="../../../assets/imagenes/fondo-login.jpg" />
+
+   
+    <div id="container">
     <br>
     <h2>
       Inicio de Sesión
     </h2>
-
+    
     <form>
     
         <br>
         <br>
-  
+      
       <input type="text" minlength="10" maxlength="35" placeholder="Ingrese su usuario">
       <br>
       <br>
@@ -28,13 +23,11 @@
       <input type="password" minlength="8" maxlength="15" placeholder="Ingrese su contraseña">
       <br>
       <br>
-
-      <button type="submit">Ingresar</button>
+      
+      <button (click)="ingresar()" type="submit" >Ingresar</button>
 
     </form>
 
   </div>
 
 </body>
-
-</html>

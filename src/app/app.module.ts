@@ -1,46 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { AppRoutingModule } from './app-routing.module';
-import { EncabezadoComponent } from './Components/encabezado/encabezado.component';
-import { FooterComponent } from './Components/footer/footer.component';
-import { ReportesComponent } from './Components/reportes/reportes.component';
-import { RegistroComponent } from './Components/registro/registro.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
-import { MenuComponent } from './Components/menu/menu.component';
+import { LoginComponent } from './pages/dashboard/login/login.component';
+import { AppRoutingModule } from './router/app-routing.module';
+import { SharedModule } from "./shared/shared.module";
 
-
-
+/* Módulo principal donde se cargan todos los componentes y demás
 /*import {ReactiveFormsModule} from '@angular/forms'; */
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    EncabezadoComponent,
-    FooterComponent,
-    ReportesComponent,
-    RegistroComponent,
-    MenuComponent,
-   
+    LoginComponent
       
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule
-    /*ReactiveFormsModule*/
+     SharedModule.forRoot()
+
   ],
  
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

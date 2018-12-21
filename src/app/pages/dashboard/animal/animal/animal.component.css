@@ -1,0 +1,62 @@
+
+#container{
+    background-image: linear-gradient(to top, rgba(235, 211, 253, 0.4) 0%, rgba(246, 255, 255, 0.71) 100%);
+    box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+    text-align: center;
+    border-radius: 5px;
+    margin: 3em auto;
+    background: rgba(255, 255, 255, 0.95);
+    height: 500px;
+    width: 470px;
+    padding: 1em;
+    
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;	 
+    
+}
+
+#container h2 {
+     
+    font-family: 'Farsan', cursive;
+    background-size:cover;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    margin: 0.5;
+    color: #000000;
+
+
+}
+
+#container input {
+    	
+        width: 220px;
+        height: 10px;
+        display: inline-block;
+        text-align: center;
+        border-radius: 7px;
+        background: #eee;
+        padding: 1em 2em;
+        outline: none;
+        border: none; 
+        color: #000000;
+        font-family: 'Farsan', cursive;
+        
+    }
+
+    #container button {
+        background: #04B45F;
+        font-family: 'Farsan', cursive;
+        padding: 0.5em 1.9em;
+        margin: 2.3em 0 0 0;
+        border-radius: 7px;
+        font-size: 1.4em;
+        cursor: pointer;
+        color: #FFFFFF;
+        font-size: 1em;
+        outline: none;
+        border: none;
+    
+    }
