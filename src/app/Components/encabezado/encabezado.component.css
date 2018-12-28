@@ -1,22 +1,17 @@
 
 
-#main-header {
-	background: #333;
+#header {
+    background: #0B6138;
 	color: white;
-	height: 80px;
+	height: 90px;
 	
 	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
 	left: 0; /* Posicionamos la cabecera al lado izquierdo */
 	top: 0; /* Posicionamos la cabecera pegada arriba */
 	position: fixed; /* Hacemos que la cabecera tenga una posición fija */
 }
-
-#main-header {
-	background: #0B6138;
-	color: white;
-	height: 90px;
-}	
-	#main-header a {
+	
+	#header a {
 		color: white;
     }
     
@@ -29,7 +24,7 @@
             
     
 
-        #main-header button {
+        #header button {
             background: #A4A4A4;
             font-family: 'Farsan', cursive;
             padding: 0.5em 1.7em; 
@@ -44,6 +39,6 @@
             float: right;
         }
 
-        #main-header button:active {
+        #header button:active {
             background: #E6E6E6 ;
         }

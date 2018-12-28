@@ -11,6 +11,7 @@ import { CamadasComponent } from './animal/camadas/camadas.component';
 import { NotificacionesComponent } from './notificaciones/notificaciones.component';
 import { VacunasComponent } from './vacunas/vacunas.component';
 import { SharedModule } from '../../shared/shared.module';
+import { HomeComponent } from './home/home.component';
 
 // aquí van los componentes del dashboard
 
@@ -37,7 +38,8 @@ const admin_routes: Routes = [
         CamadasComponent,
         NotificacionesComponent,
         ReportesComponent,
-        VacunasComponent
+        VacunasComponent,
+        HomeComponent
         
     ],
     imports: [
