@@ -2,16 +2,17 @@
 
 <body>
 
-      <img  src="../../../assets/imagenes/fondo-login.jpg" />
+   <!-- <img  src="../../../assets/imagenes/fondo-login.jpg" />-->  
 
-   
+    
     <div id="container">
     <br>
+  
     <h2>
       Inicio de Sesión
     </h2>
     
-    <form>
+    <form #formLogin="ngForm">
     
         <br>
         <br>
@@ -22,9 +23,9 @@
 
       <input type="password" minlength="8" maxlength="15" placeholder="Ingrese su contraseña">
       <br>
-      <br>
+    
       
-      <button (click)="ingresar()" type="submit" >Ingresar</button>
+      <button (click)="ingresar()" type="submit" [disabled]="!formLogin.form.valid">Ingresar</button>
 
     </form>
 

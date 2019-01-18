@@ -3,40 +3,36 @@
 #header {
     background: #0B6138;
 	color: white;
-	height: 90px;
-	
-	width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	height: 95px;	
+	width: 100%; /*  la cabecera ocupe el ancho completo de la página */
 	left: 0; /* Posicionamos la cabecera al lado izquierdo */
 	top: 0; /* Posicionamos la cabecera pegada arriba */
-	position: fixed; /* Hacemos que la cabecera tenga una posición fija */
+	position: fixed; /*  la cabecera tenga una posición fija */
 }
 	
 	#header a {
 		color: white;
     }
     
-    #logo-header img {
+   #logo-header img {
         float: left;
-         width: 30%;
-         height: 95px;
-      /*  background: url('http://www.politecnicojic.edu.co/images/logo/logo-negro.png') no-repeat; */
-    }
-            
-    
+         width: 25%;
+         height: 90px;
+     
+    } 
 
-        #header button {
+            #header button {
             background: #A4A4A4;
             font-family: 'Farsan', cursive;
             padding: 0.5em 1.7em; 
             margin: 1.2em ;
-            border-radius: 7px;
-            font-size: 1.0em;
             cursor: pointer;
             color: #FFFFFF;
-            font-size: 0.9em;
+            font-size: 12px;
             outline: none;
             border: none;
             float: right;
+            border-radius: 7px;
         }
 
         #header button:active {

@@ -20,10 +20,10 @@ div #container {
         box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31); 
         text-align: center;
         border-radius: 5px;
-        margin: 3em auto;
+        margin: 6em auto;
         background: rgba(255, 255, 255, 0.95);
-        height: 380px;
-        width: 470px;
+        height: 320px;
+        width: 450px;
         padding: 1em;
         
         position: fixed;
@@ -38,7 +38,7 @@ div #container {
      
         font-family: 'Farsan', cursive;
         background-size:cover;
-        font-size: 3.5em;
+        font-size: 45px;
         margin: 0;
         color: #000000;
     
@@ -47,7 +47,8 @@ div #container {
 
     #container input {
       
-        width: 240px;
+        width: 250px;
+        height: 12px;
         display: inline-block;
         text-align: center;
         border-radius: 7px;
@@ -57,17 +58,17 @@ div #container {
         border: none;
         color: #000000;
         font-family: 'Bodoni';
-        font-size: 15px;
+        font-size: 17px;
     }
  
     
     #container button {
-        background: #04B45F;
+        background: #0B6138;
         font-family: 'Bodoni';
         padding: 0.6em 1.9em;
         margin: 2.3em 0 0 0;
         border-radius: 7px;
-        font-size: 1.1em;
+        font-size: 17px;
         cursor: pointer;
         color: #FFFFFF;
         outline: none;

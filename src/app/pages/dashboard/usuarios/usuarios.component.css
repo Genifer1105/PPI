@@ -8,10 +8,10 @@
     margin: 3em auto;
     background: rgba(255, 255, 255, 0.95);
     height: 500px;
-    width: 470px;
+    width: 570px;
     padding: 1em;
     
-    position: fixed;
+ /*   position: fixed;*/
     bottom: 0;
     right: 0;
     left: 0;
@@ -48,10 +48,10 @@
     }
 
     #container button {
-        background: #04B45F;
+        background: #0B6138;
         font-family: 'Farsan', cursive;
         padding: 0.5em 1.9em;
-        margin: 2.3em 0 0 0;
+        margin: 1.0em 1.0em 1.0em 1.0em;
         border-radius: 7px;
         font-size: 1.4em;
         cursor: pointer;
