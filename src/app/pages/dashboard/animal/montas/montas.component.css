@@ -21,7 +21,7 @@
 
 #container h2 {
      
-    font-family: 'Farsan', cursive;
+    font-family: 'Roboto', sans-serif;
     background-size:cover;
     letter-spacing: 2px;
     font-size: 1.5em;
@@ -43,13 +43,13 @@
         outline: none;
         border: none; 
         color: #000000;
-        font-family: 'Farsan', cursive;
+        font-family: 'Roboto', sans-serif;
         
     }
 
     #container button {
-        background: #0B6138;
-        font-family: 'Farsan', cursive;
+        background: #196844;
+        font-family: 'Roboto', sans-serif;
         padding: 0.5em 1.9em;
         margin: 1.0em 1.0em 1.0em 1.0em;
         border-radius: 7px;

@@ -5,6 +5,9 @@ import { LoginComponent } from './pages/dashboard/login/login.component';
 import { AppRoutingModule } from './router/app-routing.module';
 import { SharedModule } from "./shared/shared.module";
 
+
+
+
 /* Módulo principal donde se cargan todos los componentes y demás
 /*import {ReactiveFormsModule} from '@angular/forms'; */
 
@@ -12,8 +15,9 @@ import { SharedModule } from "./shared/shared.module";
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
-      
+    LoginComponent,
+    
+         
   ],
   imports: [
     BrowserModule,

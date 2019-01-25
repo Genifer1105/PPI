@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Routes, ActivatedRoute, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -18,9 +19,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-
 ingresar() {
+  
   this._router.navigate(['dashboard']);
-}
-
+} 
+  
 }

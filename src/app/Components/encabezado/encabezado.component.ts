@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RouterModule, Routes, ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-encabezado',
@@ -8,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EncabezadoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+
+    private _router: Router
+
+  ) { }
 
   ngOnInit() {
   }
+
+  salir() {
+    this._router.navigate(['login']);
+  }
+
+  
 
 }

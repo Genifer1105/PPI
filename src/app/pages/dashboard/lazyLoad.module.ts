@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 
 const admin_routes: Routes = [
 
+    { path: 'home', component: HomeComponent },
     { path: 'animal', component: AnimalComponent },
     { path: 'montas', component: MontasComponent },
     { path: 'partos', component: PartosComponent },

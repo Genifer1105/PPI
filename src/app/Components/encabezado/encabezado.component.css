@@ -1,9 +1,9 @@
 
 
 #header {
-    background: #0B6138;
+    background: #196844;
 	color: white;
-	height: 95px;	
+	height: 100px;	
 	width: 100%; /*  la cabecera ocupe el ancho completo de la página */
 	left: 0; /* Posicionamos la cabecera al lado izquierdo */
 	top: 0; /* Posicionamos la cabecera pegada arriba */
@@ -16,25 +16,26 @@
     
    #logo-header img {
         float: left;
-         width: 25%;
-         height: 90px;
+         width: 27%;
+         height: 95px;
      
-    } 
+	} 
+	
+	#header button {
+        background: #A4A4A4;
+        font-family: 'Roboto', sans-serif;
+        padding: 0.5em 1.7em; 
+        margin: 1.2em ;
+        cursor: pointer;
+        color: #FFFFFF;
+        font-size: 12px;
+        outline: none;
+        border: none;
+        float: right;
+        border-radius: 7px;
+        
+    }
 
-            #header button {
-            background: #A4A4A4;
-            font-family: 'Farsan', cursive;
-            padding: 0.5em 1.7em; 
-            margin: 1.2em ;
-            cursor: pointer;
-            color: #FFFFFF;
-            font-size: 12px;
-            outline: none;
-            border: none;
-            float: right;
-            border-radius: 7px;
-        }
-
-        #header button:active {
-            background: #E6E6E6 ;
-        }
+    #header button:active {
+        background: #E6E6E6 ;
+    }
