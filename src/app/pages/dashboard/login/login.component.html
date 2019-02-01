@@ -1,40 +1,30 @@
-
-
-
-
-
-
-
-
 <body>
-
 
   <img src="../../../assets/imagenes/fondo.jpg">
 
 
   <div id="container">
     <br>
- 
-    
-    <h2> 
+
+    <h2>
       Inicio de Sesión
     </h2>
 
-    <form #formLogin="ngForm" (ngSubmit)="ingresar()">
+    <form [formGroup]="profileForm" (ngSubmit)="ingresar()">
 
       <br>
       <br>
 
-      <input id="usuario" name="usuario" type="text" minlength="10" maxlength="30" placeholder="Ingrese su usuario"
+      <input id="usuario" formControlName="usuario" type="text" minlength="10" maxlength="30" placeholder="Ingrese su usuario"
         required>
-  
+
       <br>
       <br>
 
-      <input type="password" minlength="8" maxlength="15" placeholder="Ingrese su contraseña" required>
+      <input id="contrasena" formControlName="contrasena" type="password" placeholder="Ingrese su contraseña" required>
       <br>
 
-      <button type="submit" [disabled]="!formLogin.form.valid">Ingresar</button>
+      <button type="submit">Ingresar</button>
 
     </form>
 
