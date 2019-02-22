@@ -1,0 +1,13 @@
+.introduccion { 
+    font-family: 'Roboto', sans-serif; 
+    color: black; 
+    font-size: 18px; 
+    width: 90%;
+    font-weight: 400; 
+    text-align: center; 
+    background: #D6E9DD; 
+    margin:  15px 15px 15px 40px; 
+    overflow: hidden; 
+    padding: 15px; 
+    border-radius: 35px 0px 35px 0px; 
+}

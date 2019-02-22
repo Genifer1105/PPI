@@ -16,13 +16,13 @@
     
    #logo-header img {
         float: left;
-         width: 27%;
-         height: 95px;
+         width: 22%;
+         height: 90px;
      
 	} 
 	
 	#header button {
-        background: #A4A4A4;
+        background: #A6B4AB;
         font-family: 'Roboto', sans-serif;
         padding: 0.5em 1.7em; 
         margin: 1.2em ;
