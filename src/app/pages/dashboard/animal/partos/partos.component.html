@@ -1,55 +1,64 @@
 
 
- <br>
+<br>
 
-<div class="introduccion"> 
- La trazabilidad de partos de los porcinos reproductores de la granja Marinilla 
- del Politécnico Colombiano Jaime Isaza Cadavid, consta de 3 etapas, Montas, Partos y Camadas.
- La información se debe gestionar según cada una de estas 3 etapas y en el respectivo orden.
- 
+<div class="introduccion">
+  La trazabilidad de partos de los porcinos reproductores de la granja Marinilla
+  del Politécnico Colombiano Jaime Isaza Cadavid, consta de 3 etapas, Montas, Partos y Camadas.
+  La información se debe gestionar según cada una de estas 3 etapas y en el respectivo orden.
 
- </div>
+</div>
 
- <br>
- <br>
+<br>
+<br>
 
 
- 
+
 <div id="container">
-  
-     <h2>Registro de Partos</h2>
-     
-    <form>
 
-        <br>
-       
-      
-      <input type="text" placeholder="">
-      <br>
-      <br>
-      <input type="number" placeholder="">
-      <br>
-      <br>
-      <input type="email" placeholder="">
-      <br>
-      <br>
-      <input type="number" placeholder="">
-      <br>
-      <br>
-      <input type="text" placeholder="">
+  <h2>Registro de Partos</h2>
 
-      <br>
-      <br>
-      
+  <form>
 
-      <button type="submit">Registrar</button>
-      <button type="submit">Consultar</button>
-      <button type="submit">Modificar</button>
-
-    </form>
-
-  </div>
+    <br>
 
 
+    <input type="number" placeholder="Identificación de Camada">
+    <br>
+    <br>
+    <input type="date" placeholder="Fecha de Parto">
+    <br>
+    <br>
+    <input type="number" placeholder="Número de Lechones vivos">
+    <br>
+    <br>
+    <input type="number" placeholder="Nímero de Lechones Muertos">
+    <br>
+    <br>
+    <input type="number" placeholder="Número de Machos">
+    <br>
+    <br>
+    <input type="number" placeholder="Número de Hembras">
+    <br>
+    <br>
+    <input type="number" placeholder="Número de Momias">
+    <br>
+    <br>
+    <input type="number" placeholder="Peso Total de Lechones Vivos">
+    <br>
+    <br>
+    <input type="date" placeholder="Fecha De Probable Destete">
+    <br>
+    <br>
 
-  <button type="submit" [routerLink]="['camadas']" routerLinkActive="active"> Camadas </button>
+    <button type="submit">Registrar</button>
+    <button type="submit">Consultar</button>
+    <button type="submit">Modificar</button>
+
+  </form>
+
+</div>
+
+
+
+<button type="submit" [routerLink]="['camadas']" routerLinkActive="active"> Camadas </button>
