@@ -9,6 +9,21 @@
     margin:  15px 15px 15px 40px; 
     overflow: hidden; 
     padding: 15px;
-    border-radius: 35px 0px 35px 0px; 
+    border-radius: 35px 10px 35px 0px; 
   }
   
+
+  table {
+    margin:  40px 50px 50px 60px; 
+    width: 90%;
+    border: 0.2px solid #848484;
+ }
+ th, td {
+    width: 25%;
+    text-align:center;
+    vertical-align: top;
+    border: 0.2px solid #848484;
+    font-family: 'Roboto', sans-serif; 
+    color: black; 
+    font-size: 15px;
+ }
