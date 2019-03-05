@@ -24,7 +24,7 @@
       <input id="contrasena" formControlName="contrasena" type="password" placeholder="Ingrese su contraseña" required>
       <br>
 
-      <button type="submit">Ingresar</button>
+      <button type="submit" [disabled]="!profileForm.valid">Ingresar</button>
 
     </form>
 

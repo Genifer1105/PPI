@@ -32,10 +32,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  ingresar() {
-    this._router.navigate(['dashboard']);
-  }
-  /*
+ 
   ingresar() {
     console.log('prueba');
     if(!this.profileForm.valid) {
@@ -44,6 +41,6 @@ export class LoginComponent implements OnInit {
     } 
     this._router.navigate(['dashboard']);
 }
-*/
+
 
 }

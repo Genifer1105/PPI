@@ -11,13 +11,14 @@
     padding: 15px;
     border-radius: 35px 10px 35px 0px; 
   }
-  
+
 
   table {
     margin:  40px 50px 50px 60px; 
     width: 90%;
     border: 0.2px solid #848484;
  }
+
  th, td {
     width: 25%;
     text-align:center;
@@ -27,3 +28,61 @@
     color: black; 
     font-size: 15px;
  }
+
+
+ 
+#container{
+   background-image: linear-gradient(to top, rgba(235, 211, 253, 0.4) 0%, rgba(246, 255, 255, 0.71) 100%);
+   box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+   text-align: center;
+   border-radius: 5px;
+   margin: 3em auto;
+   background: rgba(255, 255, 255, 0.95);
+   height: 480px;
+   width: 480px;
+   padding: 1em;
+
+   bottom: 0;
+   right: 0;
+   left: 0;
+   top: 0;	 
+   
+}
+
+#container h2 { 
+   font-family: 'Roboto', sans-serif;
+   background-size:cover;
+   letter-spacing: 2px;
+   font-size: 1.5em;
+   margin: 0.5;
+   color: #000000;
+
+}
+
+#container input {
+       width: 220px;
+       height: 10px;
+       display: inline-block;
+       text-align: center;
+       border-radius: 7px;
+       background: #eee;
+       padding: 1em 2em;
+       outline: none;
+       border: none; 
+       color: #000000;
+       font-family: 'Roboto', sans-serif;
+}
+
+#container button {
+   background: #196844;
+   font-family: 'Roboto', sans-serif;
+   padding: 0.5em 1.9em;
+   margin: 0.5em;
+   border-radius: 7px;
+   cursor: pointer;
+   color: #FFFFFF;
+   font-size: 1em;
+   outline: none;
+  border: none;
+
+}
