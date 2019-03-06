@@ -1,14 +1,14 @@
 
 
 #container{
- background-image: linear-gradient(to top, rgba(235, 211, 253, 0.4) 0%, rgba(246, 255, 255, 0.71) 100%);
-    box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+ 
+    box-shadow: 9px 10px 70px 9px rgba(24, 23, 23, 0.31);
     text-align: center;
     border-radius: 5px;
     margin: 3em auto;
     background: rgba(255, 255, 255, 0.95);
-    height: 500px;
-    width: 570px;
+    height: 450px;
+    width: 550px;
     padding: 1em;
     
    /* position: fixed;*/

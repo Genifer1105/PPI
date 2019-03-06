@@ -19,11 +19,20 @@
     border: 0.2px solid #848484;
  }
 
- th, td {
+ th {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif; 
+    color: black; 
     width: 25%;
     text-align:center;
     vertical-align: top;
-    border: 0.2px solid #848484;
+ }
+
+ td {
+    width: 25%;
+    text-align:center;
+    vertical-align: top;
+    border: 0.5px solid #848484;
     font-family: 'Roboto', sans-serif; 
     color: black; 
     font-size: 15px;
@@ -32,13 +41,13 @@
 
  
 #container{
-   background-image: linear-gradient(to top, rgba(235, 211, 253, 0.4) 0%, rgba(246, 255, 255, 0.71) 100%);
-   box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+  
+   box-shadow: 9px 10px 70px 9px rgba(24, 23, 23, 0.31);
    text-align: center;
    border-radius: 5px;
    margin: 3em auto;
    background: rgba(255, 255, 255, 0.95);
-   height: 480px;
+   height: 490px;
    width: 480px;
    padding: 1em;
 
