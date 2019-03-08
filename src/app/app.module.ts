@@ -3,11 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/dashboard/login/login.component';
 import { AppRoutingModule } from './router/app-routing.module';
-import { SharedModule } from "./shared/shared.module";
-import { ReactiveFormsModule } from '@angular/forms';
-
-
-
+import { SharedModule } from './shared/shared.module';
+import { ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 /* Módulo principal donde se cargan todos los componentes y demás
@@ -18,18 +16,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     LoginComponent,
-
-    
-         
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule.forRoot(),
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    HttpClientModule
   ],
- 
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -6,8 +6,8 @@ import { MenuComponent } from '../components/menu/menu.component';
 import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 import { EncabezadoComponent } from '../Components/encabezado/encabezado.component';
 import { FooterComponent } from '../components/footer/footer.component';
- 
-
+import { UsersService } from './users.service';
+import { HttpClientModule } from '@angular/common/http';
 /**
  *  Modulo donde se puede realizar instanciación modular de clases
  *  aquí van los elementos transversales
@@ -15,7 +15,8 @@ import { FooterComponent } from '../components/footer/footer.component';
 @NgModule({
 	imports: [
 		CommonModule,
-		RouterModule
+		RouterModule,
+		HttpClientModule
 	],
 	declarations: [
 		MenuComponent,
@@ -23,14 +24,16 @@ import { FooterComponent } from '../components/footer/footer.component';
 		DashboardComponent,
 		FooterComponent
 	],
-	
 	exports: [
 		CommonModule,
 		RouterModule,
 		FormsModule,
-
+	],
+	providers: [
+		UsersService
 	]
 })
+
 export class SharedModule {
 	static forRoot(): ModuleWithProviders {
 		return {
