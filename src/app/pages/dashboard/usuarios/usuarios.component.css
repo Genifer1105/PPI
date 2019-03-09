@@ -1,16 +1,16 @@
 
-.introduccion { 
-    font-family: 'Roboto', sans-serif; 
-    color: black; 
-    font-size: 18px; 
+.introduccion {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 18px;
     width: 90%;
-    font-weight: 400; 
-    text-align: center; 
-    background: #D6E9DD; 
-    margin:  15px 15px 15px 40px; 
-    overflow: hidden; 
-    padding: 15px; 
-    border-radius: 35px 0px 35px 0px; 
+    font-weight: 400;
+    text-align: center;
+    background: #D6E9DD;
+    margin:  15px 15px 15px 40px;
+    overflow: hidden;
+    padding: 15px;
+    border-radius: 35px 0px 35px 0px;
 }
 
 #container{
@@ -19,20 +19,20 @@
     border-radius: 5px;
     margin: 3em auto;
     background: rgba(255, 255, 255, 0.95);
-    height: 460px;
-    width: 570px;
+    height: 490px;
+    width: 540px;
     padding: 1em;
-    
+
  /*   position: fixed;*/
     bottom: 0;
     right: 0;
     left: 0;
-    top: 0;	 
-    
+    top: 0;
+
 }
 
 #container h2 {
-     
+
     font-family: 'Roboto', sans-serif;
     background-size:cover;
     letter-spacing: 2px;
@@ -44,7 +44,7 @@
 }
 
 #container input {
-    	
+
         width: 220px;
         height: 10px;
         display: inline-block;
@@ -53,13 +53,13 @@
         background: #eee;
         padding: 1em 2em;
         outline: none;
-        border: none; 
+        border: none;
         color: #000000;
         font-family: 'Roboto', sans-serif;
-        
+
     }
 /*
-    #container select { 
+    #container select {
         width: 270px;
         height: 30px;
         display: inline-block;
@@ -68,7 +68,7 @@
         background: #eee;
         padding: 1em 2em;
         outline: none;
-        border: none; 
+        border: none;
         color: #000000;
         font-family: 'Roboto', sans-serif;
     }
@@ -86,5 +86,5 @@
         font-size: 1em;
         outline: none;
         border: none;
-    
+
     }

@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,45 +16,37 @@ import { HomeComponent } from './home/home.component';
 
 // aquí van los componentes del dashboard
 
-
 const admin_routes: Routes = [
-
-    { path: 'home', component: HomeComponent },
-    { path: 'animal', component: AnimalComponent },
-    { path: 'montas', component: MontasComponent },
-    { path: 'partos', component: PartosComponent },
-    { path: 'camadas', component: CamadasComponent },
-    { path: 'reportes', component: ReportesComponent },
-    { path: 'usuarios', component: UsuariosComponent },
-    { path: 'notificaciones', component: NotificacionesComponent },
-    { path: 'vacunas', component: VacunasComponent },
-    { path: '**', redirectTo: 'animal' }
+  { path: 'home', component: HomeComponent },
+  { path: 'animal', component: AnimalComponent },
+  { path: 'montas', component: MontasComponent },
+  { path: 'partos', component: PartosComponent },
+  { path: 'camadas', component: CamadasComponent },
+  { path: 'reportes', component: ReportesComponent },
+  { path: 'usuarios', component: UsuariosComponent },
+  { path: 'notificaciones', component: NotificacionesComponent },
+  { path: 'vacunas', component: VacunasComponent },
+  { path: '**', redirectTo: 'animal' }
 ];
 
 @NgModule({
-    declarations: [
-        UsuariosComponent,
-        AnimalComponent,
-        MontasComponent,
-        PartosComponent,
-        CamadasComponent,
-        NotificacionesComponent,
-        ReportesComponent,
-        VacunasComponent,
-        HomeComponent
-        
-    ],
-    imports: [
-        CommonModule,
-        SharedModule,
-        RouterModule.forChild (
-        admin_routes) 
-    ],
-    exports: [
-        RouterModule,
-       
-    ]
-
+  declarations: [
+    UsuariosComponent,
+    AnimalComponent,
+    MontasComponent,
+    PartosComponent,
+    CamadasComponent,
+    NotificacionesComponent,
+    ReportesComponent,
+    VacunasComponent,
+    HomeComponent
+  ],
+  imports: [
+    CommonModule,
+    SharedModule,
+    RouterModule.forChild(admin_routes),
+    ReactiveFormsModule
+  ],
+  exports: [RouterModule]
 })
-
-export class LazyLoadModule { }
+export class LazyLoadModule {}

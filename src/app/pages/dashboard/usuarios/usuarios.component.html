@@ -2,34 +2,43 @@
 
 <br>
 
-<div class="introduccion"> 
+<div class="introduccion">
  Las personas que vayan a hacer uso del sistema, deben estar previamente
- registradas. En esta sección el administrador podrá crear dichos usuarios con su respectivo perfil. 
+ registradas. En esta sección el administrador podrá crear dichos usuarios con su respectivo perfil.
  </div>
- 
+
  <div id="container">
 
   <h2>Registro de Usuarios</h2>
 
-  <form>
+  <form [formGroup]="usersForm" (ngSubmit)="guardar()" >
 
     <br>
 
-    <input type="text" placeholder="Nombre Completo">
+    <input type="text" placeholder="Nombre Completo" formControlName="nombre">
     <br>
     <br>
-    <input type="number" placeholder="Identificación">
+    <input type="text" placeholder="Primer Apellido" formControlName="apellido1">
     <br>
     <br>
-    <input type="email" placeholder="Correo electronico">
+    <input type="text" placeholder="Segundo Apellido" formControlName="apellido2">
     <br>
     <br>
-    <input type="number" placeholder="Telefono">
+    <input type="number" placeholder="Identificación" formControlName="identificacion">
+    <br>
+    <br>
+    <input type="email" placeholder="Correo electronico" formControlName="correo">
+    <br>
+    <br>
+    <input type="text" placeholder="Telefono" formControlName="telefono">
+    <br>
+    <br>
+    <input type="password" placeholder="Contraseña" formControlName="contrasena">
     <br>
     <br>
     <select placeholder="Perfil">
-      <option value="value1">Admin</option>
-      <option value="value3">Operario</option>
+      <option value="1">Admin</option>
+      <option value="2">Operario</option>
     </select>
 
     <br>
