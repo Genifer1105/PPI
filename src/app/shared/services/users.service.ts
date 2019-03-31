@@ -6,11 +6,11 @@ import { User } from '../models/user.model';
   providedIn: 'root'
 })
 export class UsersService {
-  private readonly urlAuth: string = 'http://0.0.0.0:5000/auth';
+  private readonly urlAuth: string = 'http://localhost:5000/auth';
   private readonly urlAuthGetUsers: string =
-    'http://0.0.0.0:5000/auth/get_users';
+    'http://localhost:5000/auth/get_users';
   private readonly urlAuthCreateUsers: string =
-    'http://0.0.0.0:5000/auth/create_user';
+    'http://localhost:5000/auth/create_user';
 
   constructor(private http: HttpClient) {}
 

@@ -1,54 +1,52 @@
-
-
 <br>
 
+
 <div class="introduccion">
- Las personas que vayan a hacer uso del sistema, deben estar previamente
- registradas. En esta sección el administrador podrá crear dichos usuarios con su respectivo perfil.
- </div>
+    Las personas que vayan a hacer uso del sistema, deben estar previamente registradas. En esta sección el administrador podrá crear dichos usuarios con su respectivo perfil.
+</div>
 
- <div id="container">
+<div id="container">
 
-  <h2>Registro de Usuarios</h2>
+    <h2>Registro de Usuarios</h2>
 
-  <form [formGroup]="usersForm" (ngSubmit)="guardar()" >
+    <form [formGroup]="usersForm" (ngSubmit)="guardar()">
 
-    <br>
-
-    <input type="text" placeholder="Nombre Completo" formControlName="nombre">
-    <br>
-    <br>
-    <input type="text" placeholder="Primer Apellido" formControlName="apellido1">
-    <br>
-    <br>
-    <input type="text" placeholder="Segundo Apellido" formControlName="apellido2">
-    <br>
-    <br>
-    <input type="number" placeholder="Identificación" formControlName="identificacion">
-    <br>
-    <br>
-    <input type="email" placeholder="Correo electronico" formControlName="correo">
-    <br>
-    <br>
-    <input type="text" placeholder="Telefono" formControlName="telefono">
-    <br>
-    <br>
-    <input type="password" placeholder="Contraseña" formControlName="contrasena">
-    <br>
-    <br>
-    <select placeholder="Perfil">
+        <br>
+        <br>
+        <input type="number" placeholder="Identificación" formControlName="identificacion">
+        <br>
+        <br>
+        <input type="text" placeholder="Nombre Completo" formControlName="nombre">
+        <br>
+        <br>
+        <input type="text" placeholder="Primer Apellido" formControlName="apellido1">
+        <br>
+        <br>
+        <input type="text" placeholder="Segundo Apellido" formControlName="apellido2">
+        <br>
+        <br>
+        <input type="text" placeholder="Telefono" formControlName="telefono">
+        <br>
+        <br>
+        <input type="email" placeholder="Correo electronico" formControlName="correo">
+        <br>
+        <br>
+        <input type="password" placeholder="Contraseña" formControlName="contrasena">
+        <br>
+        <br>
+        <select placeholder="Perfil">
       <option value="1">Admin</option>
       <option value="2">Operario</option>
     </select>
 
-    <br>
-    <br>
-    <br>
+        <br>
+        <br>
+        <br>
 
-    <button type="submit">Registrar</button>
-    <button type="submit">Consultar</button>
-    <button type="submit">Modificar</button>
+        <button type="submit">Registrar</button>
+        <button type="submit">Consultar</button>
+        <button type="submit">Modificar</button>
 
-  </form>
+    </form>
 
 </div>
