@@ -1,4 +1,5 @@
 
+
 .introduccion { 
     font-family: 'Roboto', sans-serif; 
     color: black; 
@@ -20,7 +21,7 @@
     margin: 3em auto;
     background: rgba(255, 255, 255, 0.95);
     height: 460px;
-    width: 570px;
+    width: 650px;
     padding: 1em;
     
  /*   position: fixed;*/
@@ -43,6 +44,32 @@
 
 }
 
+
+label {
+	top: .8rem;	
+	left: 0;
+	display: block;
+    font-size: 1rem;
+    color: #000000;
+    display: inline-block;
+    width: 200px;
+}
+
+
+input {
+	border: 1px solid #fff;
+	font-size: 1.2rem;
+	padding: .6rem;
+	padding-left: 0;
+	background:transparent;
+	border: none;
+	border-bottom: 2px solid #444;
+	width: 230px;
+    border-radius: 0;
+   
+}
+    
+    /*
 #container input {
     	
         width: 220px;
@@ -58,6 +85,7 @@
         font-family: 'Roboto', sans-serif;
         
     }
+    */
 /*
     #container select { 
         width: 270px;

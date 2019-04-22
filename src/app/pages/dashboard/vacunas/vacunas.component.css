@@ -40,7 +40,7 @@
 
 
  
-#container{
+#containerVacunas{
   
    box-shadow: 9px 10px 70px 9px rgba(24, 23, 23, 0.31);
    text-align: center;
@@ -48,9 +48,8 @@
    margin: 3em auto;
    background: rgba(255, 255, 255, 0.95);
    height: 490px;
-   width: 480px;
+   width: 630px;
    padding: 1em;
-
    bottom: 0;
    right: 0;
    left: 0;
@@ -58,7 +57,7 @@
    
 }
 
-#container h2 { 
+#containerVacunas h2 { 
    font-family: 'Roboto', sans-serif;
    background-size:cover;
    letter-spacing: 2px;
@@ -68,7 +67,7 @@
 
 }
 
-#container input {
+#containerVacunas input {
        width: 220px;
        height: 10px;
        display: inline-block;
@@ -82,7 +81,7 @@
        font-family: 'Roboto', sans-serif;
 }
 
-#container button {
+#containerVacunas button {
    background: #196844;
    font-family: 'Roboto', sans-serif;
    padding: 0.5em 1.9em;
@@ -95,3 +94,68 @@
   border: none;
 
 }
+
+
+
+
+
+
+
+
+
+ 
+#containerVacunasGestacion{
+  
+   box-shadow: 9px 10px 70px 9px rgba(24, 23, 23, 0.31);
+   text-align: center;
+   border-radius: 5px;
+   margin: 3em auto;
+   background: rgba(255, 255, 255, 0.95);
+   height: 490px;
+   width: 630px;
+   padding: 1em;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   top: 0;	 
+   
+}
+
+#containerVacunasGestacion h2 { 
+   font-family: 'Roboto', sans-serif;
+   background-size:cover;
+   letter-spacing: 2px;
+   font-size: 1.5em;
+   margin: 0.5;
+   color: #000000;
+
+}
+
+#containerVacunasGestacion input {
+       width: 220px;
+       height: 10px;
+       display: inline-block;
+       text-align: center;
+       border-radius: 7px;
+       background: #eee;
+       padding: 1em 2em;
+       outline: none;
+       border: none; 
+       color: #000000;
+       font-family: 'Roboto', sans-serif;
+}
+
+#containerVacunasGestacion button {
+  background: #196844;
+   font-family: 'Roboto', sans-serif;
+   padding: 0.5em 1.9em;
+   margin: 0.5em;
+   border-radius: 7px;
+   cursor: pointer;
+   color: #FFFFFF;
+   font-size: 1em;
+   outline: none;
+  border: none;
+
+}
+

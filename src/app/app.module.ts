@@ -8,8 +8,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
-
-
 /* Módulo principal donde se cargan todos los componentes y demás
 /*import {ReactiveFormsModule} from '@angular/forms'; */
 
