@@ -1,4 +1,4 @@
-* {
+/** {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,10 +8,10 @@ body img {
   width: 99%;
   height: 98%;
   position: absolute;
-  /*   opacity: 0.8; */
+    opacity: 0.8; 
 }
 
-/*
+
 div #container {
     background-attachment: fixed;
     background-size: cover;
@@ -19,7 +19,7 @@ div #container {
     background-color: rgba(0,0,255,0.5);
 
      box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
-  } */
+  } 
 
 
 #container {
@@ -51,7 +51,6 @@ div #container {
 
 #container input {
 
-
   width: 290px;
   height: 12px;
   display: inline-block;
@@ -64,7 +63,6 @@ div #container {
   font-size: 17px;
 
 }
-
     
 
 #container button {
@@ -80,3 +78,7 @@ div #container {
   border: none;
 
 }
+*/
+
+
+
