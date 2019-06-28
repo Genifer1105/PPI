@@ -2,6 +2,7 @@
 .navbar {
   height: 45px;
   border: #D8D8D8 1px solid ;
+  position: static; 
 }
 
 .navbar ul li{
