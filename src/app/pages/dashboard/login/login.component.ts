@@ -10,9 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class LoginComponent implements OnInit {
 
-
   profileForm: FormGroup;
-
 
   constructor(
 
@@ -27,15 +25,14 @@ export class LoginComponent implements OnInit {
     });
   }
 
-
   ngOnInit() {
 
   }
 
-
   ingresar() {
     console.log('prueba');
-    if (!this.profileForm.valid) {
+    //  if(!this.profileForm.valid)
+    if(this.profileForm.valid) {
       console.log('no valido')
       return;
     }

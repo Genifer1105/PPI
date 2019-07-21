@@ -1,52 +1,116 @@
 <br>
 
+<div class="introduccion">
+    Las personas que vayan a hacer uso del sistema, deben estar previamente
+    registradas. En esta sección el administrador podrá crear dichos usuarios con su respectivo perfil.
+    </div>
+
+    <div id="container">
+
+        <h2>Registro de Usuarios</h2>
+         <br>
+<form>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Identificación</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Nombres</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+     <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Primer Apellido</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputPassword1">Segundo Apellido</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+
+      <div class="form-group">
+          <label for="exampleInputPassword1">Correo electrónico</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+
+
+        <div class="form-group">
+            <label for="exampleInputPassword1">Teléfono</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+
+
+    <button type="submit" class="btn btn-primary">Registrar</button>
+
+  </form>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <!--
 
 <div class="introduccion">
     Las personas que vayan a hacer uso del sistema, deben estar previamente registradas. En esta sección el administrador podrá crear dichos usuarios con su respectivo perfil.
 </div>
 
-<div id="container">
+<div class="introduccion">
+ Las personas que vayan a hacer uso del sistema, deben estar previamente
+ registradas. En esta sección el administrador podrá crear dichos usuarios con su respectivo perfil.
+ </div>
 
-    <h2>Registro de Usuarios</h2>
+ <div id="container">
 
-    <form [formGroup]="usersForm" (ngSubmit)="guardar()">
+  <h2>Registro de Usuarios</h2>
 
-        <br>
-        <br>
-        <input type="number" placeholder="Identificación" formControlName="identificacion">
-        <br>
-        <br>
-        <input type="text" placeholder="Nombre Completo" formControlName="nombre">
-        <br>
-        <br>
-        <input type="text" placeholder="Primer Apellido" formControlName="apellido1">
-        <br>
-        <br>
-        <input type="text" placeholder="Segundo Apellido" formControlName="apellido2">
-        <br>
-        <br>
-        <input type="text" placeholder="Telefono" formControlName="telefono">
-        <br>
-        <br>
-        <input type="email" placeholder="Correo electronico" formControlName="correo">
-        <br>
-        <br>
-        <input type="password" placeholder="Contraseña" formControlName="contrasena">
-        <br>
-        <br>
-        <select placeholder="Perfil">
-      <option value="1">Admin</option>
-      <option value="2">Operario</option>
+  <form>
+
+    <br>
+
+    <label>Nombre Completo </label>
+    <input type="text" >
+
+    <br>
+
+    <label>Identificación </label>
+    <input type="number"  >
+    <br>
+
+
+    <label>Correo Electrónico </label>
+    <input type="email">
+    <br>
+
+    <label>Telefono </label>
+    <input type="number">
+
+    <br>
+
+    <select placeholder="Perfil">
+      <option value="value1">Admin</option>
+      <option value="value3">Operario</option>
     </select>
+<br>
+<br>
 
-        <br>
-        <br>
-        <br>
+     <button type="submit">Registrar</button>
+    <button type="submit">Consultar</button>
+    <button type="submit">Modificar</button>
+    <button type="submit">Eliminar</button>
 
-        <button type="submit">Registrar</button>
-        <button type="submit">Consultar</button>
-        <button type="submit">Modificar</button>
-
-    </form>
+ <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  </form>
 
 </div>
+-->

@@ -13,6 +13,7 @@ import { NotificacionesComponent } from './notificaciones/notificaciones.compone
 import { VacunasComponent } from './vacunas/vacunas.component';
 import { SharedModule } from '../../shared/shared.module';
 import { HomeComponent } from './home/home.component';
+;
 
 // aquí van los componentes del dashboard
 
@@ -30,23 +31,29 @@ const admin_routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [
-    UsuariosComponent,
-    AnimalComponent,
-    MontasComponent,
-    PartosComponent,
-    CamadasComponent,
-    NotificacionesComponent,
-    ReportesComponent,
-    VacunasComponent,
-    HomeComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    RouterModule.forChild(admin_routes),
-    ReactiveFormsModule
-  ],
-  exports: [RouterModule]
+    declarations: [
+        UsuariosComponent,
+        AnimalComponent,
+        MontasComponent,
+        PartosComponent,
+        CamadasComponent,
+        NotificacionesComponent,
+        ReportesComponent,
+        VacunasComponent,
+        HomeComponent,
+
+
+    ],
+    imports: [
+        CommonModule,
+        SharedModule,
+        RouterModule.forChild (
+        admin_routes)
+    ],
+    exports: [
+        RouterModule,
+
+    ]
+
 })
 export class LazyLoadModule {}

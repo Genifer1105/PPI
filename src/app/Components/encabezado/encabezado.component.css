@@ -1,15 +1,16 @@
 
-
 #header {
     background: #196844;
 	color: white;
 	height: 100px;	
 	width: 100%; /*  la cabecera ocupe el ancho completo de la página */
 	left: 0; /*  la cabecera al lado izquierdo */
-	top: 0; /*  la cabecera pegada arriba */
-	position: fixed; /*  la cabecera tenga una posición fija */
+    top: 0; /*  la cabecera pegada arriba */
+position: fixed;
+z-index: 100;
+/*  la cabecera tenga una posición fija */
+
 }
-	
 	#header a {
 		color: white;
     }
@@ -19,7 +20,6 @@
          width: 22%;
          height: 85px;
          margin: 2px;
-     
 	} 
 	
 	#header button {
@@ -33,10 +33,8 @@
         border: none;
         float: right;
         border-radius: 7px;
-        
     }
-/*
+
     #header button:active {
         background: #E6E6E6 ;
     }
-*/
