@@ -1,17 +1,15 @@
-
-
-.introduccion { 
-    font-family: 'Roboto', sans-serif; 
-    color: black; 
-    font-size: 18px; 
+.introduccion {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 18px;
     width: 90%;
-    font-weight: 400; 
-    text-align: center; 
-    background: #D6E9DD; 
-    margin:  15px 15px 15px 40px; 
-    overflow: hidden; 
-    padding: 20px; 
-    border-radius: 35px 0px 35px 0px; 
+    font-weight: 400;
+    text-align: center;
+    background: #D6E9DD;
+    margin: 15px 15px 15px 40px;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 35px 0px 35px 0px;
 }
 
 #container {
@@ -23,12 +21,12 @@
     height: 960px;
     width: 800px;
     padding: 1em;
-    position: static; 
+    position: static;
 }
 
 #container h2 {
     font-family: 'Roboto', sans-serif;
-    background-size:cover;
+    background-size: cover;
     letter-spacing: 2px;
     font-size: 25px;
     color: #000000;
@@ -38,6 +36,8 @@
 .form-group {
     margin: 0.5em
 }
+
+
 /*
 .form-group input {
     width: 320px;
@@ -46,15 +46,16 @@
     justify-content: center;
 }
 */
+
 .form-group label {
     font-size: 16px;
     color: #000000;
     width: 80%;
     display: flex;
     align-items: baseline;
-    position: static; 
-
+    position: static;
 }
+
 
 /*
 
@@ -70,7 +71,9 @@
     padding: 1em;
     
    /* position: fixed;*/
- /*   bottom: 0;
+
+
+/*   bottom: 0;
    /* right: 0;
     /*left: 0;
     /*top: 0;	 
@@ -104,17 +107,17 @@
         
     }
 */
-    #container button {
-        background: #196844;
-        font-family: 'Roboto', sans-serif;
-        padding: 0.5em 1.9em;
-        margin: 1.0em 1.0em 1.0em 1.0em;
-        border-radius: 7px;
-        font-size: 1.4em;
-        cursor: pointer;
-        color: #FFFFFF;
-        font-size: 1em;
-        outline: none;
-        border: none;
-    
-    }
+
+#container button {
+    background: #196844;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5em 1.9em;
+    margin: 1.0em 1.0em 1.0em 1.0em;
+    border-radius: 7px;
+    font-size: 1.4em;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 1em;
+    outline: none;
+    border: none;
+}
