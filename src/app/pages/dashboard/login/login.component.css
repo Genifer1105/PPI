@@ -1,7 +1,9 @@
 body {
-    background-image: url('/../../../assets/imagenes/fondo.jpg');
+    background: url('/../../../assets/imagenes/cerditos.jpg') no-repeat;
+    /*background-image: url('/../../../assets/imagenes/do.jpg');*/
     width: 100%;
     height: 100%;
+    image-resolution: 100px;
     position: absolute;
     opacity: 0.9;
 }
