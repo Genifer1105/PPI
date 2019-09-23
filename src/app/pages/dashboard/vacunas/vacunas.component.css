@@ -13,12 +13,14 @@
   }
 
 
-  table {
-    margin:  40px 50px 50px 60px; 
-    width: 90%;
-    border: 0.2px solid #848484;
+ table {
+   margin: auto; 
+   width: 70%;
+   height: 70%;
+   border: 0.2px solid #848484;
+   text-align: center;
  }
-
+/*
  th {
     font-size: 20px;
     font-family: 'Roboto', sans-serif; 
@@ -117,7 +119,7 @@
        color: #000000;
        font-family: 'Roboto', sans-serif;
 }
-*/
+
 #containerVacunas button {
    background: #196844;
    font-family: 'Roboto', sans-serif;
@@ -131,6 +133,7 @@
   border: none;
 
 }
+
 
 
 /*

@@ -20,8 +20,8 @@
     border-radius: 5px;
     margin: 3em auto;
     background: rgba(255, 255, 255, 0.95);
-    height: 700px;
-    width: 500px;
+    height: 500px;
+    width: 690px;
     padding: 1em;
 }
 
@@ -34,16 +34,22 @@
     margin: 0.5em
 }
 
+
 .form-group {
-    margin: 0.5em
+    margin: 0.7em;
+    }
+
+.form-row {
+    margin-left: 12px;
 }
+/*
 .form-group input {
     width: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
    
-}
+}*/
 
 .form-group label {
     font-size: 16px;
@@ -123,8 +129,7 @@ input {
         color: #FFFFFF;
         font-size: 1em;
         outline: none;
-        border: none;
-    
+        border: none;        
     }
 
     
