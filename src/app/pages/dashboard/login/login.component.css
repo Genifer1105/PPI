@@ -1,6 +1,5 @@
 body {
-    background: url('/../../../assets/imagenes/cerditos.jpg') no-repeat;
-    /*background-image: url('/../../../assets/imagenes/do.jpg');*/
+    background-image: url('/../../../assets/imagenes/fondo.jpg');
     width: 100%;
     height: 100%;
     image-resolution: 100px;
