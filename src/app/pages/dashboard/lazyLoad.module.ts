@@ -17,11 +17,11 @@ const admin_routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'animal', component: AnimalComponent },
   { path: 'partos', component: PartosComponent },
+  { path: 'vacunas', component: VacunasComponent },
   { path: 'reportes', component: ReportesComponent },
   { path: 'usuarios', component: UsuariosComponent },
-  { path: 'vacunas', component: VacunasComponent },
   { path: 'ayuda', component: AyudaComponent },
-  { path: '**', redirectTo: 'animal' }
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({

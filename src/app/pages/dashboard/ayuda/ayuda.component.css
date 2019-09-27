@@ -11,3 +11,18 @@
     padding: 20px;
     border-radius: 35px 0px 35px 0px;
 }
+
+.container {
+    width: 70%;
+    height: 70%;
+    text-align: center;
+  }
+  
+    .card a {
+    background: #196844;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+  }

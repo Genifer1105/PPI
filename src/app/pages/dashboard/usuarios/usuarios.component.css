@@ -14,10 +14,10 @@
 
 #container {
     box-shadow: 9px 10px 70px 9px rgba(133, 131, 131, 0.31);
-    text-align: center;
     border-radius: 5px;
     margin: 3em auto;
-    background: rgba(255, 255, 255, 0.95);
+    background: #F5F5F5;
+    /*background: rgba(255, 255, 255, 0.95);*/
     height: 700px;
     width: 500px;
     padding: 1em;
@@ -29,7 +29,8 @@
     letter-spacing: 2px;
     font-size: 25px;
     color: #000000;
-    margin: 0.5em
+    margin: 0.5em;
+    text-align: center;
 }
 
 .form-group {
