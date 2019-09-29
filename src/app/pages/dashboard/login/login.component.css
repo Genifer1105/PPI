@@ -1,12 +1,11 @@
-
-
 body {
-    background-image: url('/../../../assets/imagenes/fondo.jpg');
+    background-image: url('/../../../assets/imagenes/cerdito3.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    image-resolution: 100px;
     width: 100%;
     height: 100%;
-    image-resolution: 100px;
     position: absolute;
-    opacity: 0.9;
     overflow: hidden
 }
 
@@ -36,11 +35,3 @@ button {
     height: 20%;
     width: 100%;
 }
-
-
-
-
-
-
- 
-
