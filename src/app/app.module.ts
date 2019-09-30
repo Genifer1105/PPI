@@ -8,6 +8,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
+
 /* Módulo principal donde se cargan todos los componentes y demás
 /*import {ReactiveFormsModule} from '@angular/forms'; */
 
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     LoginComponent,
+    
   ],
   imports: [
     BrowserModule,

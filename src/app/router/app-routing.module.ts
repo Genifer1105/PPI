@@ -6,7 +6,6 @@ import { LoginComponent } from '../pages/dashboard/login/login.component';
 import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 
 
-
 /* import {ModuleWithProviders} from '@angular/core'*/
 
 const routes: Routes = [

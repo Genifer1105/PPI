@@ -15,21 +15,21 @@
 }
 
 #container {
-    box-shadow: 9px 10px 70px 9px rgba(133, 131, 131, 0.31);
+   box-shadow: 9px 9px 9px 9px rgba(133, 131, 131, 0.30);
     text-align: center;
     border-radius: 5px;
     margin: 3em auto;
-    background: rgba(255, 255, 255, 0.95);
-    height: 700px;
-    width: 500px;
+    background: rgba(226, 226, 226, 0.2);
+    height: 660px;
+    width: 460px;
     padding: 1em;
 }
 
 #container h2 {
-    font-family: 'Roboto', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-size:cover;
     letter-spacing: 2px;
-    font-size: 25px;
+    font-size: 27px;
     color: #000000;
     margin: 0.5em
 }
@@ -52,70 +52,6 @@
     align-items: baseline;
 }
 
-/*
-
-.introduccion { 
-    font-family: 'Roboto', sans-serif; 
-    color: black; 
-    font-size: 18px; 
-    width: 90%;
-    font-weight: 400; 
-    text-align: center; 
-    background: #D6E9DD; 
-    margin:  15px 15px 15px 40px; 
-    overflow: hidden; 
-    padding: 20px; 
-    border-radius: 35px 0px 35px 0px; 
-  }
-  
-  
-#container{
-   
-    box-shadow: 9px 10px 70px 9px rgba(24, 23, 23, 0.31);
-    text-align: center;
-    border-radius: 5px;
-    margin: 3em auto;
-    background: rgba(255, 255, 255, 0.95);
-    height: 500px;
-    width: 630px;
-    padding: 1em;
-    
-   /* position: fixed;*/
- /*   bottom: 0;
-   /* right: 0;
-    /*left: 0;
-    /*top: 0;	 
-    
-}
-
-#container h2 {
-     
-    font-family: 'Roboto', sans-serif;
-    background-size:cover;
-    letter-spacing: 2px;
-    font-size: 1.5em;
-    margin: 0.5;
-    color: #000000;
-
-
-}
-
-#container input {
-    	
-        width: 220px;
-        height: 10px;
-        display: inline-block;
-        text-align: center;
-        border-radius: 7px;
-        background: #eee;
-        padding: 1em 2em;
-        outline: none;
-        border: none; 
-        color: #000000;
-        font-family: 'Roboto', sans-serif;
-        
-    }
-*/
     #container button {
         background: #196844;
         font-family: 'Roboto', sans-serif;

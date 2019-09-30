@@ -22,11 +22,11 @@ table {
 
 #containerVacunas {
     box-shadow: 9px 10px 70px 9px rgba(133, 131, 131, 0.31);
-    /*  text-align: center;*/
-    border-radius: 5px;
+    /*  text-align: center;
+    border-radius: 5px;*/
     margin: 3em auto;
     background: rgba(255, 255, 255, 0.95);
-    height: 700px;
+    height: 710px;
     width: 690px;
     padding: 1em;
 }
@@ -45,12 +45,12 @@ table {
     background: #196844;
     font-family: 'Roboto', sans-serif;
     padding: 0.5em 1.9em;
-    margin: 15px;
+    margin: 24px;
     position: relative;
     border-radius: 7px;
     cursor: pointer;
     color: #FFFFFF;
-    font-size: 14px;
+    font-size: 15px;
     outline: none;
     border: none;
 }

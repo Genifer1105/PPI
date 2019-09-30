@@ -11,6 +11,7 @@ import { VacunasComponent } from './vacunas/vacunas.component';
 import { SharedModule } from '../../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { AyudaComponent} from './ayuda/ayuda.component';
+import { AcercaComponent } from './acerca/acerca.component';
 
 // aquí van los componentes del dashboard
 const admin_routes: Routes = [
@@ -21,6 +22,7 @@ const admin_routes: Routes = [
   { path: 'reportes', component: ReportesComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'ayuda', component: AyudaComponent },
+  { path: 'acerca', component: AcercaComponent },
   { path: '**', redirectTo: 'home' }
 ];
 
@@ -33,7 +35,7 @@ const admin_routes: Routes = [
         VacunasComponent,
         AyudaComponent,
         HomeComponent,
-
+        AcercaComponent,
 
     ],
     imports: [
