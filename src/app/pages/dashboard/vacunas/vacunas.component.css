@@ -20,75 +20,41 @@ table {
     text-align: center;
 }
 
-
 #containerVacunas {
-   box-shadow: 9px 10px 70px 9px rgba(133, 131, 131, 0.31);
- /*  text-align: center;*/
-   border-radius: 5px;
-   margin: 3em auto;
-   background: rgba(255, 255, 255, 0.95);
-   height: 700px;
-   width: 700px;
-   padding: 1em;
+    box-shadow: 9px 10px 70px 9px rgba(133, 131, 131, 0.31);
+    /*  text-align: center;*/
+    border-radius: 5px;
+    margin: 3em auto;
+    background: rgba(255, 255, 255, 0.95);
+    height: 700px;
+    width: 690px;
+    padding: 1em;
 }
 
 #containerVacunas h2 {
-   font-family: 'Roboto', sans-serif;
-   text-align: center;
-   background-size:cover;
-   letter-spacing: 2px;
-   font-size: 25px;
-   color: #000000;
-   margin: 0.5em
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-size: cover;
+    letter-spacing: 2px;
+    font-size: 25px;
+    color: #000000;
+    margin: 0.5em
 }
-
-/*
-.form-group {
-   margin: 0.5em
-}
-
-.form-group label {
-   font-size: 16px;
-   color: #000000;
-   width: 80%;
-   display: flex;
-   align-items: baseline;
-}
-.form-group input {
-   width: 300px;
-   display: flex;
-   align-items: center;
-   justify-content: center; 
-}
-
-
-
-#containerVacunas input {
-       width: 220px;
-       height: 10px;
-       display: inline-block;
-       text-align: center;
-       border-radius: 7px;
-       background: #eee;
-       padding: 1em 2em;
-       outline: none;
-       border: none; 
-       color: #000000;
-       font-family: 'Roboto', sans-serif;
-}
-*/
 
 #containerVacunas button {
-   background: #196844;
-   font-family: 'Roboto', sans-serif;
-   padding: 0.5em 1.9em;
-   margin: 0.5em;
-   border-radius: 7px;
-   cursor: pointer;
-   color: #FFFFFF;
-   font-size: 1em;
-   outline: none;
-  border: none;
-
+    background: #196844;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5em 1.9em;
+    margin: 15px;
+    position: relative;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 14px;
+    outline: none;
+    border: none;
 }
 
+.form-control {
+    width: 100%;
+}

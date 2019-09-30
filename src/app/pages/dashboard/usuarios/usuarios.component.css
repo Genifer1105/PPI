@@ -19,7 +19,7 @@
     background: #F5F5F5;
     /*background: rgba(255, 255, 255, 0.95);*/
     height: 700px;
-    width: 500px;
+    width: 550px;
     padding: 1em;
 }
 
@@ -40,13 +40,16 @@
 #container button {
     background: #196844;
     font-family: 'Roboto', sans-serif;
-    padding: 0.5em 1.9em;
-    margin: 1.0em 1.0em 1.0em 1.0em;
+    padding: 0.3em 1.5em;
+    margin: 0.7em;
     border-radius: 7px;
-    font-size: 1.4em;
+    font-size: 15px;
     cursor: pointer;
     color: #FFFFFF;
-    font-size: 1em;
     outline: none;
     border: none;
+}
+
+.form-control {
+    width: 80%;
 }

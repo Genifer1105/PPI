@@ -1,40 +1,46 @@
-
 #header {
     background: #196844;
-	color: white;
-	height: 100px;	
-	width: 100%; /*  la cabecera ocupe el ancho completo de la página */
-	left: 0; /*  la cabecera al lado izquierdo */
-    top: 0; /*  la cabecera pegada arriba */
-position: fixed;
-z-index: 100;
-/*  la cabecera tenga una posición fija */
+    color: white;
+    height: 100px;
+    width: 100%;
+    /*  la cabecera ocupe el ancho completo de la página */
+    left: 0;
+    /*  la cabecera al lado izquierdo */
+    top: 0;
+    /*  la cabecera pegada arriba */
+    position: fixed;
+    z-index: 100;
+    /*  la cabecera tenga una posición fija */
 }
-    
-   #logo-header img {
-        float: left;
-         width: 22%;
-         height: 85px;
-         margin: 2px;
-	} 
-    
-    #navbarNav {
-		color: white;
-    }
-    
-	#header button {
-        background: #196844;
-        font-family: 'Roboto', sans-serif;
-        padding: 0.5em 1.7em; 
-        margin: 1.2em ;
-        cursor: pointer;
-        color: #FFFFFF;
-        font-size: 15px;
-        border: none;
-        float: right;
-        border-radius: 7px;
-    }
 
-    #header button:active {
-        background: #E6E6E6 ;
-    }
+#logo-header img {
+    float: left;
+    width: 22%;
+    height: 85px;
+    margin: 2px;
+}
+
+#navbarNav {
+    color: white;
+}
+
+#header button {
+    background: #196844;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5em 1.7em;
+    margin: 1.2em;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 15px;
+    border: none;
+    float: right;
+    border-radius: 7px;
+}
+
+#header button:active {
+    background: #E6E6E6;
+}
+
+#exampleModalLong {
+    position: fixed
+}
