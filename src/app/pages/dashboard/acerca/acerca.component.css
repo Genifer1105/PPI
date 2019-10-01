@@ -1,12 +1,12 @@
 
 .container {
-    width: 60%;
-    height: 60%;
-    text-align: left;
-  }
-  
-    .card a {
-    background: #196844;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+   /* margin-left: 20%;*/
+   margin-right: 20%;
+   margin-left: 20%;
+
   }
   
   img {
