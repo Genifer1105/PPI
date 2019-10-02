@@ -13,11 +13,10 @@
 }
 
 #container {
-    box-shadow: 9px 10px 70px 9px rgba(133, 131, 131, 0.31);
+    box-shadow: 9px 9px 9px 9px rgba(133, 131, 131, 0.30);
     border-radius: 5px;
     margin: 3em auto;
-    background: #F5F5F5;
-    /*background: rgba(255, 255, 255, 0.95);*/
+    background: rgba(226, 226, 226, 0.2);
     height: 700px;
     width: 550px;
     padding: 1em;
