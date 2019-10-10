@@ -20,7 +20,7 @@ table {
     text-align: center;
 }
 
-#containerVacunas {
+#formVacCamadas {
     box-shadow: 9px 9px 9px 9px rgba(133, 131, 131, 0.30);
     /*  text-align: center;
     border-radius: 5px;*/
@@ -31,7 +31,7 @@ table {
     padding: 1em;
 }
 
-#containerVacunas h2 {
+#formVacCamadas h2 {
     font-family: 'Roboto', sans-serif;
     text-align: center;
     background-size: cover;
@@ -41,7 +41,7 @@ table {
     margin: 0.5em
 }
 
-#containerVacunas button {
+#formVacCamadas button {
     background: #196844;
     font-family: 'Roboto', sans-serif;
     padding: 0.5em 1.9em;
@@ -57,4 +57,52 @@ table {
 
 .form-control {
     width: 100%;
+}
+
+
+
+#formVacPorcinos {
+    box-shadow: 9px 9px 9px 9px rgba(133, 131, 131, 0.30);
+    /*  text-align: center;
+    border-radius: 5px;*/
+    margin: 3em auto;
+    background: rgba(226, 226, 226, 0.2);
+    height: 710px;
+    width: 690px;
+    padding: 1em;
+}
+
+#formVacPorcinos h2 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-size: cover;
+    letter-spacing: 2px;
+    font-size: 25px;
+    color: #000000;
+    margin: 0.5em
+}
+
+#formVacPorcinos button {
+    background: #196844;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5em 1.9em;
+    margin: 24px;
+    position: relative;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 15px;
+    outline: none;
+    border: none;
+}
+
+#botonesForm {
+    width: 80%;
+    margin-left: 5%;
+   
+}
+
+#botonesForm button {
+    width: 22%;
+    margin: 5px;
 }

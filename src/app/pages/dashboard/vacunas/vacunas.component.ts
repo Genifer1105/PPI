@@ -12,4 +12,14 @@ export class VacunasComponent implements OnInit {
   ngOnInit() {
   }
 
+  mostrarFormPorcinos() {
+    var formulario = document.getElementById('formVacPorcinos');
+    formulario.style.display = "block";
+    }
+
+  mostrarFormCamadas() {
+      var formulario = document.getElementById('formVacCamadas');
+      formulario.style.display = "block";
+      }
+  
 }

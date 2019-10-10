@@ -55,9 +55,20 @@
 
 <br>
 <br>
-<br>
 
-<div id="containerVacunas">
+
+<div id="botonesForm">
+    <button type="submit" class="btn btn-primary" (click)="mostrarFormPorcinos()">
+        Registrar Vacuna de Porcino</button>
+
+    <button type="submit" class="btn btn-primary" (click)="mostrarFormCamadas()">
+        Registrar Vacuna de Camada</button>
+ </div>
+
+ <br>
+ <br>
+
+<div  id="formVacPorcinos" style="display: none;">
 
     <h2>Registro de Vacunas de Porcinos</h2>
     <br>
@@ -142,7 +153,7 @@
 </div>
 
 
-<div id="containerVacunas">
+<div id="formVacCamadas"  style="display: none;">
 
     <h2>Registro de Vacunas de Camadas</h2>
 
