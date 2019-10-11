@@ -1,26 +1,19 @@
-
-.row {
-  width: 100%;
+.card {
+    text-align: center;
+    background-color: #F6F5F5;
 }
 
-  .card {
-   text-align: center;
-   margin-left:  25%;
-   margin-top: 2%;
-   width: 100%;
-   background-color:#F6F5F5;
-  }
-
-  h4 {
+h4 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-  }
-  img {
-    width: 100%;
-    height: 100%;
-  }
+}
 
-  h5 {
+
+/* 
+img {
+    width: 80%;
+    height: 80%;
+} */
+
+h5 {
     text-align: center;
-  }
-
- 
+}
