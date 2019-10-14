@@ -12,8 +12,6 @@ import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
-
- 
   { path: 'dashboard',
   component: DashboardComponent,
     children: [
@@ -35,11 +33,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(
-      routes),
-       
+    RouterModule.forRoot(routes),
   ],
-  
   exports: [
     RouterModule
   ]
