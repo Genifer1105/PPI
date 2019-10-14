@@ -12,6 +12,7 @@ import { SharedModule } from '../../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { AyudaComponent} from './ayuda/ayuda.component';
 import { AcercaComponent } from './acerca/acerca.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 // aquí van los componentes del dashboard
 const admin_routes: Routes = [
@@ -23,6 +24,7 @@ const admin_routes: Routes = [
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'ayuda', component: AyudaComponent },
   { path: 'acerca', component: AcercaComponent },
+  { path: 'perfil', component: PerfilComponent },
   { path: '**', redirectTo: 'home' }
 ];
 
@@ -36,6 +38,7 @@ const admin_routes: Routes = [
         AyudaComponent,
         HomeComponent,
         AcercaComponent,
+        PerfilComponent,
 
     ],
     imports: [

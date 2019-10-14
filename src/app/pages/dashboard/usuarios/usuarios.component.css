@@ -52,3 +52,21 @@
 .form-control {
     width: 80%;
 }
+
+#botonesForm {
+    width: 80%;
+    margin-left: 5%;
+}
+
+#botonesForm button {
+    background: #196844;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5em 1.9em;
+    margin: 1px;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #FFFFFF;
+    outline: none;
+    border: none;
+}

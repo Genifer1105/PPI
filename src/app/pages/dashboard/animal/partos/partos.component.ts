@@ -11,5 +11,4 @@ export class PartosComponent implements OnInit {
 
   ngOnInit() {
   }
-
-}
+  }

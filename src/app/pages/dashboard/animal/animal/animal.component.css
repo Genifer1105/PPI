@@ -1,33 +1,31 @@
-
-
-.introduccion { 
-    font-family: 'Roboto', sans-serif; 
-    color: black; 
-    font-size: 18px; 
+.introduccion {
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 18px;
     width: 90%;
-    font-weight: 400; 
-    text-align: center; 
-    background: #D6E9DD; 
-    margin:  15px 15px 15px 40px; 
-    overflow: hidden; 
-    padding: 15px; 
-    border-radius: 35px 0px 35px 0px; 
+    font-weight: 400;
+    text-align: center;
+    background: #D6E9DD;
+    margin: 15px 15px 15px 40px;
+    overflow: hidden;
+    padding: 15px;
+    border-radius: 35px 0px 35px 0px;
 }
 
 #container {
-   box-shadow: 9px 9px 9px 9px rgba(133, 131, 131, 0.30);
+    box-shadow: 9px 9px 9px 9px rgba(133, 131, 131, 0.30);
     text-align: center;
     border-radius: 5px;
     margin: 3em auto;
     background: rgba(226, 226, 226, 0.2);
     height: 660px;
-    width: 460px;
+    width: 550px;
     padding: 1em;
 }
 
 #container h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-size:cover;
+    background-size: cover;
     letter-spacing: 2px;
     font-size: 27px;
     color: #000000;
@@ -37,11 +35,12 @@
 .form-group {
     margin: 0.5em
 }
+
 .form-group input {
     width: 400px;
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .form-group label {
@@ -52,17 +51,33 @@
     align-items: baseline;
 }
 
-    #container button {
-        background: #196844;
-        font-family: 'Roboto', sans-serif;
-        padding: 0.5em 1.9em;
-        margin: 1.0em 1.0em 1.0em 1.0em;
-        border-radius: 7px;
-        font-size: 1em;
-        cursor: pointer;
-        color: #FFFFFF;
-        outline: none;
-        border: none;
-    
-    }
-    
+#container button {
+    background: #196844;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.3em 1.5em;
+    margin: 0.7em;
+    border-radius: 7px;
+    font-size: 15px;
+    cursor: pointer;
+    color: #FFFFFF;
+    outline: none;
+    border: none;
+}
+
+#botonesForm {
+    width: 80%;
+    margin-left: 5%;
+}
+
+#botonesForm button {
+    background: #196844;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5em 1.9em;
+    margin: 1px;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #FFFFFF;
+    outline: none;
+    border: none;
+}

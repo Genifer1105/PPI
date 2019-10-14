@@ -12,7 +12,6 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
 
- 
   { path: 'dashboard',
   component: DashboardComponent,
     children: [
@@ -35,10 +34,8 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(
-      routes),
-       
+      routes),    
   ],
-  
   exports: [
     RouterModule
   ]
