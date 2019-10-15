@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/dashboard/login/login.component';
 import { AppRoutingModule } from './router/app-routing.module';
 import { SharedModule } from './shared/shared.module';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -22,7 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     SharedModule.forRoot(),
-    FormsModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
