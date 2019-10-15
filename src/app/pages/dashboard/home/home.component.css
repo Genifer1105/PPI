@@ -1,6 +1,7 @@
 .slider {
-    width: 60%;
-    margin: auto;
+    width: 70%;
+    margin: auto; 
+    margin-top: 1px;;
     overflow: hidden;
 }
 
@@ -46,4 +47,24 @@
     100% {
         margin-left: -300%;
     }
+}
+
+.introduccion { 
+    font-family: 'Roboto', sans-serif; 
+    font-size: 18px; 
+    width: 90%;
+    font-weight: 400; 
+    text-align: center; 
+    margin: auto; 
+    overflow: hidden; 
+    padding: 5px;
+    
+  }
+
+  .introduccion h2 {
+    color: #196844;
+  }
+
+.introduccion h4 { 
+    color: black; 
 }

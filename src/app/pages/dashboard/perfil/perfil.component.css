@@ -1,0 +1,29 @@
+
+.container {
+    width: 60%;
+    height: 60%;
+    text-align: left;
+  }
+
+  .card {
+    background-color:#F6F5F5;
+  }
+
+  
+  img {
+    width: 80%;
+    height: 90%;
+    margin: 10px;
+      
+  }
+
+  h5 {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  a {
+    margin-left: 70%;
+  }
+
+ 
