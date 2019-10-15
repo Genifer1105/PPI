@@ -1,5 +1,4 @@
 import { ReactiveFormsModule } from '@angular/forms';
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
@@ -45,7 +44,8 @@ const admin_routes: Routes = [
         CommonModule,
         SharedModule,
         RouterModule.forChild (
-        admin_routes)
+        admin_routes),
+        ReactiveFormsModule
     ],
     exports: [
         RouterModule,

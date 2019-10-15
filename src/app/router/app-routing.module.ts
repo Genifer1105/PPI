@@ -5,13 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LoginComponent } from '../pages/dashboard/login/login.component';
 import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 
-
 /* import {ModuleWithProviders} from '@angular/core'*/
 
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
-
   { path: 'dashboard',
   component: DashboardComponent,
     children: [
@@ -33,8 +31,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule.forRoot(
-      routes),    
+    RouterModule.forRoot(routes),
   ],
   exports: [
     RouterModule

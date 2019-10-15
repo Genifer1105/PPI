@@ -13,14 +13,13 @@
     /*  la cabecera tenga una posición fija */
 }
 
-
 #logo-header img {
     float: left;
     width: 25%;
     height: 90px;
-    margin: 3px;;
+    margin: 3px;
+    ;
 }
-
 
 #navbarNav {
     color: white;
