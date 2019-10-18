@@ -7,19 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VacunasComponent implements OnInit {
 
+  public mostrarForm = false;
+  public mostrarFormC = false;
+  
+
   constructor() { }
 
   ngOnInit() {
   }
 
   mostrarFormPorcinos() {
-    var formulario = document.getElementById('formVacPorcinos');
-    formulario.style.display = "block";
-    }
+    this.mostrarForm = !this.mostrarForm;
+  }
 
   mostrarFormCamadas() {
-      var formulario = document.getElementById('formVacCamadas');
-      formulario.style.display = "block";
-      }
-  
+   this.mostrarFormC = !this.mostrarFormC;
+  }
 }

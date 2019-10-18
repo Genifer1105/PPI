@@ -60,78 +60,77 @@
     <button type="submit" class="btn btn-primary" (click)="mostrarFormPorcinos()">
         Registrar Vacuna de Porcino</button>
 
-    <button type="submit" class="btn btn-primary"(click)="mostrarFormCamadas()">
+    <button type="submit" class="btn btn-primary" (click)="mostrarFormCamadas()">
         Registrar Vacuna de Camada</button>
- </div>
+</div>
 
- <br>
- <br>
+<br>
+<br>
 
-<div  id="formVacPorcinos" style="display: none;">
+<div id="formVacPorcinos" *ngIf="mostrarForm">
 
     <h2>Registro de Vacunas de Porcinos</h2>
     <br>
 
     <form>
-
         <!-- <div class="form-group" > -->
         <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Identificación Animal*</label>
                 <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificación del animal">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
 
                 <label for="exampleInputEmail1">Vacuna*</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Vacuna a aplicar">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Fecha programada*</label>
                 <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Fecha programada de aplicación">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Evento*</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Evento de la vacuna">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Fecha de ejecución</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Fecha de aplicación de vacuna">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Via de aplicación*</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Via de aplicación">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Dosis*</label>
                 <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Dosis de la vacuna">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Laboratorio*</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Laboratorio de la vacuna">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Registro ICA*</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Registro ICA">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Número de lote* </label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Número de lote de la vacuna">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Tiempo de retiro </label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Días de retiro de la vacuna">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Observación</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Observaciones">
             </div>
@@ -152,7 +151,7 @@
 </div>
 
 
-<div id="formVacCamadas"  style="display: none;">
+<div id="formVacCamadas" *ngIf="mostrarFormC">
 
     <h2>Registro de Vacunas de Camadas</h2>
 
@@ -162,62 +161,62 @@
 
         <!-- <div class="form-group" > -->
         <div class="form-row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Identificación Camada*</label>
                 <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificación del animal">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
 
                 <label for="exampleInputEmail1">Vacuna*</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Vacuna a aplicar">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Fecha programada*</label>
                 <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Fecha programada de aplicación">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Evento*</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Evento de la vacuna">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Fecha de ejecución</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Fecha de aplicación de vacuna">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Via de aplicación*</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Via de aplicación">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Dosis*</label>
                 <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Dosis de la vacuna">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Laboratorio*</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Laboratorio de la vacuna">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Registro ICA*</label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Registro ICA">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Número de lote* </label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Número de lote de la vacuna">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Tiempo de retiro </label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Días de retiro de la vacuna">
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-5">
                 <label for="exampleInputPassword1">Observaciones </label>
                 <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Observaciones">
             </div>
