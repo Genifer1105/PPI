@@ -27,7 +27,7 @@ table {
     margin: 3em auto;
     background: rgba(226, 226, 226, 0.2);
     height: 710px;
-    width: 690px;
+    width: 560px;
     padding: 1em;
 }
 
@@ -44,8 +44,8 @@ table {
 #formVacCamadas button {
     background: #196844;
     font-family: 'Roboto', sans-serif;
-    padding: 0.5em 1.9em;
-    margin: 24px;
+    padding: 0.5em 1.0em;
+    margin: 15px;
     position: relative;
     border-radius: 7px;
     cursor: pointer;
@@ -94,12 +94,12 @@ table {
     border: none;
 }
 
-#botonesForm {
+#btnMostrarForms {
     width: 80%;
     margin-left: 5%;
 }
 
-#botonesForm button {
+#btnMostrarForms button {
     background: #196844;
     font-family: 'Roboto', sans-serif;
     padding: 0.5em 1.9em;

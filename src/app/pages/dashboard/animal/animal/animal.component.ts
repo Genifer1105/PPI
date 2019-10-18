@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimalComponent implements OnInit {
 
+  public mostrarTableAni = false;
+
   constructor() { }
 
   ngOnInit() {
   }
-
+  
+  mostrartableAnimales() {
+    this.mostrarTableAni = !this.mostrarTableAni;
+  }
 }

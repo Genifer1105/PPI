@@ -1,59 +1,109 @@
 <br>
 
 <div class="introduccion">
-    Los porcinos reproductores de la Granja Marinilla del Politécnico Colombiano Jaime Isaza Cadavid deben ser registrados en el sistema para posteriormente poder gestionar su trazabilidad de partos.
+    Los porcinos reproductores de la Granja Marinilla del Politécnico Colombiano Jaime Isaza Cadavid deben ser
+    registrados en el sistema para posteriormente poder gestionar su trazabilidad de partos.
 </div>
 
 
-<div id="container">
+<div id="formAnimales">
 
     <h2>Registro de Animales</h2>
     <br>
     <form>
 
-        <div class="form-group">
-            <label for="exampleInputPassword1">Identificación animal*</label>
-            <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificación del animal">
-        </div>
+        <div class="form-row">
 
-        <div class="form-group">
-            <label for="exampleInputEmail1">Raza*</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Raza del animal">
-            <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Fecha de nacimiento*</label>
-            <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Fecha de nacimiento del animal">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Identificación de la madre</label>
-            <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificación de la madre">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Identificación del padre</label>
-            <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificación del padre">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Procedencia*</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Procedencia del animal">
-        </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Identificación animal*</label>
+                <input type="number" class="form-control" id="exampleInputPassword1"
+                    placeholder="Identificación del animal">
+            </div>
 
-        <button type="submit" class="btn btn-primary">Registrar</button>
-        <button type="submit" class="btn btn-primary">Consultar</button>
-        <button type="submit" class="btn btn-primary">Modificar</button>
-        <button type="submit" class="btn btn-primary">Eliminar</button>
+            <div class="form-group col-md-6">
+                <label for="exampleInputEmail1">Raza*</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Raza del animal">
+                <!--  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Fecha de nacimiento*</label>
+                <input type="date" class="form-control" id="exampleInputPassword1"
+                    placeholder="Fecha de nacimiento del animal">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Identificación de la madre</label>
+                <input type="number" class="form-control" id="exampleInputPassword1"
+                    placeholder="Identificación de la madre">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Identificación del padre</label>
+                <input type="number" class="form-control" id="exampleInputPassword1"
+                    placeholder="Identificación del padre">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Procedencia*</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Procedencia del animal">
+            </div>
 
+            <br>
+            <br>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button type="submit" class="btn btn-primary">Consultar</button>
+            <button type="submit" class="btn btn-primary">Modificar</button>
+            <button type="submit" class="btn btn-primary">Eliminar</button>
 
+        </div>
     </form>
 </div>
 
-
 <br>
 
-<div id="botonesForm">
-    <button type="submit" class="btn btn-primary" (click)="mostrarFormPorcinos()">
+<div id="btnListarAnimales">
+    <button type="submit" class="btn btn-primary" (click)="mostrartableAnimales()">
         Listar animales</button>
 </div>
 <br>
+<br>
+<br>
+
+<div id="tableAnimales" *ngIf="mostrarTableAni">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Identificación animal</th>
+                <th scope="col">Raza</th>
+                <th scope="col">Fecha nacimiento</th>
+                <th scope="col">Identificación madre</th>
+                <th scope="col">Identificación padre</th>
+                <th scope="col">Procedencia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td> xxxxxxxxx </td>
+                <td>xxxxxxx</td>
+                <td>xxxxx</td>
+                <td>xxxxx</td>
+                <td>xxxxx</td>
+                <td>xxxxx</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td> xxxxxxxxx </td>
+                <td>xxxxxxx</td>
+                <td>xxxxx</td>
+                <td>xxxxx</td>
+                <td>xxxxx</td>
+                <td>xxxxx</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 <br>
 <br>

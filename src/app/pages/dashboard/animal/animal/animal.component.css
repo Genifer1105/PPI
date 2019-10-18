@@ -12,50 +12,38 @@
     border-radius: 35px 0px 35px 0px;
 }
 
-#container {
+#formAnimales {
     box-shadow: 9px 9px 9px 9px rgba(133, 131, 131, 0.30);
-    text-align: center;
-    border-radius: 5px;
+    /*  text-align: center;
+    border-radius: 5px;*/
     margin: 3em auto;
     background: rgba(226, 226, 226, 0.2);
-    height: 660px;
-    width: 550px;
+    height: 450px;
+    width: 560px;
     padding: 1em;
 }
 
-#container h2 {
+#formAnimales h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-size: cover;
     letter-spacing: 2px;
     font-size: 27px;
     color: #000000;
-    margin: 0.5em
+    margin: 0.5em;
+    text-align: center;
 }
 
-.form-group {
-    margin: 0.5em
+
+.form-control {
+    width: 100%;
 }
 
-.form-group input {
-    width: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.form-group label {
-    font-size: 16px;
-    color: #000000;
-    width: 50%;
-    display: flex;
-    align-items: baseline;
-}
-
-#container button {
+#formAnimales button {
     background: #196844;
     font-family: 'Roboto', sans-serif;
-    padding: 0.3em 1.5em;
-    margin: 0.7em;
+    padding: 0.5em 1.9em;
+    margin: 4px;
     border-radius: 7px;
     font-size: 15px;
     cursor: pointer;
@@ -64,12 +52,12 @@
     border: none;
 }
 
-#botonesForm {
+#btnListarAnimales {
     width: 80%;
     margin-left: 5%;
 }
 
-#botonesForm button {
+#btnListarAnimales button {
     background: #196844;
     font-family: 'Roboto', sans-serif;
     padding: 0.5em 1.9em;
@@ -80,4 +68,10 @@
     color: #FFFFFF;
     outline: none;
     border: none;
+}
+
+#tableAnimales {
+    margin-left: 10%;
+    width: 80%;
+    text-align: center;
 }

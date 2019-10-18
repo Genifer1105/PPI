@@ -12,6 +12,8 @@ export class UsuariosComponent implements OnInit {
 
   public usersForm: FormGroup;
 
+  public mostrarTableUsu = false;
+
   constructor(
     private usersService: UsersService,
     private fb: FormBuilder
@@ -69,5 +71,9 @@ export class UsuariosComponent implements OnInit {
   ngOnInit() {
 
   }
+
+mostrarTableUsuarios() {
+  this.mostrarTableUsu = !this.mostrarTableUsu;
+}
 
 }

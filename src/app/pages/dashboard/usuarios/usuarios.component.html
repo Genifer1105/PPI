@@ -4,72 +4,121 @@
     Las personas que vayan a hacer uso del sistema, deben estar previamente registradas. En esta sección el administrador podrá crear dichos usuarios con su respectivo perfil.
 </div>
 
-<div id="container">
+<div id="formUsuarios">
 
     <h2>Registro de Usuarios</h2>
     <br>
+
     <form [formGroup]="usersForm" (ngSubmit)="guardar()">
 
-        <div class="form-group">
+        <div class="form-row">
+    
+        <div class="form-group col-md-6">
             <label for="exampleInputPassword1">Identificación*</label>
             <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificación del usuario">
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label for="exampleInputEmail1">Nombre Completo*</label>
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre del usuario" formControlName="nombre">
 
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label for="exampleInputPassword1">Primer Apellido*</label>
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Primer apellido del usuario" formControlName="apellido1">
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label for="exampleInputPassword1">Segundo Apellido</label>
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Segundo apellido del usuario" formControlName="apellido2">
         </div>
 
-        <div class="form-group">
-            <label for="exampleInputPassword1">Correo electrónico</label>
-            <input type="email" class="form-control" id="correo" placeholder="Correo electrónico del usuario" formControlName="correo">
-        </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label for="exampleInputPassword1">Teléfono*</label>
             <input type="number" class="form-control" id="telefono" placeholder="Teléfono del usuario" formControlName="telefono">
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label for="exampleInputPassword1">Contraseña*</label>
-            <input type="number" class="form-control" id="telefono" placeholder="Contraseña del usuario" formControlName="contrasena">
+            <input type="text" class="form-control" id="telefono" placeholder="Contraseña del usuario" formControlName="contrasena">
         </div>
     
-        <div class="form-group">
+        <div class="form-group col-md-8">
+            <label for="exampleInputPassword1">Correo electrónico</label>
+            <input type="email" class="form-control" id="correo" placeholder="Correo electrónico del usuario" formControlName="correo">
+        </div>
+   
+        <div class="form-group col-md-2">
         <label for="exampleInputPassword1">Perfil* </label>
         <select placeholder="Perfil">
             <option value="1">Administrador</option>
             <option value="2">Operario</option>
           </select>
         </div>
-        <br>
-        <br>
 
+        <br>
+        <br>
+        <br>
+        <br>
+     
         <button type="submit" class="btn btn-primary">Registrar</button>
         <button type="submit" class="btn btn-primary">Consultar</button>
         <button type="submit" class="btn btn-primary">Modificar</button>
         <button type="submit" class="btn btn-primary">Eliminar</button>
-
+    </div>
     </form>
 </div>
 
 <br>
 
-<div id="botonesForm">
-    <button type="submit" class="btn btn-primary">
+<div id="btnListarUsuarios">
+    <button type="submit" class="btn btn-primary" (click)="mostrarTableUsuarios()">
         Listar usuarios</button>
 </div>
+<br>
+<br>
+<br>
 
-<br>
-<br>
-<br>
+
+<div id="tableUsuarios" *ngIf="mostrarTableUsu">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Identificación</th>
+                    <th scope="col">Nombre completo</th>
+                    <th scope="col">Primer apellido</th>
+                    <th scope="col">Segundo apellido</th>
+                    <th scope="col">Teléfono</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Perfil</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td> xxxxxxxxx </td>
+                    <td>xxxxxxx</td>
+                    <td>xxxxx</td>
+                    <td>xxxxx</td>
+                    <td>xxxxx</td>
+                    <td>xxxxx</td>
+                    <td>xxxxx</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td> xxxxxxxxx </td>
+                    <td>xxxxxxx</td>
+                    <td>xxxxx</td>
+                    <td>xxxxx</td>
+                    <td>xxxxx</td>
+                    <td>xxxxx</td>
+                    <td>xxxxx</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+    <br>
