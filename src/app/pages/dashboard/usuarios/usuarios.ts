@@ -2,12 +2,13 @@
 export class Usuario {
 
     constructor (
-
-        public nombreCompleto:string,
         public identificación:number,
+        public nombre:string,
         public correo:string,
+        public perfil:string,
+        public contrasena: string,
         public telefono:number,
-        public perfil:string
+        
     ) {}
 
 }

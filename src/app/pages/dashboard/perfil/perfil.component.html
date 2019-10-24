@@ -3,24 +3,66 @@
 <br>
 
 <div class="container">
-        <div class="row">
-                <div class="card">
-                    <div class="card-body">
-                     <img src="../../../assets/imagenes/usuario.png" alt="imagen">
-                     
-                        <h4 class="card-title">Mi Perfil</h4>
-                        <p> La granja Román Gómez Gómez, de Marinilla, fue inaugurada en el año de 1980, por el presidente de Colombia Julio Cesar Turbay Ayala. La granja Román Gómez Gómez se encuentra ubicada en el municipio de Marinilla, vereda la Primavera,
-                            a cinco kilómetros del parque principal.
-                            En la granja se desarrollan programas en el áreas Pecuaria tales como: 
-                            Ganado de leche,Porcicultura, Avicultura, Cunicultura y Ovinos.
-                            Y en el área agrícola: Aguacate, Forrajeras, Vivero, Lombricultivo 
-                        </p>
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <img src="../../../assets/imagenes/usuario.png" alt="imagen">
 
-                            <a href="#"> <u> Cambiar Contraseña </u> </a>          
+                <h4 class="card-title">Mi Perfil</h4>
+                 <br>
+
+                <div id="perfil">
+
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1">Identificación</label>
+                            <input type="number" class="form-control" id="exampleInputPassword1"
+                                placeholder="Identificación del usuario">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputEmail1">Nombre Completo</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1"
+                                placeholder="Nombre del usuario" formControlName="nombre">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1">Primer Apellido</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1"
+                                placeholder="Primer apellido del usuario" formControlName="apellido1">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1">Segundo Apellido</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1"
+                                placeholder="Segundo apellido del usuario" formControlName="apellido2">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1">Teléfono</label>
+                            <input type="number" class="form-control" id="telefono" placeholder="Teléfono del usuario"
+                                formControlName="telefono">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correo"
+                                placeholder="Correo electrónico del usuario" formControlName="correo">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="exampleInputPassword1">Perfil</label>
+                            <input type="email" class="form-control" id="correo"
+                                placeholder="Correo electrónico del usuario" formControlName="correo">
+                        </div>
+
+                        <a href="#"> <u> Cambiar Contraseña </u> </a>
                     </div>
                 </div>
             </div>
-    <br>
-    <br>
-    <br>
-    <br>
+        </div>
+    </div>
+</div>
+<br>
+<br>

@@ -6,8 +6,9 @@
 
   .card {
     background-color:#F6F5F5;
-    width: 100%;
+    width: 90%;
     height: 100%;
+    margin-left: 8%;
   }
   
   img {
