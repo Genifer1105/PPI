@@ -1,9 +1,7 @@
 <br>
 
 <div class="introduccion">
-    La trazabilidad de partos de los porcinos reproductores de la granja Marinilla del Politécnico Colombiano Jaime
-    Isaza Cadavid, consta de 3 etapas, Montas, Partos y Camadas. La información se debe gestionar según cada una de
-    estas 3 etapas y en el respectivo
+    La trazabilidad de partos de los porcinos reproductores de la granja Marinilla del Politécnico Colombiano Jaime Isaza Cadavid, consta de 3 etapas, Montas, Partos y Camadas. La información se debe gestionar según cada una de estas 3 etapas y en el respectivo
     orden.
 
 </div>
@@ -17,29 +15,30 @@
     <form>
         <div class="form-row">
             <div class="form-group col-md-3.5">
-                <label for="inputEmail4">Identificación animal</label>
-                <input type="number" class="form-control" id="identificacion_animal"
-                    placeholder="Identificación animal">
+                <label for="inputEmail4">Identificación animal*</label>
+                <input type="number" class="form-control" id="identificacion_animal" placeholder="Identificación animal">
             </div>
 
             <div class="form-group col-md-3.5">
-                <label for="inputPassword4">Fecha de monta</label>
+                <label for="inputPassword4">Fecha de monta*</label>
                 <input type="date" class="form-control" id="fecha_monta" placeholder="Fecha de la monta">
             </div>
 
             <div class="form-group col-md-3.5">
-                <label for="inputEmail4">Tipo de servicio</label>
-                <input type="text" class="form-control" id="tipo_servicio" placeholder="Tipo de servicio de la monta">
+                <label for="exampleInputPassword1">Tipo servicio* </label>
+                <select class="custom-select custom-select-md mb-2" formControlName="raza">
+                         <option selected value=Natural>Natural</option>
+                         <option value="Inseminacion">Inseminación</option>
+                    </select>
             </div>
 
             <div class="form-group col-md-3.5">
                 <label for="inputPassword4">Identificación macho</label>
-                <input type="number" class="form-control" id="identificacion_macho"
-                    placeholder="Identificación del macho">
+                <input type="number" class="form-control" id="identificacion_macho" placeholder="Identificación del macho">
             </div>
 
             <div class="form-group col-md-3.5">
-                <label for="inputPassword4">Fecha probable parto</label>
+                <label for="inputPassword4">Fecha prob. parto*</label>
                 <input type="date" class="form-control" id="fecha_probable" placeholder="Fecha probable del parto">
             </div>
 
@@ -48,50 +47,49 @@
             </div>
 
             <div class="form-group col-md-3.5">
-                <label for="inputPassword4">Fecha de parto</label>
+                <label for="inputPassword4">Fecha de parto*</label>
                 <input type="date" class="form-control" id="fecha_parto" placeholder="Fecha del parto">
             </div>
 
             <div class="form-group col-md-3.5">
-                <label for="inputPassword4">Jaula de parto</label>
+                <label for="inputPassword4">Jaula de parto*</label>
                 <input type="text" class="form-control" id="jaula_parto" placeholder="Jaula del parto">
             </div>
 
 
             <div class="form-group col-md-3.5">
-                <label for="inputPassword4">Identificación camada</label>
-                <input type="number" class="form-control" id="identificacion_camada"
-                    placeholder="Ientificación de la camada">
+                <label for="inputPassword4">Id camada*</label>
+                <input type="number" class="form-control" id="identificacion_camada" placeholder="Identificación camada">
             </div>
 
 
             <div class="form-group col-md-2">
-                <label for="inputPassword4">Vivos</label>
+                <label for="inputPassword4">Vivos*</label>
                 <input type="number" class="form-control" id="vivos_parto" placeholder="Lechones vivos">
             </div>
 
             <div class="form-group col-md-2">
-                <label for="inputPassword4">Muertos </label>
+                <label for="inputPassword4">Muertos* </label>
                 <input type="number" class="form-control" id="muertos_parto" placeholder="Lechones muertos">
             </div>
 
             <div class="form-group col-md-2">
-                <label for="inputPassword4">Machos </label>
+                <label for="inputPassword4">Machos* </label>
                 <input type="number" class="form-control" id="machos_parto" placeholder="Lechones machos">
             </div>
 
             <div class="form-group col-md-2">
-                <label for="inputPassword4">Hembras </label>
+                <label for="inputPassword4">Hembras* </label>
                 <input type="number" class="form-control" id="hembras_parto" placeholder="Lechones hembras">
             </div>
 
             <div class="form-group col-md-2">
-                <label for="inputPassword4">Momias </label>
+                <label for="inputPassword4">Momias* </label>
                 <input type="number" class="form-control" id="momias" placeholder="Fecha del parto">
             </div>
 
             <div class="form-group col-md-3.5">
-                <label for="inputPassword4">Peso total vivos</label>
+                <label for="inputPassword4">Peso total vivos*</label>
                 <input type="number" class="form-control" id="peso_total_vivos" placeholder="Peso lechones vivos">
             </div>
 
@@ -133,8 +131,7 @@
 
             <div class="form-group col-md-3.5">
                 <label for="inputPassword4">Peso total al destete</label>
-                <input type="number" class="form-control" id="peso_total_destete"
-                    placeholder="Peso total de lechones vivos">
+                <input type="number" class="form-control" id="peso_total_destete" placeholder="Peso total de lechones vivos">
             </div>
 
             <div class="form-group col-md-3.5">

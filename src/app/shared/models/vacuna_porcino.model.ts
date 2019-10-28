@@ -1,14 +1,14 @@
-export interface vacuna_Porcino {
+export interface vacunaPorcino {
   identificacion_animal: number;
   vacuna: string;
-  fecha_programada: string; // tipo
+  fecha_programada: Date;
   evento: string;
-  fecha_ejecucion: string; // tipo
+  fecha_ejecucion?: Date;
   via_aplicacion: string;
-  dosis: number; // validar tipo
+  dosis: number;
   laboratorio: string;
   registro_ica: string;
   numero_lote: string;
-  tiempo_retiro: string;
-  observacion: string;
+  tiempo_retiro?: string;
+  observacion?: string;
 }

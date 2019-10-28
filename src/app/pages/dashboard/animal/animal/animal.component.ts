@@ -1,3 +1,4 @@
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimalComponent implements OnInit {
 
+  public animalsForm = FormGroup;
+
   public mostrarTableAni = false;
 
   constructor() { }
 
   ngOnInit() {
+
   }
-  
   mostrartableAnimales() {
     this.mostrarTableAni = !this.mostrarTableAni;
   }
