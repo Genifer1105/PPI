@@ -4,8 +4,18 @@
     Los porcinos reproductores de la Granja Marinilla del Politécnico Colombiano Jaime Isaza Cadavid deben ser registrados en el sistema para posteriormente poder gestionar su trazabilidad de partos.
 </div>
 
+<div id="btnListarAnimales">
+  <button *ngIf="showForm"  type="button" class="btn btn-primary" (click)="mostrartableAnimales()">
+      Listar animales</button>
+  <button type="button" class="btn btn-primary" (click)="searchAnimal()" >Consultar</button>
+  <button *ngIf="mostrarTableAni" type="button" (click)="createAnimal()" class="btn btn-primary">Registrar</button>
+</div>
+<br>
+<br>
+<br>
+<br>
 
-<div id="formAnimales">
+<div id="formAnimales" *ngIf="showForm" >
 
     <h2>Registro de Animales</h2>
     <br>
@@ -15,7 +25,7 @@
 
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Identificación animal*</label>
-                <input type="number" class="form-control" id="identificacion_animal" placeholder="Identificación del animal" formControlName="identificacion_animal">
+                <input type="number" [readonly]="isUpdate"  class="form-control" id="identificacion_animal" placeholder="Identificación del animal" formControlName="identificacion_animal">
             </div>
 
 
@@ -24,21 +34,21 @@
                 <br>
                 <select class="custom-select custom-select-md mb-2" formControlName="raza">
                                 <option selected value="Kamburuc">Kamburuc</option>
-                                <option value="pic 410	">pic 410</option>
+                                <option value="pic 410">pic 410</option>
                 </select>
             </div>
 
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Fecha de nacimiento*</label>
-                <input type="date" class="form-control" id="identificacion_madre" placeholder="Fecha de nacimiento del animal" formControlName="fecha_nacimiento">
+                <input type="date" class="form-control" id="identificacion_madre" placeholder="Fecha de nacimiento del animal" formControlName="fechaNacimiento">
             </div>
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Identificación de la madre</label>
-                <input type="number" class="form-control" id="identificacion_madre" placeholder="Identificación de la madre" formControlName="identificacion_madre">
+                <input type="number" class="form-control" id="identificacion_madre" placeholder="Identificación de la madre" formControlName="idMadre">
             </div>
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Identificación del padre</label>
-                <input type="number" class="form-control" id="identificacion_padre" placeholder="Identificación del padre" formControlName="identificacion_padre">
+                <input type="number" class="form-control" id="identificacion_padre" placeholder="Identificación del padre" formControlName="idPadre">
             </div>
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Procedencia*</label>
@@ -49,24 +59,10 @@
             <br>
             <br>
             <br>
-            <button type="submit" class="btn btn-primary">Registrar</button>
-            <button type="submit" class="btn btn-primary">Consultar</button>
-            <button type="submit" class="btn btn-primary">Modificar</button>
-            <button type="submit" class="btn btn-primary">Eliminar</button>
-
+            <button type="button" [disabled]="!animalsForm.valid" (click)="saveAnimal()" class="btn btn-primary">Guardar</button>
         </div>
     </form>
 </div>
-
-<br>
-
-<div id="btnListarAnimales">
-    <button type="submit" class="btn btn-primary" (click)="mostrartableAnimales()">
-        Listar animales</button>
-</div>
-<br>
-<br>
-<br>
 
 <div id="tableAnimales" *ngIf="mostrarTableAni">
     <table class="table">
@@ -79,26 +75,20 @@
                 <th scope="col">Identificación madre</th>
                 <th scope="col">Identificación padre</th>
                 <th scope="col">Procedencia</th>
+                <th scope="col" colspan="2">Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td> xxxxxxxxx </td>
-                <td>xxxxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td> xxxxxxxxx </td>
-                <td>xxxxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
+            <tr *ngFor="let item of animals; let itemIndex = index">
+                <td scope="row">{{ itemIndex + 1 }}</td>
+                <td> {{ item.identificacion_animal }} </td>
+                <td>{{ item.raza }}</td>
+                <td>{{ item.fecha_nacimiento }}</td>
+                <td>{{ item.id_madre || 'n/a' }}</td>
+                <td>{{ item.id_padre || 'n/a' }}</td>
+                <td>{{ item.procedencia }}</td>
+                <td><button  (click)="updateAnimal(item.identificacion_animal)"  type="button" class="btn btn-primary" title="editar"><i class="fa fa-edit"></i></button></td>
+                <td><button  (click)="deleteAnimal(item.identificacion_animal)"  type="button" class="btn btn-danger" title="eliminar"><i class="fa fa-trash"></i></button></td>
             </tr>
         </tbody>
     </table>

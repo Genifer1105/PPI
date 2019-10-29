@@ -1,5 +1,7 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { AnimalsService } from 'src/app/shared/services/animals.service';
+import { Animal } from 'src/app/shared/models/animal.model';
 
 @Component({
   selector: 'app-animal',
@@ -8,16 +10,149 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnimalComponent implements OnInit {
 
-  public animalsForm = FormGroup;
+  public mostrarTableAni = true;
 
-  public mostrarTableAni = false;
+  public animals: Array<Animal> = [];
 
-  constructor() { }
+  public animalsForm: FormGroup;
 
-  ngOnInit() {
+  public showForm = false;
+
+  public isUpdate = false;
+
+  private selectedAnimal: Animal;
+
+
+  constructor(
+    private animalsService: AnimalsService,
+    private fb: FormBuilder
+  ) {
 
   }
+
+  ngOnInit() {
+    this.getAnimals().catch(console.error);
+  }
+
+  public async getAnimals() {
+    try {
+      const animals = await this.animalsService.getAnimals();
+      console.log(animals);
+      this.animals = animals;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  public createAnimal() {
+    this.createForm();
+    this.showForm = true;
+    this.mostrarTableAni = false;
+  }
+
+  public async updateAnimal(identificacionAnimal: number) {
+    try {
+      this.selectedAnimal = await this.animalsService.getAnimalInfo(identificacionAnimal);
+      this.showUpdateForm();
+    } catch (error) {
+      console.error('error on updateAnimal', { error });
+      alert('ha ocurrido un error');
+    }
+  }
+
+  private showUpdateForm() {
+    this.updateForm(this.selectedAnimal);
+    this.showForm = true;
+    this.isUpdate = true;
+    this.mostrarTableAni = false;
+  }
+
+  private createForm() {
+    this.animalsForm = this.fb.group({
+      identificacion_animal: [null, [Validators.required]],
+      raza: [null, [Validators.required]],
+      idMadre: [null, []],
+      idPadre: [null, []],
+      fechaNacimiento: [null, [Validators.required]],
+      procedencia: [null, [Validators.required]]
+    });
+  }
+
+  private updateForm(data: Animal) {
+    this.animalsForm = this.fb.group({
+      identificacion_animal: [data.identificacion_animal, [Validators.required]],
+      raza: [data.raza, [Validators.required]],
+      idMadre: [data.id_madre, []],
+      idPadre: [data.id_padre, []],
+      fechaNacimiento: [new Date(data.fecha_nacimiento).toISOString().split('T')[0], [Validators.required]],
+      // fechaNacimiento: [data.fecha_nacimiento, [Validators.required]],
+      procedencia: [data.procedencia, [Validators.required]]
+    });
+  }
+
+  public async deleteAnimal(identificacionAnimal: number) {
+    const remove = confirm(`¿Estás seguro de eliminar el animal ${identificacionAnimal}?`);
+    if (remove) {
+      try {
+        await this.animalsService.deleteAnimal(identificacionAnimal);
+        await this.getAnimals();
+        alert('operación realizada con exito');
+      } catch (error) {
+        alert('Ha ocurrido un error');
+      }
+    }
+  }
+
+  public async searchAnimal() {
+    const identificacion = prompt('Ingrese la identificación del animal');
+    if (identificacion === null) {
+      return;
+    }
+    const identificacionAnimal = (+identificacion);
+    console.log({identificacion, identificacionAnimal});
+    if (isNaN(identificacionAnimal) || identificacion.length === 0) {
+      alert('la identificacion debe ser un numero');
+    } else {
+      try {
+        this.selectedAnimal = await this.animalsService.getAnimalInfo(identificacionAnimal);
+        this.showUpdateForm();
+      } catch (error) {
+        if (error.status === 404) {
+          alert('No se encontró el registro');
+        }
+      }
+    }
+  }
+
+  public async saveAnimal() {
+    console.log(this.animalsForm.value);
+    const animalData: Animal = {
+      identificacion_animal: this.animalsForm.value.identificacion_animal,
+      raza: this.animalsForm.value.raza,
+      id_madre: this.animalsForm.value.idMadre,
+      id_padre: this.animalsForm.value.idPadre,
+      fecha_nacimiento: this.animalsForm.value.fechaNacimiento,
+      procedencia: this.animalsForm.value.procedencia
+    };
+    try {
+      if (this.selectedAnimal) {
+        await this.animalsService.updateAnimal(animalData);
+      } else {
+        await this.animalsService.createAnimal(animalData);
+      }
+      alert('Operación realizada con exito');
+      await this.getAnimals();
+    } catch (error) {
+      console.error('error on saveAnimal', { error });
+      alert('Ha ocurrido un error');
+    }
+    this.mostrartableAnimales();
+  }
+
   mostrartableAnimales() {
-    this.mostrarTableAni = !this.mostrarTableAni;
+    this.mostrarTableAni = true;
+    this.showForm = false;
+    this.isUpdate = false;
+    this.selectedAnimal = null;
   }
 }
