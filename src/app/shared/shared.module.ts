@@ -9,6 +9,7 @@ import { FooterComponent } from '../Components/footer/footer.component';
 import { UsersService } from './services/users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AnimalsService } from './services/animals.service';
+import { PartosService } from './services/partos.service';
 /**
 *  Modulo donde se puede realizar instanciación modular de clases
 *  aquí van los elementos transversales
@@ -32,7 +33,8 @@ import { AnimalsService } from './services/animals.service';
   ],
   providers: [
     UsersService,
-    AnimalsService
+    AnimalsService,
+    PartosService
   ]
 })
 

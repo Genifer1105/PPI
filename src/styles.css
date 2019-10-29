@@ -1,3 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
 
 
+.formApp {
+  box-shadow: 9px 9px 9px 9px rgba(133, 131, 131, 0.30);
+  /*  text-align: center;
+  border-radius: 5px;*/
+  margin: 3em auto;
+  background: rgba(226, 226, 226, 0.2);
+  height: auto;
+  width: 560px;
+  padding: 1em;
+}
+
+.formApp h2 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-size: cover;
+  letter-spacing: 2px;
+  font-size: 27px;
+  color: #000000;
+  margin: 0.5em;
+  text-align: center;
+}
+
+
+.form-control {
+  width: 100%;
+}
+
+
+.formApp button {
+  background: #196844;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.5em 1.9em;
+  margin: 4px;
+  border-radius: 7px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+}
+
+.btnListarApp {
+  width: 80%;
+  margin-left: 5%;
+}
+
+.btnListarApp button {
+  background: #196844;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.5em 1.9em;
+  margin: 1px;
+  border-radius: 7px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+}
+
+.tableApp {
+  margin-left: 10%;
+  width: 80%;
+  text-align: center;
+}

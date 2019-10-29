@@ -20,7 +20,7 @@ export class AnimalComponent implements OnInit {
 
   public isUpdate = false;
 
-  private selectedAnimal: Animal;
+  public selectedAnimal: Animal;
 
 
   constructor(
@@ -69,7 +69,7 @@ export class AnimalComponent implements OnInit {
 
   private createForm() {
     this.animalsForm = this.fb.group({
-      identificacion_animal: [null, [Validators.required]],
+      identificacion_animal: [null, [Validators.required, Validators.min(1)]],
       raza: [null, [Validators.required]],
       idMadre: [null, []],
       idPadre: [null, []],
@@ -80,7 +80,7 @@ export class AnimalComponent implements OnInit {
 
   private updateForm(data: Animal) {
     this.animalsForm = this.fb.group({
-      identificacion_animal: [data.identificacion_animal, [Validators.required]],
+      identificacion_animal: [data.identificacion_animal, [Validators.required, Validators.min(1)]],
       raza: [data.raza, [Validators.required]],
       idMadre: [data.id_madre, []],
       idPadre: [data.id_padre, []],
@@ -88,19 +88,6 @@ export class AnimalComponent implements OnInit {
       // fechaNacimiento: [data.fecha_nacimiento, [Validators.required]],
       procedencia: [data.procedencia, [Validators.required]]
     });
-  }
-
-  public async deleteAnimal(identificacionAnimal: number) {
-    const remove = confirm(`¿Estás seguro de eliminar el animal ${identificacionAnimal}?`);
-    if (remove) {
-      try {
-        await this.animalsService.deleteAnimal(identificacionAnimal);
-        await this.getAnimals();
-        alert('operación realizada con exito');
-      } catch (error) {
-        alert('Ha ocurrido un error');
-      }
-    }
   }
 
   public async searchAnimal() {
@@ -129,8 +116,8 @@ export class AnimalComponent implements OnInit {
     const animalData: Animal = {
       identificacion_animal: this.animalsForm.value.identificacion_animal,
       raza: this.animalsForm.value.raza,
-      id_madre: this.animalsForm.value.idMadre,
-      id_padre: this.animalsForm.value.idPadre,
+      id_madre: this.animalsForm.value.idMadre && +this.animalsForm.value.idMadre,
+      id_padre: this.animalsForm.value.idPadre && +this.animalsForm.value.idPadre,
       fecha_nacimiento: this.animalsForm.value.fechaNacimiento,
       procedencia: this.animalsForm.value.procedencia
     };
@@ -142,11 +129,11 @@ export class AnimalComponent implements OnInit {
       }
       alert('Operación realizada con exito');
       await this.getAnimals();
+      this.mostrartableAnimales();
     } catch (error) {
       console.error('error on saveAnimal', { error });
       alert('Ha ocurrido un error');
     }
-    this.mostrartableAnimales();
   }
 
   mostrartableAnimales() {
