@@ -1,5 +1,5 @@
 body {
-    background-image: url('/../../../assets/imagenes/cerdito3.jpg');
+    background-image: url('/../../../assets/imagenes/fondo cerditos.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
     image-resolution: 100px;
@@ -21,13 +21,13 @@ body {
 
 .form-signin input {
     font-family: 'Roboto', sans-serif;
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .h3 {
     font-size: 43px;
-    color: black;
-    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 button {

@@ -38,11 +38,14 @@
     border-radius: 7px;
 }
 
-
 #exampleModalLong {
     position: fixed
 }
 
-#dropdown a:active {
-    color: #196844;
+#header a:active {
+    background: #196844;
+}
+
+#header a:hover {
+    background: #196844;
 }

@@ -38,7 +38,6 @@
 }
 
 
-
 .form-group label {
     font-size: 16px;
     color: #000000;
@@ -50,6 +49,20 @@
 
 
 #container button {
+    background: #196844;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5em 1.9em;
+    margin: 1.0em 1.0em 1.0em 1.0em;
+    border-radius: 7px;
+    font-size: 1.4em;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 1em;
+    outline: none;
+    border: none;
+}
+
+.form button {
     background: #196844;
     font-family: 'Roboto', sans-serif;
     padding: 0.5em 1.9em;

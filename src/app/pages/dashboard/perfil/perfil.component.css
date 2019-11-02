@@ -26,4 +26,42 @@
     margin-left: 75%;
   }
 
+
  
+#formCambioContrasena {
+  box-shadow: 9px 9px 9px 9px rgba(133, 131, 131, 0.30);
+  /*  text-align: center;
+  border-radius: 5px;*/
+  margin: 3em auto;
+  background: rgba(226, 226, 226, 0.2);
+  height: 450px;
+  width: 450px;
+  padding: 1em;
+}
+
+#formCambioContrasena h2 {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  background-size: cover;
+  letter-spacing: 2px;
+  font-size: 25px;
+  color: #000000;
+  margin: 0.5em
+}
+
+
+#formCambioContrasena button {
+  text-align: center;
+  background: #196844;
+  font-family: 'Roboto', sans-serif;
+  padding: 0.5em 1.9em;
+  margin: 5px;
+  margin-left: 35%;
+  border-radius: 7px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+}
+

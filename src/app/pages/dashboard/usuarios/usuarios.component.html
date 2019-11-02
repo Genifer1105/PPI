@@ -51,7 +51,7 @@
 
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Perfil* </label>
-                <select class="custom-select custom-select-md mb-2" formControlName="raza">
+                <select class="custom-select custom-select-md mb-2" formControlName="perfil">
                             <option value="Administrador">Administrador</option>
                             <option value="Operario">Operario</option>
                  </select>
@@ -62,10 +62,8 @@
             <br>
             <br>
 
-            <button type="submit" class="btn btn-primary" (ngSubmit)="guardar()">Registrar</button>
-            <button type="submit" class="btn btn-primary">Consultar</button>
-            <button type="submit" class="btn btn-primary">Modificar</button>
-            <button type="submit" class="btn btn-primary">Eliminar</button>
+            <button type="submit" class="btn btn-primary" (ngSubmit)="guardar()">Guardar</button>
+            
         </div>
     </form>
 </div>

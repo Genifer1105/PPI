@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilComponent implements OnInit {
 
+  public mostrarFormCambio = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+    mostrarFormCambioContrasena() {
+      this.mostrarFormCambio= !this.mostrarFormCambio;
   }
 
 }
