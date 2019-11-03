@@ -59,6 +59,14 @@
   border: none;
 }
 
+.btnListarApp button {
+  margin: 15px;
+}
+
+.btnListarApp button:hover {
+  background: #659E5E;
+} 
+
 .tableApp {
   margin-left: 10%;
   width: 80%;
