@@ -1,3 +1,4 @@
+import { Constants } from 'src/app/shared/constants';
 import { User } from './../../../shared/models/user.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsersService } from './../../../shared/services/users.service';
@@ -12,12 +13,25 @@ export class UsuariosComponent implements OnInit {
 
   public usersForm: FormGroup;
 
-  public mostrarTableUsu = false;
+  public mostrarTableUsu = true;
+
+  public showForm = false;
+
+  public isUpdate = false;
+
+  public selectedUser: User = null;
+
+  public usuarios: User[] = [];
+
+  public readonly profiles = Constants.PROFILES;
 
   constructor(
     private usersService: UsersService,
     private fb: FormBuilder
   ) {
+  }
+
+  private createForm() {
     this.usersForm = this.fb.group({
       identificacion: ['', [Validators.required]],
       nombre: ['', [Validators.required]],
@@ -30,50 +44,114 @@ export class UsuariosComponent implements OnInit {
     });
   }
 
-  guardar() {
-     const usuario: User = {
-       nombre: this.usersForm.get('nombre').value,
-       apellido1: this.usersForm.get('apellido1').value,
-       apellido2: this.usersForm.get('apellido2').value  ,
-       contrasena: this.usersForm.get('contrasena').value ,
-       correo: this.usersForm.get('correo').value ,
-       id_perfil: this.usersForm.get('id_perfil').value ,
-       identificacion: this.usersForm.get('identificacion').value,
-       telefono: this.usersForm.get('telefono').value
-     };
-     this.guardarUsuario(usuario);
+  private updateForm(user: User) {
+    this.usersForm = this.fb.group({
+      identificacion: [user.identificacion, [Validators.required]],
+      nombre: [user.nombre, [Validators.required]],
+      apellido1: [user.apellido1, [Validators.required]],
+      apellido2: [user.apellido2, []],
+      correo: [user.correo, [Validators.required]],
+      id_perfil: [user.id_perfil, [Validators.required]],
+      telefono: [user.telefono, [Validators.pattern('[0-9]*')]],
+      // contrasena: ['', [Validators.required]]
+    });
   }
-  private async guardarUsuario(usuario: User) {
-    let success;
-    try {
-      const result: any = await this.usersService.createUser(usuario);
-      success = result.success;
-    } catch (error) {
-      success = false;
-      console.error(error);
+
+  public createUser() {
+    this.createForm();
+    this.showForm = true;
+    this.mostrarTableUsu = false;
+  }
+
+
+  private showUpdateForm() {
+    this.updateForm(this.selectedUser);
+    this.showForm = true;
+    this.isUpdate = true;
+    this.mostrarTableUsu = false;
+  }
+
+  public async searchUser() {
+    const identificacion = prompt('Ingrese la identificación del usuario');
+    if (identificacion === null) {
+      return;
     }
-    if (success) {
-      alert('Usuario guardado con exito!');
+    const identificacionUser = (+identificacion);
+    console.log({identificacion, identificacionUser});
+    if (isNaN(identificacionUser) || identificacion.length === 0) {
+      alert('la identificacion debe ser un numero');
     } else {
-      alert('Error al guardar el usuario');
+      try {
+        this.selectedUser = await this.usersService.getUser(identificacionUser);
+        this.showUpdateForm();
+      } catch (error) {
+        if (error.status === 404) {
+          alert('No se encontró el registro');
+        }
+      }
     }
-    this.obtenerUsuarios();
   }
+
+  public async saveUser() {
+    console.log(this.usersForm.value);
+    const userData: User = {
+      identificacion: this.usersForm.value.identificacion,
+      nombre: this.usersForm.value.nombre,
+      apellido1: this.usersForm.value.apellido1,
+      apellido2: this.usersForm.value.apellido2,
+      id_perfil: +this.usersForm.value.id_perfil,
+      contrasena: this.usersForm.value.contrasena,
+      correo: this.usersForm.value.correo,
+      telefono: this.usersForm.value.telefono
+    };
+    try {
+      if (this.selectedUser) {
+        await this.usersService.updateUser(userData);
+      } else {
+        await this.usersService.createUser(userData);
+      }
+      alert('Operación realizada con exito');
+      await this.obtenerUsuarios();
+      this.mostarTablaUsuarios();
+    } catch (error) {
+      console.error('error on saveUser', { error });
+      alert('Ha ocurrido un error');
+    }
+  }
+
+
 
   private async obtenerUsuarios() {
     try {
-      console.log(await this.usersService.getUsers());
+      this.usuarios = await this.usersService.getUsers();
     } catch (error) {
       console.error(error);
     }
   }
 
-  ngOnInit() {
-
+  public async updateUser(identificacion: number) {
+    try {
+      this.selectedUser = await this.usersService.getUser(identificacion);
+      this.showUpdateForm();
+    } catch (error) {
+      console.error('error on updateUser', { error });
+      alert('ha ocurrido un error');
+    }
   }
 
-mostrarTableUsuarios() {
-  this.mostrarTableUsu = !this.mostrarTableUsu;
-}
+  async ngOnInit() {
+    try {
+      await this.obtenerUsuarios();
+    } catch(error) {
+      console.error('error on get Users', {error});
+    }
+  }
+
+  mostarTablaUsuarios() {
+    this.mostrarTableUsu = true;
+    this.showForm = false;
+    this.isUpdate = false;
+    this.selectedUser = null;
+  }
 
 }

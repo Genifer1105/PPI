@@ -4,7 +4,18 @@
     Las personas que vayan a hacer uso del sistema, deben estar previamente registradas. En esta sección el administrador podrá crear dichos usuarios con su respectivo perfil.
 </div>
 
-<div id="formUsuarios">
+<div class="btnListarApp">
+  <button *ngIf="showForm" type="button" class="btn btn-primary" (click)="mostarTablaUsuarios()">
+    º Listar animales</button>
+  <button type="button" class="btn btn-primary" (click)="searchUser()">Consultar</button>
+  <button *ngIf="mostrarTableUsu" type="button" (click)="createUser()" class="btn btn-primary">Registrar</button>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+<div id="formUsuarios" *ngIf="showForm">
 
     <h2>Registro de Usuarios</h2>
     <br>
@@ -15,45 +26,44 @@
 
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Identificación*</label>
-                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificación del usuario">
+                <input [readOnly]="isUpdate" formControlName="identificacion" type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificación del usuario">
             </div>
 
             <div class="form-group col-md-6">
                 <label for="exampleInputEmail1">Nombre Completo*</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre del usuario" formControlName="nombre">
+                <input formControlName="nombre" type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre del usuario" formControlName="nombre">
 
             </div>
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Primer Apellido*</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Primer apellido del usuario" formControlName="apellido1">
+                <input formControlName="apellido1" type="text" class="form-control" id="exampleInputPassword1" placeholder="Primer apellido del usuario" formControlName="apellido1">
             </div>
 
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Segundo Apellido</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Segundo apellido del usuario" formControlName="apellido2">
+                <input formControlName="apellido2" type="text" class="form-control" id="exampleInputPassword1" placeholder="Segundo apellido del usuario" formControlName="apellido2">
             </div>
 
 
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Teléfono*</label>
-                <input type="number" class="form-control" id="telefono" placeholder="Teléfono del usuario" formControlName="telefono">
+                <input formControlName="telefono" type="number" class="form-control" id="telefono" placeholder="Teléfono del usuario" formControlName="telefono">
             </div>
 
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Contraseña*</label>
-                <input type="text" class="form-control" id="telefono" placeholder="Contraseña del usuario" formControlName="contrasena">
+                <input *ngIf="!isUpdate" formControlName="contrasena" type="password" class="form-control" id="telefono" placeholder="Contraseña del usuario" formControlName="contrasena">
             </div>
 
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Correo electrónico</label>
-                <input type="email" class="form-control" id="correo" placeholder="Correo electrónico del usuario" formControlName="correo">
+                <input [readOnly]="isUpdate" formControlName="correo" type="email" class="form-control" id="correo" placeholder="Correo electrónico del usuario" formControlName="correo">
             </div>
 
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Perfil* </label>
-                <select class="custom-select custom-select-md mb-2" formControlName="perfil">
-                            <option value="Administrador">Administrador</option>
-                            <option value="Operario">Operario</option>
+                <select class="custom-select custom-select-md mb-2" formControlName="id_perfil">
+                            <option *ngFor="let item of profiles" [value]="item.id">{{item.name}}</option>
                  </select>
             </div>
 
@@ -62,24 +72,15 @@
             <br>
             <br>
 
-            <button type="submit" class="btn btn-primary" (ngSubmit)="guardar()">Guardar</button>
-            
+            <button [disabled]="!usersForm.valid" type="submit" class="btn btn-primary" (click)="saveUser()">Guardar</button>
+
         </div>
     </form>
 </div>
 
-<br>
 
-<div id="btnListarUsuarios">
-    <button type="submit" class="btn btn-primary" (click)="mostrarTableUsuarios()">
-        Listar usuarios</button>
-</div>
-<br>
-<br>
-<br>
-
-<div id="tableUsuarios" *ngIf="mostrarTableUsu">
-    <table class="table">
+<div class="tableApp" *ngIf="mostrarTableUsu">
+  <table class="table">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -90,29 +91,22 @@
                 <th scope="col">Teléfono</th>
                 <th scope="col">Correo</th>
                 <th scope="col">Perfil</th>
+                <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td> xxxxxxxxx </td>
-                <td>xxxxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td> xxxxxxxxx </td>
-                <td>xxxxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-                <td>xxxxx</td>
-            </tr>
+          <tr *ngFor="let usuario of usuarios; let itemIndex = index">
+            <td>{{ itemIndex }}</td>
+            <td>{{ usuario.identificacion }}</td>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.apellido1 }}</td>
+            <td>{{ usuario.apellido2 }}</td>
+            <td>{{ usuario.telefono }}</td>
+            <td>{{ usuario.correo }}</td>
+            <td>{{ usuario.perfil }}</td>
+            <td><button (click)="updateUser(usuario.identificacion)" type="button" class="btn btn-primary"
+                title="editar"><i class="fa fa-edit"></i></button></td>
+          </tr>
         </tbody>
     </table>
 </div>

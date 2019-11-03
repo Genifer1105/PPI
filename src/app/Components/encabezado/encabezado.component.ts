@@ -1,3 +1,4 @@
+import { AuthService } from './../../shared/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Routes, ActivatedRoute, Router } from '@angular/router';
 
@@ -9,18 +10,18 @@ import { RouterModule, Routes, ActivatedRoute, Router } from '@angular/router';
 export class EncabezadoComponent implements OnInit {
 
   constructor(
-
+    private authService: AuthService,
     private _router: Router
-
   ) { }
 
   ngOnInit() {
   }
 
   salir() {
+    this.authService.logout();
     this._router.navigate(['login']);
   }
 
-  
+
 
 }
