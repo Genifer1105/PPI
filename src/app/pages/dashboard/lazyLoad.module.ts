@@ -9,48 +9,118 @@ import { PartosComponent } from './animal/partos/partos.component';
 import { VacunasComponent } from './vacunas/vacunas.component';
 import { SharedModule } from '../../shared/shared.module';
 import { HomeComponent } from './home/home.component';
-import { AyudaComponent} from './ayuda/ayuda.component';
+import { AyudaComponent } from './ayuda/ayuda.component';
 import { AcercaComponent } from './acerca/acerca.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { RoleGuardService } from 'src/app/shared/guards/role-guard.service';
+import { Constants } from 'src/app/shared/constants';
 
 // aquí van los componentes del dashboard
 const admin_routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'animal', component: AnimalComponent },
-  { path: 'partos', component: PartosComponent },
-  { path: 'vacunas', component: VacunasComponent },
-  { path: 'reportes', component: ReportesComponent },
-  { path: 'usuarios', component: UsuariosComponent },
-  { path: 'ayuda', component: AyudaComponent },
-  { path: 'acerca', component: AcercaComponent },
-  { path: 'perfil', component: PerfilComponent },
-  { path: '**', redirectTo: 'home' }
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRoles: [Constants.ADMIN_PROFILE, Constants.OPERARIO_PROFILE]
+    }
+  },
+  {
+    path: 'animal',
+    component: AnimalComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRoles: [Constants.ADMIN_PROFILE, Constants.OPERARIO_PROFILE]
+    }
+  },
+  {
+    path: 'partos',
+    component: PartosComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRoles: [Constants.ADMIN_PROFILE, Constants.OPERARIO_PROFILE]
+    }
+  },
+  {
+    path: 'vacunas',
+    component: VacunasComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRoles: [Constants.ADMIN_PROFILE, Constants.OPERARIO_PROFILE]
+    }
+  },
+  {
+    path: 'reportes',
+    component: ReportesComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRoles: [Constants.ADMIN_PROFILE, Constants.OPERARIO_PROFILE]
+    }
+  },
+  {
+    path: 'usuarios',
+    component: UsuariosComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRoles: [Constants.ADMIN_PROFILE]
+    }
+  },
+  {
+    path: 'ayuda',
+    component: AyudaComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRoles: [Constants.ADMIN_PROFILE, Constants.OPERARIO_PROFILE]
+    }
+  },
+  {
+    path: 'acerca',
+    component: AcercaComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRoles: [Constants.ADMIN_PROFILE, Constants.OPERARIO_PROFILE]
+    }
+  },
+  {
+    path: 'perfil',
+    component: PerfilComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRoles: [Constants.ADMIN_PROFILE, Constants.OPERARIO_PROFILE]
+    }
+  },
+  {
+    path: '**', redirectTo: 'home', canActivate: [RoleGuardService],
+    data: {
+      expectedRoles: [Constants.ADMIN_PROFILE, Constants.OPERARIO_PROFILE]
+    }
+  }
 ];
 
 @NgModule({
-    declarations: [
-        UsuariosComponent,
-        AnimalComponent,
-        PartosComponent,
-        ReportesComponent,
-        VacunasComponent,
-        AyudaComponent,
-        HomeComponent,
-        AcercaComponent,
-        PerfilComponent,
+  declarations: [
+    UsuariosComponent,
+    AnimalComponent,
+    PartosComponent,
+    ReportesComponent,
+    VacunasComponent,
+    AyudaComponent,
+    HomeComponent,
+    AcercaComponent,
+    PerfilComponent,
 
-    ],
-    imports: [
-        CommonModule,
-        SharedModule,
-        RouterModule.forChild (
-        admin_routes),
-        ReactiveFormsModule
-    ],
-    exports: [
-        RouterModule,
+  ],
+  imports: [
+    CommonModule,
+    SharedModule,
+    RouterModule.forChild(
+      admin_routes),
+    ReactiveFormsModule
+  ],
+  exports: [
+    RouterModule,
 
-    ]
+  ]
 
 })
-export class LazyLoadModule {}
+export class LazyLoadModule { }

@@ -1,3 +1,4 @@
+import { LoginGuardService } from 'src/app/shared/guards/login-guard.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,7 +10,7 @@ import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 
 const routes: Routes = [
 
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [ LoginGuardService ] },
   { path: 'dashboard',
   component: DashboardComponent,
     children: [
@@ -20,8 +21,8 @@ const routes: Routes = [
     ]
   },
 
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: '**', redirectTo: 'login', pathMatch: 'full' }, /*home */
+  { path: '', redirectTo: 'login', pathMatch: 'full', canActivate: [ LoginGuardService ] },
+  { path: '**', redirectTo: 'login', pathMatch: 'full', canActivate: [ LoginGuardService ] }, /*home */
 
 ];
 

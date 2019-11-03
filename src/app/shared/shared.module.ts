@@ -1,3 +1,5 @@
+import { LoginGuardService } from './guards/login-guard.service';
+import { AuthService } from './services/auth.service';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -7,9 +9,12 @@ import { DashboardComponent } from '../pages/dashboard/dashboard.component';
 import { EncabezadoComponent } from '../Components/encabezado/encabezado.component';
 import { FooterComponent } from '../Components/footer/footer.component';
 import { UsersService } from './services/users.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AnimalsService } from './services/animals.service';
 import { PartosService } from './services/partos.service';
+import { TokenInterceptor } from './interceptors/token-interceptor.service';
+import { RoleGuardService } from './guards/role-guard.service';
+
 /**
 *  Modulo donde se puede realizar instanciación modular de clases
 *  aquí van los elementos transversales
@@ -34,7 +39,15 @@ import { PartosService } from './services/partos.service';
   providers: [
     UsersService,
     AnimalsService,
-    PartosService
+    PartosService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    },
+    RoleGuardService,
+    LoginGuardService
   ]
 })
 
