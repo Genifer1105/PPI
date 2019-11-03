@@ -37,7 +37,7 @@ export class AnimalsService {
       const result = await this.http.post(url, data).toPromise();
       return result;
     } catch (error) {
-      console.error('error on getAnimals', { error });
+      console.error('error on createAnimals', { error });
       throw error;
     }
   }
