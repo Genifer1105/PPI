@@ -1,0 +1,149 @@
+
+<br>
+<div class="introduccion">
+    Los porcinos lechones nacidos en la Granja Marinilla del Politécnico Jaime Isaza Cadavid, deben
+    ser vacunados según el plan de vacunación ya definido.
+</div>
+
+<br>
+<br>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Nombre de Vacuna</th>
+            <th>Momento de Aplicación</th>
+            <th>A Que Porcino</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+        <tr>
+            <td>Baycorx</td>
+            <td>4 días de nacidos</td>
+            <td>Lechones</td>
+        </tr>
+
+        <tr>
+            <td>Primera Mycroplasma</td>
+            <td>7 días de nacidos</td>
+            <td>Lechones</td>
+        </tr>
+
+        <tr>
+            <td>Segunda Mycroplasma</td>
+            <td>21 días de nacidos</td>
+            <td>Lechones</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+
+<div id="btnMostrarForms">
+    <button type="submit" class="btn btn-primary" (click)="mostrarFormCamadas()">
+        Registrar Vacuna de Camada</button>
+</div>
+
+
+<div id="formVacCamadas" *ngIf="mostrarFormC" > 
+
+    <h2> Vacunas de Camadas</h2>
+
+    <br>
+
+    <form>
+
+        <!-- <div class="form-group" > -->
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Identificación Camada*</label>
+                <input type="number" class="form-control" id="identificacion_camada"
+                    placeholder="Identificación de la camada">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Vacuna* </label>
+                <br>
+                <select class="custom-select custom-select-md mb-2">
+                    <option selected value="Intravenosa">Rinitis</option>
+                    <option value="Colitclostidrium	">Colitclostidrium</option>
+                    <option value="Baycorx">Baycorx</option>
+                    <option value="Primera Mycroplasma">Primera Mycroplasma</option>
+                    <option value="Segunda Mycroplasma">Segunda Mycroplasma</option>
+                    <option value="Desparacitación">Desparacitación</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Fecha programada*</label>
+                <input type="date" class="form-control" id="fecha_programada"
+                    placeholder="Fecha programada de aplicación">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Evento*</label>
+                <input type="text" class="form-control" id="Evento" placeholder="Evento de la vacuna">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Fecha de ejecución</label>
+                <input type="date" class="form-control" id="fecha_ejecucion"
+                    placeholder="Fecha de aplicación de vacuna">
+            </div>
+
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Via de aplicación* </label>
+                <br>
+                <select class="custom-select custom-select-md mb-2">
+                    <option selected value="Intravenosa">Intravenosa</option>
+                    <option value="Muscular">Muscular</option>
+                    <option value="Subcutanea">Subcutanea</option>
+                </select>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Dosis*</label>
+                <input type="number" class="form-control" id="dosis" placeholder="Dosis de la vacuna">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Laboratorio*</label>
+                <input type="text" class="form-control" id="laboratorio" placeholder="Laboratorio de la vacuna">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Registro ICA*</label>
+                <input type="text" class="form-control" id="registro_ica" placeholder="Registro ICA">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Número de lote* </label>
+                <input type="text" class="form-control" id="numero_lote" placeholder="Número de lote de la vacuna">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Tiempo de retiro </label>
+                <input type="text" class="form-control" id="tiempo_retiro" placeholder="Días de retiro de la vacuna">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Observaciones </label>
+                <input type="text" class="form-control" id="observacion" placeholder="Observación">
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Consultar</button>
+            <button type="submit" class="btn btn-primary">Modificar</button>
+
+        </div>
+    </form>
+</div>

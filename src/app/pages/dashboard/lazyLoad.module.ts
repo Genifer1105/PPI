@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { AyudaComponent} from './ayuda/ayuda.component';
 import { AcercaComponent } from './acerca/acerca.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { VacunasCamadaComponent } from './vacunas-camada/vacunas-camada.component';
 
 // aquí van los componentes del dashboard
 const admin_routes: Routes = [
@@ -19,6 +20,7 @@ const admin_routes: Routes = [
   { path: 'animal', component: AnimalComponent },
   { path: 'partos', component: PartosComponent },
   { path: 'vacunas', component: VacunasComponent },
+  { path: 'vacunasCamada', component: VacunasCamadaComponent },
   { path: 'reportes', component: ReportesComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'ayuda', component: AyudaComponent },
@@ -38,6 +40,7 @@ const admin_routes: Routes = [
         HomeComponent,
         AcercaComponent,
         PerfilComponent,
+        VacunasCamadaComponent,
 
     ],
     imports: [

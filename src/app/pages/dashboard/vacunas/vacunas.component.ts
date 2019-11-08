@@ -13,8 +13,6 @@ export class VacunasComponent implements OnInit {
   public mostrarTableVac = true;
 
   public mostrarForm = false;
-
-  public mostrarFormC = false;
   
   public vacunasPorcinos: Array<vacunaPorcino> = [];
 
@@ -29,7 +27,22 @@ export class VacunasComponent implements OnInit {
   constructor(
     private vacunasPorcinosService: VacunasPorcinosService,
     private fb: FormBuilder
-  ) { }
+    ) {
+      this.vacunasPorcinosForm = this.fb.group({
+        identificacion_animal: ['', [Validators.required]],
+        vacuna: ['', [Validators.required]],
+        evento: ['', [Validators.required]],
+        fecha_ejecucion: ['', []],
+        via_aplicacion: ['', [Validators.required]],
+        dosis: [1, [Validators.required]],
+        laboratorio: ['', [Validators.required]],
+        registro_ica: ['', [Validators.required]],
+        numero_lote: ['', [Validators.required]],
+        tiempo_retiro: ['', []],
+        observacion: ['', []]
+
+      });
+    }
 
   ngOnInit() {
   }
@@ -38,11 +51,8 @@ export class VacunasComponent implements OnInit {
     this.mostrarForm = !this.mostrarForm;
   }
 
-  mostrarFormCamadas() {
-   this.mostrarFormC = !this.mostrarFormC;
-  }
 
-/*
+
   public async getVacunaPorcino() {
     try {
       const vacunasPorcinos = await this.vacunasPorcinosService.getVacunasPorcinos;
@@ -172,5 +182,5 @@ export class VacunasComponent implements OnInit {
     this.isUpdate = false;
     this.selectedVacunaPorcino = null;
   }
- */ 
+  
 }

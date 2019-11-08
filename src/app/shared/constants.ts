@@ -1,3 +1,3 @@
 export class Constants {
-  public static readonly URL_SERVER = 'http://192.168.1.54:5000/';
+  public static readonly URL_SERVER = 'http://127.0.0.1:5000/';
 }
