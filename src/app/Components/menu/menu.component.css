@@ -6,7 +6,7 @@
 }
 
 .navbar ul li {
-    width: 160px;
+    width: 140px;
 }
 
 .navbar ul li a {
@@ -15,7 +15,7 @@
     padding: 5px;
     color: #196844;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
     margin: 2px;
 }

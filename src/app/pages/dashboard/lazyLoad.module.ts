@@ -14,6 +14,7 @@ import { AcercaComponent } from './acerca/acerca.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { RoleGuardService } from 'src/app/shared/guards/role-guard.service';
 import { Constants } from 'src/app/shared/constants';
+import { VacunasCamadaComponent } from './vacunas-camada/vacunas-camada.component';
 
 // aquí van los componentes del dashboard
 const admin_routes: Routes = [
@@ -89,12 +90,20 @@ const admin_routes: Routes = [
       expectedRoles: [Constants.ADMIN_PROFILE, Constants.OPERARIO_PROFILE]
     }
   },
+  { 
+    path: 'vacunasCamada', 
+    component: VacunasCamadaComponent,
+    canActivate: [RoleGuardService],
+    data: {
+      expectedRoles: [Constants.ADMIN_PROFILE, Constants.OPERARIO_PROFILE]
+    }
+  },
   {
     path: '**', redirectTo: 'home', canActivate: [RoleGuardService],
     data: {
       expectedRoles: [Constants.ADMIN_PROFILE, Constants.OPERARIO_PROFILE]
     }
-  }
+  },
 ];
 
 @NgModule({
@@ -108,7 +117,7 @@ const admin_routes: Routes = [
     HomeComponent,
     AcercaComponent,
     PerfilComponent,
-
+    VacunasCamadaComponent
   ],
   imports: [
     CommonModule,

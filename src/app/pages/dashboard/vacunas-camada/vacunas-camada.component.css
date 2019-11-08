@@ -21,11 +21,8 @@ table {
 }
 
 
-.form-control {
-    width: 100%;
-}
 
-#formVacPorcinos {
+#formVacCamadas {
     box-shadow: 9px 9px 9px 9px rgba(133, 131, 131, 0.30);
     /*  text-align: center;
     border-radius: 5px;*/
@@ -36,7 +33,7 @@ table {
     padding: 1em;
 }
 
-#formVacPorcinos h2 {
+#formVacCamadas h2 {
     font-family: 'Roboto', sans-serif;
     text-align: center;
     background-size: cover;
@@ -46,7 +43,8 @@ table {
     margin: 0.5em
 }
 
-#formVacPorcinos button {
+
+#formVacCamadas button {
     background: #196844;
     font-family: 'Roboto', sans-serif;
     padding: 0.5em 1.0em;
@@ -60,9 +58,9 @@ table {
     border: none;
 }
 
-#btnMostrarForms {
-    width: 80%;
-    margin-left: 5%;
+
+.form-control {
+    width: 100%;
 }
 
 #btnMostrarForms button {
@@ -81,3 +79,9 @@ table {
 #btnMostrarForms button:hover {
     background: #659E5E;
   } 
+
+
+#btnMostrarForms {
+    width: 80%;
+    margin-left: 5%;
+}

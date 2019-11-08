@@ -3,7 +3,8 @@
 .container {
     width: 60%;
     height: 60%;
-    text-align: left;
+    text-align: justify;
+    font-family: 'Roboto', sans-serif;
   }
 
   .card a {
@@ -15,12 +16,10 @@
   }
 
   img {
-   width: 95%;
+   width: 97%;
    height: 90%;
    margin: 10px; 
   
-   /*padding: 5px;;*/
-      
   }
 
   h5 {

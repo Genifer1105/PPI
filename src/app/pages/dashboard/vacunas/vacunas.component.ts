@@ -29,7 +29,22 @@ export class VacunasComponent implements OnInit {
   constructor(
     private vacunasPorcinosService: VacunasPorcinosService,
     private fb: FormBuilder
-  ) { }
+    ) {
+      this.vacunasPorcinosForm = this.fb.group({
+        identificacion_animal: ['', [Validators.required]],
+        vacuna: ['', [Validators.required]],
+        evento: ['', [Validators.required]],
+        fecha_ejecucion: ['', []],
+        via_aplicacion: ['', [Validators.required]],
+        dosis: [1, [Validators.required]],
+        laboratorio: ['', [Validators.required]],
+        registro_ica: ['', [Validators.required]],
+        numero_lote: ['', [Validators.required]],
+        tiempo_retiro: ['', []],
+        observacion: ['', []]
+
+      });
+    }
 
   ngOnInit() {
   }
