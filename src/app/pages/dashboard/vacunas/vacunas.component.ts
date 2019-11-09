@@ -1,3 +1,5 @@
+import { Animal } from './../../../shared/models/animal.model';
+import { AnimalsService } from './../../../shared/services/animals.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { VacunasPorcinosService } from 'src/app/shared/services/vacunasPorcinos.service';
@@ -9,7 +11,7 @@ import { VacunaPorcino } from 'src/app/shared/models/vacuna_porcino.model';
   styleUrls: ['./vacunas.component.css']
 })
 export class VacunasComponent implements OnInit {
-  public mostrarTabla = true;
+  public showTable = true;
 
   public mostrarForm = false;
 
@@ -23,8 +25,13 @@ export class VacunasComponent implements OnInit {
 
   public selectedVacunaPorcino: VacunaPorcino;
 
+  public selectedIdentificacionAnimal: number;
+
+  public animales: Array<Animal>;
+
   constructor(
     private vacunasPorcinosService: VacunasPorcinosService,
+    private animalsService: AnimalsService,
     private fb: FormBuilder
   ) {
     this.vacunasPorcinosForm = this.fb.group({
@@ -43,18 +50,14 @@ export class VacunasComponent implements OnInit {
   }
 
   async ngOnInit() {
-    await this.getVacunasPorcinos();
+    await this.showTableVacunas();
   }
 
   mostrarFormPorcinos() {
     this.mostrarForm = !this.mostrarForm;
-    this.mostrarTabla = false;
+    this.showTable = false;
     this.isUpdate = false;
     this.selectedVacunaPorcino = null;
-  }
-
-  mostrarFormCamadas() {
-    this.mostrarFormC = !this.mostrarFormC;
   }
 
   public async getVacunasPorcinos() {
@@ -67,16 +70,28 @@ export class VacunasComponent implements OnInit {
     }
   }
 
-  public createVacunaPorcino() {
+  public async createVacunaPorcino() {
+    await this.getAnimales();
     this.createForm();
     this.showForm = true;
-    this.mostrarTableVac = false;
+    this.showTable = false;
   }
 
-  public async updateVacunaPorcino(identificacionAnimal: number) {
+  private async getAnimales() {
     try {
-      this.selectedVacunaPorcino = await this.vacunasPorcinosService.getVacunasPorcinosInfo(
-        identificacionAnimal
+      this.animales = await this.animalsService.getAnimals();
+    } catch (error) {
+      console.error('error on getAnimals', {error});
+      throw error;
+    }
+  }
+
+  public async updateVacunaPorcino(identificacionAnimal: number, vacuna: string, fecha: Date) {
+    try {
+      this.selectedVacunaPorcino = await this.vacunasPorcinosService.getVacunasPorcinoItem(
+        identificacionAnimal,
+        vacuna,
+        fecha
       );
       this.showUpdateForm();
     } catch (error) {
@@ -89,7 +104,7 @@ export class VacunasComponent implements OnInit {
     this.updateForm(this.selectedVacunaPorcino);
     this.showForm = true;
     this.isUpdate = true;
-    this.mostrarTableVac = false;
+    this.showTable = false;
   }
 
   private createForm() {
@@ -116,7 +131,7 @@ export class VacunasComponent implements OnInit {
         [Validators.required, Validators.min(1)]
       ],
       vacuna: [data.vacuna, [Validators.required]],
-      fechaProgramada: [data.fecha_programada, [Validators.required]],
+      fechaProgramada: [new Date(data.fecha_programada).toISOString().split('T')[0], [Validators.required]],
       evento: [data.evento, [Validators.required]],
       fechaEjecucion: [
         new Date(data.fecha_ejecucion).toISOString().split('T')[0]
@@ -131,7 +146,7 @@ export class VacunasComponent implements OnInit {
     });
   }
 
-  public async searchVacunaPorcino() {
+  public async searchVacunasPorcino() {
     const identificacion = prompt('Ingrese la identificación del animal');
     if (identificacion === null) {
       return;
@@ -141,15 +156,23 @@ export class VacunasComponent implements OnInit {
     if (isNaN(identificacionAnimal) || identificacion.length === 0) {
       alert('la identificacion debe ser un numero');
     } else {
-      try {
-        this.selectedVacunaPorcino = await this.vacunasPorcinosService.getVacunasPorcinosInfo(
-          identificacionAnimal
-        );
-        this.showUpdateForm();
-      } catch (error) {
-        if (error.status === 404) {
-          alert('No se encontró el registro');
-        }
+      await this.getVacunasByIdentificacionAnimal(identificacionAnimal);
+    }
+  }
+
+  private async getVacunasByIdentificacionAnimal(identificacion_animal: number) {
+    try {
+      const result = await this.vacunasPorcinosService.getVacunasPorcino(identificacion_animal);
+      if (result.length) {
+        this.selectedIdentificacionAnimal = identificacion_animal;
+        console.log({selectedIdentificacionAnimal: this.selectedIdentificacionAnimal});
+        this.vacunasPorcinos = result;
+      } else {
+        alert('No se encontrarón registros');
+      }
+    } catch (error) {
+      if (error.status === 404) {
+        alert('No se encontro el registro');
       }
     }
   }
@@ -157,18 +180,17 @@ export class VacunasComponent implements OnInit {
   public async saveVacunaPorcino() {
     console.log(this.vacunasPorcinosForm.value);
     const vacunaPorcinoData: VacunaPorcino = {
-      identificacion_animal: this.vacunasPorcinosForm.value
-        .identificacion_animal,
+      identificacion_animal: +this.vacunasPorcinosForm.value.identificacion_animal,
       vacuna: this.vacunasPorcinosForm.value.vacuna,
-      fecha_programada: this.vacunasPorcinosForm.value.fecha_programada,
+      fecha_programada: this.vacunasPorcinosForm.value.fechaProgramada,
       evento: this.vacunasPorcinosForm.value.evento,
-      fecha_ejecucion: this.vacunasPorcinosForm.value.fecha_ejecucion,
-      via_aplicacion: this.vacunasPorcinosForm.value.via_aplicacion,
+      fecha_ejecucion: this.vacunasPorcinosForm.value.fechaEjecucion,
+      via_aplicacion: this.vacunasPorcinosForm.value.viaAplicacion,
       dosis: this.vacunasPorcinosForm.value.dosis,
       laboratorio: this.vacunasPorcinosForm.value.laboratorio,
-      registro_ica: this.vacunasPorcinosForm.value.registro_ica,
-      numero_lote: this.vacunasPorcinosForm.value.numero_lote,
-      tiempo_retiro: this.vacunasPorcinosForm.value.tiempo_retiro,
+      registro_ica: this.vacunasPorcinosForm.value.registroIca,
+      numero_lote: this.vacunasPorcinosForm.value.numeroLote,
+      tiempo_retiro: this.vacunasPorcinosForm.value.tiempoRetiro,
       observacion: this.vacunasPorcinosForm.value.observacion
     };
     try {
@@ -182,18 +204,19 @@ export class VacunasComponent implements OnInit {
         );
       }
       alert('Operación realizada con exito');
-      await this.getVacunasPorcinos();
-      this.mostrarTableVacunas();
+      this.showTableVacunas();
     } catch (error) {
       console.error('error on saveAnimal', { error });
       alert('Ha ocurrido un error');
     }
   }
 
-  mostrarTableVacunas() {
-    this.mostrarTableVac = true;
+  async showTableVacunas() {
+    await this.getVacunasPorcinos();
+    this.showTable = true;
     this.showForm = false;
     this.isUpdate = false;
     this.selectedVacunaPorcino = null;
+    this.selectedIdentificacionAnimal = null;
   }
 }

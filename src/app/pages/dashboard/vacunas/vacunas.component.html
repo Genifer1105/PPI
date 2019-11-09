@@ -7,6 +7,17 @@
 <br />
 <br />
 
+<div class="btnListarApp">
+  <button *ngIf="showForm || selectedIdentificacionAnimal" type="button" class="btn btn-primary" (click)="showTableVacunas()">
+    Listar vacunas</button>
+  <button type="button" class="btn btn-primary" (click)="searchVacunasPorcino()">Consultar</button>
+  <button *ngIf="showTable" type="button" (click)="createVacunaPorcino()" class="btn btn-primary">Registrar</button>
+</div>
+<br>
+<br>
+<br>
+<br>
+
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -38,17 +49,10 @@
 <br />
 <br />
 
-<div id="btnMostrarForms">
-  <button type="submit" class="btn btn-primary" (click)="mostrarFormPorcinos()">
-    Registrar Vacuna de Porcino
-  </button>
-</div>
 
-<br />
-<br />
+<div id="formVacPorcinos" *ngIf="showForm">
+  <h2 >Vacunas de Porcinos</h2>
 
-<div id="formVacPorcinos" *ngIf="mostrarForm">
-  <h2>Vacunas de Porcinos</h2>
   <br />
 
   <form [formGroup]="vacunasPorcinosForm">
@@ -56,34 +60,53 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="exampleInputPassword1">Identificación Animal*</label>
+        <br />
         <input
-          type="number"
-          class="form-control"
-          id="identificacion_animal"
-          placeholder="Identificación del animal"
-          formControlName="identificacion_animal"
-        />
+        id="identificacion_animal"
+        *ngIf="isUpdate; else elseTemplateIdentificacionAnimal"
+        class="form-control"
+        formControlName="identificacion_animal"
+        [readOnly]="isUpdate" >
+        <ng-template #elseTemplateIdentificacionAnimal>
+          <select
+            id="identificacion_animal"
+            class="custom-select custom-select-md mb-2"
+            formControlName="identificacion_animal"
+          >
+            <option selected disabled>Identificación del animal</option>
+            <option *ngFor="let item of animales" [value]="item.identificacion_animal" >{{ item.identificacion_animal }}</option>
+          </select>
+
+        </ng-template>
       </div>
 
       <div class="form-group col-md-6">
         <label for="exampleInputPassword1">Vacuna* </label>
         <br />
-        <select
-          class="custom-select custom-select-md mb-2"
-          formControlName="vacuna"
-        >
-          <option selected value="Intravenosa">Rinitis</option>
-          <option value="Colitclostidrium	">Colitclostidrium</option>
-          <option value="Baycorx">Baycorx</option>
-          <option value="Primera Mycroplasma">Primera Mycroplasma</option>
-          <option value="Segunda Mycroplasma">Segunda Mycroplasma</option>
-          <option value="Desparacitación">Desparacitación</option>
-        </select>
+        <input
+        *ngIf="isUpdate; else elseTemplateVacuna"
+        class="form-control"
+        formControlName="vacuna"
+        [readOnly]="isUpdate" >
+        <ng-template #elseTemplateVacuna>
+          <select
+
+            class="custom-select custom-select-md mb-2"
+            formControlName="vacuna"
+          >
+            <option selected value="Intravenosa">Rinitis</option>
+            <option value="Colitclostidrium">Colitclostidrium</option>
+            <option value="Desparacitación">Desparacitación</option>
+          </select>
+
+        </ng-template>
+
       </div>
 
       <div class="form-group col-md-6">
         <label for="exampleInputPassword1">Fecha programada*</label>
         <input
+          [readOnly]="isUpdate"
           type="date"
           class="form-control"
           id="fecha_programada"
@@ -198,14 +221,13 @@
       <br />
       <br />
 
-      <button type="submit" class="btn btn-primary">Guardar</button>
-      <button type="submit" class="btn btn-primary">Consultar</button>
-      <button type="submit" class="btn btn-primary">Modificar</button>
+      <button type="submit" (click)="saveVacunaPorcino()" class="btn btn-primary" [disabled]="!vacunasPorcinosForm.valid">Guardar</button>
     </div>
   </form>
 </div>
 
-<div id="tableVacunasPorcinos">
+<div *ngIf="showTable" id="tableVacunasPorcinos">
+  <h2 class="text-center" *ngIf="selectedIdentificacionAnimal" >Vacunas animal {{ selectedIdentificacionAnimal }}</h2>
   <table class="table">
     <thead>
       <tr>
@@ -214,19 +236,19 @@
         <th scope="col">Vacuna</th>
         <th scope="col">Fecha Programada</th>
         <th scope="col">Via Aplicación</th>
-        <th scope="col">Tiempo de retiro</th>
-        <th scope="col">Observación</th>
+        <th scope="col">Fecha de ejecución</th>
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of vacunasPorcinos; let itemIndex = index">
-        <th scope="row">{{ itemIndex }}</th>
+        <th scope="row">{{ itemIndex + 1 }}</th>
         <td>{{ item.identificacion_animal }}</td>
         <td>{{ item.vacuna }}</td>
         <td>{{ item.fecha_programada | date }}</td>
         <td>{{ item.via_aplicacion }}</td>
-        <td>{{ item.tiempo_retiro }}</td>
-        <td>{{ item.observacion }}</td>
+        <td>{{ item.fecha_ejecucion? (item.fecha_ejecucion | date) : '-' }}</td>
+        <td><button class="btn btn-primary" title="editar vacuna" (click)="updateVacunaPorcino(item.identificacion_animal, item.vacuna, item.fecha_programada)"><i class="fa fa-edit"></i></button></td>
       </tr>
       <tr></tr>
     </tbody>
