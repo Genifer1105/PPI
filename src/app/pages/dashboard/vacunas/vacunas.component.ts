@@ -38,13 +38,13 @@ export class VacunasComponent implements OnInit {
       identificacion_animal: ['', [Validators.required]],
       vacuna: ['', [Validators.required]],
       evento: ['', [Validators.required]],
-      fecha_ejecucion: ['', []],
-      via_aplicacion: ['', [Validators.required]],
+      fechaEjecucion: ['', []],
+      viaAplicacion: ['', [Validators.required]],
       dosis: [1, [Validators.required]],
       laboratorio: ['', [Validators.required]],
-      registro_ica: ['', [Validators.required]],
-      numero_lote: ['', [Validators.required]],
-      tiempo_retiro: ['', []],
+      registroIca: ['', [Validators.required]],
+      numeroLote: ['', [Validators.required]],
+      tiempoRetiro: ['', []],
       observacion: ['', []]
     });
   }
@@ -115,7 +115,7 @@ export class VacunasComponent implements OnInit {
       evento: [null, [Validators.required]],
       fechaEjecucion: [null, []],
       viaAplicacion: [null, [Validators.required]],
-      dosis: [null, [Validators.required]],
+      dosis: [null, [Validators.required, Validators.min(1)]],
       laboratorio: [null, [Validators.required]],
       registroIca: [null, [Validators.required]],
       numeroLote: [null, [Validators.required]],
@@ -137,7 +137,7 @@ export class VacunasComponent implements OnInit {
         new Date(data.fecha_ejecucion).toISOString().split('T')[0]
       ],
       viaAplicacion: [data.via_aplicacion, [Validators.required]],
-      dosis: [data.dosis, [Validators.required]],
+      dosis: [data.dosis, [Validators.required, Validators.min(1)]],
       laboratorio: [data.laboratorio, [Validators.required]],
       registroIca: [data.registro_ica, [Validators.required]],
       numeroLote: [data.numero_lote, [Validators.required]],

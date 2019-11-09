@@ -14,6 +14,8 @@ import { AnimalsService } from './services/animals.service';
 import { PartosService } from './services/partos.service';
 import { TokenInterceptor } from './interceptors/token-interceptor.service';
 import { RoleGuardService } from './guards/role-guard.service';
+import { VacunasCamadasService } from './services/vacunasCamadas.service';
+import { VacunasPorcinosService } from './services/vacunasPorcinos.service';
 
 /**
 *  Modulo donde se puede realizar instanciación modular de clases
@@ -41,6 +43,8 @@ import { RoleGuardService } from './guards/role-guard.service';
     AnimalsService,
     PartosService,
     AuthService,
+    // VacunasCamadasService,
+    // VacunasPorcinosService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

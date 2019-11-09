@@ -7,8 +7,8 @@ export interface Parto {
   fecha_probable_parto: Date;
   dias_lactancia?: number;
   fecha_destete?: number;
-    fecha_parto?: Date;
-  fecha_probable_destete?: Date;  
+  fecha_parto?: Date;
+  fecha_probable_destete?: Date;
   jaula_destete?: string;
   jaula_parto?: string;
   numero_hembras_destete?: number;
@@ -21,5 +21,5 @@ export interface Parto {
   numero_muertos_destete?: number;
   peso_total_destete?: number;
   peso_total_vivos?: number;
-  
+
 }

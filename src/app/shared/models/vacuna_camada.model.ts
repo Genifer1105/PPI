@@ -1,11 +1,11 @@
-export interface vacunaCamada {
-    identificacion_camada: number;
+export interface VacunaCamada {
+    id_camada: number;
     vacuna: string;
-    fecha_programada: Date; 
+    fecha_programada: Date;
     evento: string;
     fecha_ejecucion?: Date;
     via_aplicacion: string;
-    dosis: number; 
+    dosis: number;
     laboratorio: string;
     registro_ica: string;
     numero_lote: string;
