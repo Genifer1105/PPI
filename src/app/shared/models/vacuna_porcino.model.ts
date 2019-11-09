@@ -1,4 +1,4 @@
-export interface vacunaPorcino {
+export interface VacunaPorcino {
   identificacion_animal: number;
   vacuna: string;
   fecha_programada: Date;
