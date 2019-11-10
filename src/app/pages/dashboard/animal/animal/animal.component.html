@@ -1,15 +1,14 @@
 <br>
 
 <div class="introduccion">
-  Los porcinos reproductores de la Granja Marinilla del Politécnico Colombiano Jaime Isaza Cadavid deben ser registrados
-  en el sistema para posteriormente poder gestionar su trazabilidad de partos.
+    Los porcinos reproductores de la Granja Marinilla del Politécnico Colombiano Jaime Isaza Cadavid deben ser registrados en el sistema para posteriormente poder gestionar su trazabilidad de partos.
 </div>
 
 <div class="btnListarApp">
-  <button *ngIf="showForm" type="button" class="btn btn-primary" (click)="mostrartableAnimales()">
+    <button *ngIf="showForm" type="button" class="btn btn-primary" (click)="mostrartableAnimales()">
     Listar animales</button>
-  <button type="button" class="btn btn-primary" (click)="searchAnimal()">Consultar</button>
-  <button *ngIf="mostrarTableAni" type="button" (click)="createAnimal()" class="btn btn-primary">Registrar</button>
+    <button type="button" class="btn btn-primary" (click)="searchAnimal()">Consultar</button>
+    <button *ngIf="mostrarTableAni" type="button" (click)="createAnimal()" class="btn btn-primary">Registrar</button>
 </div>
 <br>
 <br>
@@ -18,89 +17,86 @@
 
 <div class="formApp" *ngIf="showForm">
 
-  <h2>Registro de Animales</h2>
-  <br>
-  <form [formGroup]="animalsForm">
+    <h2>Registro de Animales</h2>
+    <br>
+    <form [formGroup]="animalsForm">
 
-    <div class="form-row">
+        <div class="form-row">
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Identificación animal*</label>
-        <input type="number" [readonly]="isUpdate" class="form-control" id="identificacion_animal"
-          placeholder="Identificación del animal" formControlName="identificacion_animal">
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Identificación animal*</label>
+                <input type="number" [readonly]="isUpdate" class="form-control" id="" placeholder="Identificación del animal" formControlName="identificacion_animal">
+                <p class="text-danger" *ngIf="animalsForm.errors && animalsForm.errors.identificacion_animal">{{ animalsForm.errors.identificacion_animal }}</p>
+            </div>
 
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Raza* </label>
-        <br>
-        <select class="custom-select custom-select-md mb-2" formControlName="raza">
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Raza* </label>
+                <br>
+                <select class="custom-select custom-select-md mb-2" formControlName="raza">
           <option selected value="Kamburuc">Kamburuc</option>
           <option value="pic 410">pic 410</option>
         </select>
-      </div>
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Fecha de nacimiento*</label>
-        <input type="date" class="form-control" id="identificacion_madre" placeholder="Fecha de nacimiento del animal"
-          formControlName="fechaNacimiento">
-      </div>
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Identificación de la madre</label>
-        <select class="custom-select custom-select-md mb-2" formControlName="idMadre">
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Fecha de nacimiento*</label>
+                <input type="date" class="form-control" id="identificacion_madre" placeholder="Fecha de nacimiento del animal" formControlName="fechaNacimiento">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Identificación de la madre</label>
+                <select class="custom-select custom-select-md mb-2" formControlName="idMadre">
           <option *ngFor="let item of animals" [value]="item.identificacion_animal" [selected]="selectedAnimal && (selectedAnimal.id_madre === item.identificacion_animal)">{{ item.identificacion_animal }}</option>
         </select>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Identificación del padre</label>
-        <select class="custom-select custom-select-md mb-2" formControlName="idPadre">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Identificación del padre</label>
+                <select class="custom-select custom-select-md mb-2" formControlName="idPadre">
             <option *ngFor="let item of animals" [value]="item.identificacion_animal" [selected]="selectedAnimal && (selectedAnimal.id_madre === item.identificacion_animal)">{{ item.identificacion_animal }}</option>
           </select>
-      </div>
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Procedencia*</label>
-        <input type="text" class="form-control" id="procedencia" placeholder="procedencia"
-          formControlName="procedencia">
-      </div>
+                <p class="text-danger" *ngIf="animalsForm.errors && animalsForm.errors.padresIguales">{{ animalsForm.errors.padresIguales }}</p>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Procedencia*</label>
+                <input type="text" class="form-control" id="procedencia" placeholder="procedencia" formControlName="procedencia">
+            </div>
 
-      <br>
-      <br>
-      <br>
-      <br>
-      <button type="button" [disabled]="!animalsForm.valid" (click)="saveAnimal()"
-        class="btn btn-primary">Guardar</button>
-    </div>
-  </form>
+            <br>
+            <br>
+            <br>
+            <br>
+            <button type="button" [disabled]="!animalsForm.valid" (click)="saveAnimal()" class="btn btn-primary">Guardar</button>
+        </div>
+    </form>
 </div>
 
 <div class="tableApp" *ngIf="mostrarTableAni">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Identificación animal</th>
-        <th scope="col">Raza</th>
-        <th scope="col">Fecha nacimiento</th>
-        <th scope="col">Identificación madre</th>
-        <th scope="col">Identificación padre</th>
-        <th scope="col">Procedencia</th>
-        <th scope="col">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of animals; let itemIndex = index">
-        <td scope="row">{{ itemIndex + 1 }}</td>
-        <td> {{ item.identificacion_animal }} </td>
-        <td>{{ item.raza }}</td>
-        <td>{{ item.fecha_nacimiento | date }}</td>
-        <td>{{ item.id_madre || 'n/a' }}</td>
-        <td>{{ item.id_padre || 'n/a' }}</td>
-        <td>{{ item.procedencia }}</td>
-        <td><button (click)="updateAnimal(item.identificacion_animal)" type="button" class="btn btn-primary"
-            title="editar"><i class="fa fa-edit"></i></button></td>
-      </tr>
-    </tbody>
-  </table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Identificación animal</th>
+                <th scope="col">Raza</th>
+                <th scope="col">Fecha nacimiento</th>
+                <th scope="col">Identificación madre</th>
+                <th scope="col">Identificación padre</th>
+                <th scope="col">Procedencia</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of animals; let itemIndex = index">
+                <td scope="row">{{ itemIndex + 1 }}</td>
+                <td> {{ item.identificacion_animal }} </td>
+                <td>{{ item.raza }}</td>
+                <td>{{ item.fecha_nacimiento | date }}</td>
+                <td>{{ item.id_madre || 'n/a' }}</td>
+                <td>{{ item.id_padre || 'n/a' }}</td>
+                <td>{{ item.procedencia }}</td>
+                <td><button (click)="updateAnimal(item.identificacion_animal)" type="button" class="btn btn-primary" title="editar"><i class="fa fa-edit"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <br>

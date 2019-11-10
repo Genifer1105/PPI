@@ -75,9 +75,21 @@ export class AnimalComponent implements OnInit {
       idPadre: [null, []],
       fechaNacimiento: [null, [Validators.required]],
       procedencia: [null, [Validators.required]]
-    });
+    }, {validator: this.formValidator});
   }
 
+  private formValidator(data) {
+    console.log(data);
+    const errors: any = {};
+    if (data.value.identificacion_animal != null && data.value.identificacion_animal <= 0) {
+      errors.identificacion_animal = 'La identificación del animal debe ser un numero mayor a 0';
+    }
+
+    if (data.value.idPadre != null && data.value.idPadre === data.value.idMadre) {
+      errors.padresIguales = 'Las identificaciones de los padres no deben ser iguales';
+    }
+    return errors;
+  }
   private updateForm(data: Animal) {
     this.animalsForm = this.fb.group({
       identificacion_animal: [data.identificacion_animal, [Validators.required, Validators.min(1)]],
@@ -87,7 +99,7 @@ export class AnimalComponent implements OnInit {
       fechaNacimiento: [new Date(data.fecha_nacimiento).toISOString().split('T')[0], [Validators.required]],
       // fechaNacimiento: [data.fecha_nacimiento, [Validators.required]],
       procedencia: [data.procedencia, [Validators.required]]
-    });
+    }, {validator: this.formValidator});
   }
 
   public async searchAnimal() {
