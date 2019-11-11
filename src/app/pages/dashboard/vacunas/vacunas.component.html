@@ -1,18 +1,13 @@
 <br />
 <div class="introduccion">
-  Los porcinos reproductores y los lechones nacidos en la Granja Marinilla del
-  Politécnico Jaime Isaza Cadavid, deben ser vacunados según el plan de
-  vacunación ya definido.
+    Los porcinos reproductores y los lechones nacidos en la Granja Marinilla del Politécnico Jaime Isaza Cadavid, deben ser vacunados según el plan de vacunación ya definido.
 </div>
-<br />
-<br />
 
 <div class="btnListarApp">
-  <button *ngIf="showForm || selectedIdentificacionAnimal" type="button" class="btn btn-primary"
-    (click)="showTableVacunas()">
+    <button *ngIf="showForm || selectedIdentificacionAnimal" type="button" class="btn btn-primary" (click)="showTableVacunas()">
     Listar vacunas</button>
-  <button type="button" class="btn btn-primary" (click)="searchVacunasPorcino()">Consultar</button>
-  <button *ngIf="showTable" type="button" (click)="createVacunaPorcino()" class="btn btn-primary">Registrar</button>
+    <button type="button" class="btn btn-primary" (click)="searchVacunasPorcino()">Consultar</button>
+    <button *ngIf="showTable" type="button" (click)="createVacunaPorcino()" class="btn btn-primary">Registrar</button>
 </div>
 <br>
 <br>
@@ -20,31 +15,31 @@
 <br>
 
 <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th>Nombre de Vacuna</th>
-      <th>Momento de Aplicación</th>
-      <th>A Que Porcino</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Rinitis</td>
-      <td>90 días</td>
-      <td>Porcina en gestación</td>
-    </tr>
-    <tr>
-      <td>Colitclostidrium</td>
-      <td>100 días</td>
-      <td>Porcina en gestación</td>
-    </tr>
+    <thead class="thead-dark">
+        <tr>
+            <th>Nombre de Vacuna</th>
+            <th>Momento de Aplicación</th>
+            <th>A Que Porcino</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Rinitis</td>
+            <td>90 días</td>
+            <td>Porcina en gestación</td>
+        </tr>
+        <tr>
+            <td>Colitclostidrium</td>
+            <td>100 días</td>
+            <td>Porcina en gestación</td>
+        </tr>
 
-    <tr>
-      <td>Desparacitación</td>
-      <td>Cada 6 meses</td>
-      <td>Porcinos Machos</td>
-    </tr>
-  </tbody>
+        <tr>
+            <td>Desparacitación</td>
+            <td>Cada 6 meses</td>
+            <td>Porcinos Machos</td>
+        </tr>
+    </tbody>
 </table>
 
 <br />
@@ -52,148 +47,135 @@
 
 
 <div id="formVacPorcinos" *ngIf="showForm">
-  <h2>Vacunas de Porcinos</h2>
+    <h2>Vacunas de Porcinos</h2>
 
-  <br />
+    <br />
 
-  <form [formGroup]="vacunasPorcinosForm">
-    <!-- <div class="form-group" > -->
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Identificación Animal*</label>
-        <br />
-        <input id="identificacion_animal" *ngIf="isUpdate; else elseTemplateIdentificacionAnimal" class="form-control"
-          formControlName="identificacion_animal" [readOnly]="isUpdate">
-        <ng-template #elseTemplateIdentificacionAnimal>
-          <select id="identificacion_animal" class="custom-select custom-select-md mb-2"
-            formControlName="identificacion_animal">
+    <form [formGroup]="vacunasPorcinosForm">
+        <!-- <div class="form-group" > -->
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Identificación Animal*</label>
+                <br />
+                <input id="identificacion_animal" *ngIf="isUpdate; else elseTemplateIdentificacionAnimal" class="form-control" formControlName="identificacion_animal" [readOnly]="isUpdate">
+                <ng-template #elseTemplateIdentificacionAnimal>
+                    <select id="identificacion_animal" class="custom-select custom-select-md mb-2" formControlName="identificacion_animal">
             <option selected disabled>Identificación del animal</option>
             <option *ngFor="let item of animales" [value]="item.identificacion_animal">{{ item.identificacion_animal }}
             </option>
           </select>
 
-        </ng-template>
-      </div>
+                </ng-template>
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Vacuna* </label>
-        <br />
-        <input *ngIf="isUpdate; else elseTemplateVacuna" class="form-control" formControlName="vacuna"
-          [readOnly]="isUpdate">
-        <ng-template #elseTemplateVacuna>
-          <select class="custom-select custom-select-md mb-2" formControlName="vacuna">
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Vacuna* </label>
+                <br />
+                <input *ngIf="isUpdate; else elseTemplateVacuna" class="form-control" formControlName="vacuna" [readOnly]="isUpdate">
+                <ng-template #elseTemplateVacuna>
+                    <select class="custom-select custom-select-md mb-2" formControlName="vacuna">
             <option selected value="Intravenosa">Rinitis</option>
             <option value="Colitclostidrium">Colitclostidrium</option>
             <option value="Desparacitación">Desparacitación</option>
           </select>
 
-        </ng-template>
+                </ng-template>
 
-      </div>
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Fecha programada*</label>
-        <input [readOnly]="isUpdate" type="date" class="form-control" id="fecha_programada"
-          placeholder="Fecha programada de aplicación" formControlName="fechaProgramada" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Fecha programada*</label>
+                <input [readOnly]="isUpdate" type="date" class="form-control" id="fecha_programada" placeholder="Fecha programada de aplicación" formControlName="fechaProgramada" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Evento*</label>
-        <input type="text" class="form-control" id="evento" placeholder="Evento de la vacuna"
-          formControlName="evento" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Evento*</label>
+                <input type="text" class="form-control" id="evento" placeholder="Evento de la vacuna" formControlName="evento" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Fecha de ejecución</label>
-        <input type="date" class="form-control" id="fecha_ejecucion" placeholder="Fecha de aplicación de vacuna"
-          formControlName="fechaEjecucion" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Fecha de ejecución</label>
+                <input type="date" class="form-control" id="fecha_ejecucion" placeholder="Fecha de aplicación de vacuna" formControlName="fechaEjecucion" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Via de aplicación* </label>
-        <br />
-        <select class="custom-select custom-select-md mb-2" formControlName="viaAplicacion">
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Via de aplicación* </label>
+                <br />
+                <select class="custom-select custom-select-md mb-2" formControlName="viaAplicacion">
           <option selected value="Intravenosa">Intravenosa</option>
           <option value="Muscular">Muscular</option>
           <option value="Subcutanea">Subcutanea</option>
         </select>
-      </div>
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Dosis*</label>
-        <input type="number" class="form-control" id="dosis" placeholder="Dosis de la vacuna" formControlName="dosis" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Dosis*</label>
+                <input type="number" class="form-control" id="dosis" placeholder="Dosis de la vacuna" formControlName="dosis" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Laboratorio*</label>
-        <input type="text" class="form-control" id="laboratorio" placeholder="Laboratorio de la vacuna"
-          formControlName="laboratorio" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Laboratorio*</label>
+                <input type="text" class="form-control" id="laboratorio" placeholder="Laboratorio de la vacuna" formControlName="laboratorio" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Registro ICA*</label>
-        <input type="text" class="form-control" id="registro_ica" placeholder="Registro ICA"
-          formControlName="registroIca" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Registro ICA*</label>
+                <input type="text" class="form-control" id="registro_ica" placeholder="Registro ICA" formControlName="registroIca" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Número de lote* </label>
-        <input type="text" class="form-control" id="numero_lote" placeholder="Número de lote de la vacuna"
-          formControlName="numeroLote" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Número de lote* </label>
+                <input type="text" class="form-control" id="numero_lote" placeholder="Número de lote de la vacuna" formControlName="numeroLote" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Tiempo de retiro </label>
-        <input type="text" class="form-control" id="tiempo_retiro" placeholder="Días de retiro de la vacuna"
-          formControlName="tiempoRetiro" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Tiempo de retiro </label>
+                <input type="text" class="form-control" id="tiempo_retiro" placeholder="Días de retiro de la vacuna" formControlName="tiempoRetiro" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Observación</label>
-        <input type="text" class="form-control" id="observacion" placeholder="Observación"
-          formControlName="observacion" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Observación</label>
+                <input type="text" class="form-control" id="observacion" placeholder="Observación" formControlName="observacion" />
+            </div>
 
-      <br />
-      <br />
-      <br />
-      <br />
+            <br />
+            <br />
+            <br />
+            <br />
 
-      <button type="submit" (click)="saveVacunaPorcino()" class="btn btn-primary"
-        [disabled]="!vacunasPorcinosForm.valid">Guardar</button>
-    </div>
-  </form>
+            <button type="submit" (click)="saveVacunaPorcino()" class="btn btn-primary" [disabled]="!vacunasPorcinosForm.valid">Guardar</button>
+        </div>
+    </form>
 </div>
 
 <div *ngIf="showTable" id="tableVacunasPorcinos">
-  <h2 class="text-center" *ngIf="selectedIdentificacionAnimal">Vacunas animal {{ selectedIdentificacionAnimal }}</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Identificación Animal</th>
-        <th scope="col">Vacuna</th>
-        <th scope="col">Fecha Programada</th>
-        <th scope="col">Via Aplicación</th>
-        <th scope="col">Fecha de ejecución</th>
-        <th scope="col">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of vacunasPorcinos; let itemIndex = index">
-        <th scope="row">{{ itemIndex + 1 }}</th>
-        <td>{{ item.identificacion_animal }}</td>
-        <td>{{ item.vacuna }}</td>
-        <td>{{ item.fecha_programada | date }}</td>
-        <td>{{ item.via_aplicacion }}</td>
-        <td>{{ item.fecha_ejecucion? (item.fecha_ejecucion | date) : '-' }}</td>
-        <td><button class="btn btn-primary" title="editar vacuna"
-            (click)="updateVacunaPorcino(item.identificacion_animal, item.vacuna, item.fecha_programada)"><i
+    <h2 class="text-center" *ngIf="selectedIdentificacionAnimal">Vacunas animal {{ selectedIdentificacionAnimal }}</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Identificación Animal</th>
+                <th scope="col">Vacuna</th>
+                <th scope="col">Fecha Programada</th>
+                <th scope="col">Via Aplicación</th>
+                <th scope="col">Fecha de ejecución</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of vacunasPorcinos; let itemIndex = index">
+                <th scope="row">{{ itemIndex + 1 }}</th>
+                <td>{{ item.identificacion_animal }}</td>
+                <td>{{ item.vacuna }}</td>
+                <td>{{ item.fecha_programada | date }}</td>
+                <td>{{ item.via_aplicacion }}</td>
+                <td>{{ item.fecha_ejecucion? (item.fecha_ejecucion | date) : '-' }}</td>
+                <td><button class="btn btn-primary" title="editar vacuna" (click)="updateVacunaPorcino(item.identificacion_animal, item.vacuna, item.fecha_programada)"><i
               class="fa fa-edit"></i></button></td>
-      </tr>
-      <tr></tr>
-    </tbody>
-  </table>
+            </tr>
+            <tr></tr>
+        </tbody>
+    </table>
 </div>
 
 <br />

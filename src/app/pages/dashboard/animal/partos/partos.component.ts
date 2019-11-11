@@ -104,8 +104,49 @@ export class PartosComponent implements OnInit {
       dias_lactancia: [null, []],
       jaula_destete: [null, []],
       peso_total_destete: [null, []],
-    });
+    }, {validator: this.formValidator});
   }
+
+  private formValidator(data) {
+    console.log(data);
+    const errors: any = {};
+    const fecha = new Date().getTime();
+    if (data.value.id_camada != null && data.value.id_camada <= 0) {
+      errors.id_camada = 'La identificación de la camada debe ser un numero mayor a 0';
+    }
+
+    if (data.value.fecha_monta != null && new Date(data.value.fecha_monta).getTime() > fecha) {
+      errors.fecha_monta = 'La fecha de monta no debe ser superior a la fecha actual';
+    }
+
+    if (data.value.jaula_parto != null && data.value.jaula_parto <= 0) {
+      errors.jaula_parto = 'El número de jaula debe ser mayor a 0';
+    }
+
+    if (data.value.jaula_destete != null && data.value.jaula_destete <= 0) {
+      errors.jaula_destete = 'El número de jaula debe ser mayor a 0';
+    }
+    if (data.value.numero_lechones_vivos_parto != 0 && data.value.numero_lechones_vivos_parto
+       != data.value.numero_machos_parto + data.value.numero_hembras_parto) {
+      errors.lechones_vivos_parto = 'El número de lechones vivos debe sumar machos y hembras';
+    }
+
+    if (data.value.numero_machos_destete != 0 && data.value.numero_machos_destete > data.value.numero_machos_parto) {
+     errors.lechones_machos_destete = 'El número de machos no puede ser mayor a los del parto';
+   }
+
+   if (data.value.numero_hembras_destete != 0 && data.value.numero_hembras_destete > data.value.numero_hembras_parto) {
+   errors.lechones_hembras_destete = 'El número de hembras no puede ser mayor a las del parto';
+   }
+
+   if (data.value.numero_machos_destete + data.value.numero_hembras_destete + data.value.numero_muertos_destete
+     != data.value.numero_lechones_vivos_parto) {
+    errors.cantidad_lechones = 'La cantidad de lechones al destete no concuerda con la cantidad de lechones vivos del parto';
+  }
+
+    return errors;
+  }
+
 
   private updateForm(data: Parto) {
     this.partosForm = this.fb.group({
@@ -131,7 +172,7 @@ export class PartosComponent implements OnInit {
       dias_lactancia: [data.dias_lactancia, []],
       jaula_destete: [data.jaula_destete, []],
       peso_total_destete: [data.peso_total_destete, []],
-    });
+    }, {validator: this.formValidator});
   }
 
   public async searchParto() {
