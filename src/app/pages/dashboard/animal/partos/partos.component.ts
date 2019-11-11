@@ -115,10 +115,6 @@ export class PartosComponent implements OnInit {
       errors.id_camada = 'La identificación de la camada debe ser un numero mayor a 0';
     }
 
-    if (data.value.fecha_monta != null && new Date(data.value.fecha_monta).getTime() > fecha) {
-      errors.fecha_monta = 'La fecha de monta no debe ser superior a la fecha actual';
-    }
-
     if (data.value.jaula_parto != null && data.value.jaula_parto <= 0) {
       errors.jaula_parto = 'El número de jaula debe ser mayor a 0';
     }
@@ -141,9 +137,33 @@ export class PartosComponent implements OnInit {
 
    if (data.value.numero_machos_destete + data.value.numero_hembras_destete + data.value.numero_muertos_destete
      != data.value.numero_lechones_vivos_parto) {
-    errors.cantidad_lechones = 'La cantidad de lechones al destete no concuerda con la cantidad de lechones vivos del parto';
+    errors.cantidad_lechones = 'El número de lechones al destete no es igual a la cantidad de lechones vivos del parto';
   }
 
+
+  if (data.value.fecha_monta != null && new Date(data.value.fecha_monta).getTime() > fecha) {
+    errors.fecha_monta = 'La fecha de monta no debe ser superior a la fecha actual';
+  }
+
+  if (data.value.fecha_parto != null && new Date(data.value.fecha_parto).getTime() > fecha) {
+    errors.fecha_parto = 'La fecha del parto no puede ser mayor a la fecha actual';
+    }
+
+  if (data.value.fecha_parto != null && data.value.fecha_parto < data.value.fecha_monta) {
+    errors.fecha_parto_monta = 'La fecha del parto no puede ser menor a la fecha de la monta';
+    }
+
+    if (data.value.fecha_destete != null && new Date(data.value.fecha_destete).getTime() > fecha) {
+      errors.fecha_destete = 'La fecha de destete no puede ser mayor a la fecha actual';
+      }
+
+    if (data.value.fecha_destete != null && data.value.fecha_destete < data.value.fecha_parto) {
+      errors.fecha_destete_parto = 'La fecha de destete no puede ser menor a la fecha del parto';
+      }
+
+      if (data.value.fecha_probable_destete != null && data.value.fecha_probable_destete < data.value.fecha_parto) {
+        errors.fecha_probable_destete = 'La fecha probable de destete no puede ser menor a la fecha del parto';
+        }
     return errors;
   }
 

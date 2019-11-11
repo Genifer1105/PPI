@@ -1,23 +1,22 @@
 <br>
 
 <div class="introduccion">
-    La trazabilidad de partos de los porcinos reproductores de la granja Marinilla del Politécnico Colombiano Jaime Isaza Cadavid, consta de 3 etapas, Montas, Partos y Camadas. La información se debe gestionar según cada una de estas 3 etapas y en el respectivo
-    orden.
-
+    La trazabilidad de partos de los porcinos reproductores de la granja se gestiona desde 3 etapas, la monta, el
+    parto y el destete de camadas. En el sistema, la información se gestiona según ese orden.
 </div>
+
+<br>
 
 <div class="btnListarApp">
     <button *ngIf="showForm" type="button" class="btn btn-primary" (click)="mostrartablePartos()">
-    Listar animales</button>
+    Listar partos</button>
     <button type="button" class="btn btn-primary" (click)="searchParto()">Consultar</button>
     <button *ngIf="mostrarTablaPartos" type="button" (click)="createParto()" class="btn btn-primary">Registrar</button>
 </div>
-<br>
-<br>
+
 <br>
 <br>
 
-<br>
 <div class="formApp" *ngIf="showForm" style="width: 730px">
 
     <h2>Registro de Partos</h2>
@@ -74,8 +73,9 @@
             <div class="form-group col-md-6">
                 <label for="inputPassword4">Fecha de parto</label>
                 <input formControlName="fecha_parto" type="date" class="form-control" id="fecha_parto" placeholder="Fecha del parto">
-
-            </div>
+                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_parto">{{ partosForm.errors.fecha_parto }}</p>
+                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_parto_monta">{{ partosForm.errors.fecha_parto_monta }}</p>
+              </div>
 
             <div class="form-group col-md-6">
                 <label for="inputPassword4">Jaula de parto</label>
@@ -119,7 +119,8 @@
             <div class="form-group col-md-6">
                 <label for="inputPassword4">Fecha probable destete</label>
                 <input formControlName="fecha_probable_destete" type="date" class="form-control" id="fecha_probable_destete" placeholder="">
-            </div>
+                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_probable_destete">{{ partosForm.errors.fecha_probable_destete }}</p>
+              </div>
 
 
             <div class="form-group col-md-10">
@@ -130,7 +131,9 @@
             <div class="form-group col-md-6">
                 <label for="inputPassword4">Fecha destete</label>
                 <input formControlName="fecha_destete" type="date" class="form-control" id="fecha_destete" placeholder="">
-            </div>
+                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_destete">{{ partosForm.errors.fecha_destete }}</p>
+                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_destete_parto">{{ partosForm.errors.fecha_destete_parto }}</p>
+              </div>
 
             <div class="form-group col-md-6">
                 <label for="inputPassword4">Días de lactancia</label>

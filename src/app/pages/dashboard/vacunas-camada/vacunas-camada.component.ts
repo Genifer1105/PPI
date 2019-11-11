@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { VacunaCamada } from 'src/app/shared/models/vacuna_camada.model';
 import { Parto } from 'src/app/shared/models/parto_model';
 import { VacunasCamadasService } from 'src/app/shared/services/vacunasCamadas.service';
+import { ClassGetter } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-vacunas-camada',
@@ -108,8 +109,27 @@ export class VacunasCamadaComponent implements OnInit {
       numeroLote: [null, [Validators.required]],
       tiempoRetiro: [null, []],
       observacion: [null, []]
-    });
+    }, { validator: this.formValidator });
   }
+
+
+  private formValidator(data) {
+    console.log(data);
+    const errors: any = {};
+    if (data.value.dosis != null ){
+      if (data.value.dosis <= 0) {
+        errors.dosis = 'El número de dosis no puede ser menor o igual a cero';
+      } else if (data.value.dosis > 99999) {
+        errors.dosis = 'El número de dosis no puede tener más de 5 caracteres';
+      }
+    }
+    if (data.value.registroIca != null && !data.value.registroIca.match(/^[\w\d]+$/)) {
+      errors.registroIca = 'El registro ica solo puede contener numeros y letras';
+    }
+    console.log({errors});
+    return errors;
+  }
+
 
   private updateForm(data: VacunaCamada) {
     this.vacunasCamadasForm = this.fb.group({
@@ -125,7 +145,7 @@ export class VacunasCamadaComponent implements OnInit {
       numeroLote: [data.numero_lote, [Validators.required]],
       tiempoRetiro: [data.tiempo_retiro, []],
       observacion: [data.observacion, []]
-    });
+    }, { validator: this.formValidator });
   }
 
   public async searchVacunasCamada() {

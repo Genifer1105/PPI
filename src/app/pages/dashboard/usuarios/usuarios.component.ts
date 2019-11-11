@@ -33,15 +33,36 @@ export class UsuariosComponent implements OnInit {
 
   private createForm() {
     this.usersForm = this.fb.group({
-      identificacion: ['', [Validators.required]],
-      nombre: ['', [Validators.required]],
-      apellido1: ['', [Validators.required]],
-      apellido2: ['', []],
-      correo: ['', [Validators.required]],
+      identificacion: [null, [Validators.required]],
+      nombre: [null, [Validators.required]],
+      apellido1: [null, [Validators.required]],
+      apellido2: [null, []],
+      correo: [null, [Validators.required]],
       id_perfil: [1, [Validators.required]],
-      telefono: ['', [Validators.pattern('[0-9]*')]],
-      contrasena: ['', [Validators.required]]
-    });
+      telefono: [null, [Validators.pattern('[0-9]*')]],
+      contrasena: [null, [Validators.required]],
+      confirmar_contrasena: [null, [Validators.required]]
+    }, { validator: this.formValidator });
+  }
+
+
+  private formValidator(data) {
+    console.log(data);
+    const errors: any = {};
+    if (data.value.identificacion != null && data.value.identificacion > 9999999999) {
+      errors.identificacion = 'La identificación no puede tener más de 10 números';
+    }
+    if (data.value.telefono != null && data.value.telefono > 9999999999) {
+      errors.telefono = 'El número de teléfono no puede tener más de 10 números';
+    }
+    if (data.value.contrasena != null && data.value.contrasena.length < 6) {
+      errors.contrasena = 'La contraseña debe tener como mínimo 6 caracteres';
+    }
+
+    if (data.value.confirmar_contrasena != null && data.value.confirmar_contrasena !== data.value.contrasena) {
+      errors.confirmar_contrasena = 'Las contraseñas no coinciden';
+    }
+    return errors;
   }
 
   private updateForm(user: User) {
@@ -54,7 +75,7 @@ export class UsuariosComponent implements OnInit {
       id_perfil: [user.id_perfil, [Validators.required]],
       telefono: [user.telefono, [Validators.pattern('[0-9]*')]],
       // contrasena: ['', [Validators.required]]
-    });
+    }, { validator: this.formValidator });
   }
 
   public createUser() {

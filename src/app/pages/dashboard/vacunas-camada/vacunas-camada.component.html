@@ -4,6 +4,7 @@
   ser vacunados según el plan de vacunación ya definido.
 </div>
 
+<br>
 
 <div class="btnListarApp">
   <button *ngIf="showForm || selectedIdentificacionCamada" type="button" class="btn btn-primary"
@@ -15,7 +16,7 @@
 <br>
 <br>
 <br>
-<br>
+
 
 <table class="table">
   <thead class="thead-dark">
@@ -122,6 +123,7 @@
       <div class="form-group col-md-6">
         <label for="exampleInputPassword1">Dosis*</label>
         <input type="number" class="form-control" id="dosis" placeholder="Dosis de la vacuna" formControlName="dosis" />
+        <p class="text-danger" *ngIf="vacunasCamadasForm.errors && vacunasCamadasForm.errors.dosis">{{ vacunasCamadasForm.errors.dosis }}</p>
       </div>
 
       <div class="form-group col-md-6">
@@ -134,6 +136,8 @@
         <label for="exampleInputPassword1">Registro ICA*</label>
         <input type="text" class="form-control" id="registro_ica" placeholder="Registro ICA"
           formControlName="registroIca" />
+          <p class="text-danger" *ngIf="vacunasCamadasForm.errors && vacunasCamadasForm.errors.registroIca">{{ vacunasCamadasForm.errors.registroIca }}</p>
+
       </div>
 
       <div class="form-group col-md-6">

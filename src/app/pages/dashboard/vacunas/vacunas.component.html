@@ -3,6 +3,8 @@
     Los porcinos reproductores y los lechones nacidos en la Granja Marinilla del Politécnico Jaime Isaza Cadavid, deben ser vacunados según el plan de vacunación ya definido.
 </div>
 
+<br>
+
 <div class="btnListarApp">
     <button *ngIf="showForm || selectedIdentificacionAnimal" type="button" class="btn btn-primary" (click)="showTableVacunas()">
     Listar vacunas</button>
@@ -12,7 +14,7 @@
 <br>
 <br>
 <br>
-<br>
+
 
 <table class="table">
     <thead class="thead-dark">
@@ -111,7 +113,8 @@
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Dosis*</label>
                 <input type="number" class="form-control" id="dosis" placeholder="Dosis de la vacuna" formControlName="dosis" />
-            </div>
+                <p class="text-danger" *ngIf="vacunasPorcinosForm.errors && vacunasPorcinosForm.errors.dosis">{{ vacunasPorcinosForm.errors.dosis }}</p>
+              </div>
 
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Laboratorio*</label>
@@ -121,6 +124,7 @@
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Registro ICA*</label>
                 <input type="text" class="form-control" id="registro_ica" placeholder="Registro ICA" formControlName="registroIca" />
+                <p class="text-danger" *ngIf="vacunasPorcinosForm.errors && vacunasPorcinosForm.errors.registroIca">{{ vacunasPorcinosForm.errors.registroIca }}</p>
             </div>
 
             <div class="form-group col-md-6">

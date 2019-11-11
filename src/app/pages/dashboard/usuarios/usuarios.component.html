@@ -4,16 +4,17 @@
     Las personas que vayan a hacer uso del sistema, deben estar previamente registradas. En esta sección el administrador podrá crear dichos usuarios con su respectivo perfil.
 </div>
 
+<br>
+
 <div class="btnListarApp">
   <button *ngIf="showForm" type="button" class="btn btn-primary" (click)="mostarTablaUsuarios()">
-    Listar animales</button>
+    Listar usuarios</button>
   <button type="button" class="btn btn-primary" (click)="searchUser()">Consultar</button>
   <button *ngIf="mostrarTableUsu" type="button" (click)="createUser()" class="btn btn-primary">Registrar</button>
 </div>
 <br>
 <br>
-<br>
-<br>
+
 
 <div id="formUsuarios" *ngIf="showForm">
 
@@ -27,7 +28,8 @@
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Identificación*</label>
                 <input [readOnly]="isUpdate" formControlName="identificacion" type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificación del usuario">
-            </div>
+                <p class="text-danger" *ngIf="usersForm.errors && usersForm.errors.identificacion">{{ usersForm.errors.identificacion }}</p>
+              </div>
 
             <div class="form-group col-md-6">
                 <label for="exampleInputEmail1">Nombre Completo*</label>
@@ -48,12 +50,20 @@
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Teléfono*</label>
                 <input formControlName="telefono" type="number" class="form-control" id="telefono" placeholder="Teléfono del usuario" formControlName="telefono">
-            </div>
+                <p class="text-danger" *ngIf="usersForm.errors && usersForm.errors.telefono">{{ usersForm.errors.telefono }}</p>
+              </div>
 
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Contraseña*</label>
-                <input *ngIf="!isUpdate" formControlName="contrasena" type="password" class="form-control" id="telefono" placeholder="Contraseña del usuario" formControlName="contrasena">
-            </div>
+                <input *ngIf="!isUpdate" formControlName="contrasena" type="password" class="form-control" id="contrsena" placeholder="Contraseña del usuario">
+                <p class="text-danger" *ngIf="usersForm.errors && usersForm.errors.contrasena">{{ usersForm.errors.contrasena }}</p>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Confirmar contraseña*</label>
+                <input *ngIf="!isUpdate" formControlName="confirmar_contrasena" type="password" class="form-control" id="confirmar_contrasena" placeholder="Contraseña del usuario">
+                <p class="text-danger" *ngIf="usersForm.errors && usersForm.errors.confirmar_contrasena">{{ usersForm.errors.confirmar_contrasena }}</p>
+              </div>
 
             <div class="form-group col-md-6">
                 <label for="exampleInputPassword1">Correo electrónico</label>
@@ -72,9 +82,9 @@
             <br>
             <br>
 
-            <button [disabled]="!usersForm.valid" type="submit" class="btn btn-primary" (click)="saveUser()">Guardar</button>
-
         </div>
+        <button [disabled]="!usersForm.valid" type="submit" class="btn btn-primary" (click)="saveUser()">Guardar</button>
+
     </form>
 </div>
 

@@ -4,16 +4,18 @@
     Los porcinos reproductores de la Granja Marinilla del Politécnico Colombiano Jaime Isaza Cadavid deben ser registrados en el sistema para posteriormente poder gestionar su trazabilidad de partos.
 </div>
 
+<br>
+
 <div class="btnListarApp">
     <button *ngIf="showForm" type="button" class="btn btn-primary" (click)="mostrartableAnimales()">
     Listar animales</button>
     <button type="button" class="btn btn-primary" (click)="searchAnimal()">Consultar</button>
     <button *ngIf="mostrarTableAni" type="button" (click)="createAnimal()" class="btn btn-primary">Registrar</button>
 </div>
+
 <br>
 <br>
-<br>
-<br>
+
 
 <div class="formApp" *ngIf="showForm">
 
