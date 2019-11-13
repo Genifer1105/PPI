@@ -1,17 +1,15 @@
 <br>
 <div class="introduccion">
-  Los porcinos lechones nacidos en la Granja Marinilla del Politécnico Jaime Isaza Cadavid, deben
-  ser vacunados según el plan de vacunación ya definido.
+    Los porcinos lechones nacidos en la Granja Marinilla del Politécnico Jaime Isaza Cadavid, deben ser vacunados según el plan de vacunación ya definido.
 </div>
 
 <br>
 
 <div class="btnListarApp">
-  <button *ngIf="showForm || selectedIdentificacionCamada" type="button" class="btn btn-primary"
-    (click)="showTableVacunas()">
+    <button *ngIf="showForm || selectedIdentificacionCamada" type="button" class="btn btn-primary" (click)="showTableVacunas()">
     Listar vacunas</button>
-  <button type="button" class="btn btn-primary" (click)="searchVacunasCamada()">Consultar</button>
-  <button *ngIf="showTable" type="button" (click)="createVacunaCamada()" class="btn btn-primary">Registrar</button>
+    <button type="button" class="btn btn-primary" (click)="searchVacunasCamada()">Consultar</button>
+    <button *ngIf="showTable" type="button" (click)="createVacunaCamada()" class="btn btn-primary">Registrar</button>
 </div>
 <br>
 <br>
@@ -19,33 +17,33 @@
 
 
 <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th>Nombre de Vacuna</th>
-      <th>Momento de Aplicación</th>
-      <th>A Que Porcino</th>
-    </tr>
-  </thead>
-  <tbody>
+    <thead class="thead-dark">
+        <tr>
+            <th>Nombre de Vacuna</th>
+            <th>Momento de Aplicación</th>
+            <th>A Que Porcino</th>
+        </tr>
+    </thead>
+    <tbody>
 
-    <tr>
-      <td>Baycorx</td>
-      <td>4 días de nacidos</td>
-      <td>Lechones</td>
-    </tr>
+        <tr>
+            <td>Baycorx</td>
+            <td>4 días de nacidos</td>
+            <td>Lechones</td>
+        </tr>
 
-    <tr>
-      <td>Primera Mycroplasma</td>
-      <td>7 días de nacidos</td>
-      <td>Lechones</td>
-    </tr>
+        <tr>
+            <td>Primera Mycroplasma</td>
+            <td>7 días de nacidos</td>
+            <td>Lechones</td>
+        </tr>
 
-    <tr>
-      <td>Segunda Mycroplasma</td>
-      <td>21 días de nacidos</td>
-      <td>Lechones</td>
-    </tr>
-  </tbody>
+        <tr>
+            <td>Segunda Mycroplasma</td>
+            <td>21 días de nacidos</td>
+            <td>Lechones</td>
+        </tr>
+    </tbody>
 </table>
 
 <br>
@@ -53,152 +51,140 @@
 
 <div id="formVacCamadas" *ngIf="showForm">
 
-  <h2> Vacunas de Camadas</h2>
+    <h2> Vacunas de Camadas</h2>
 
-  <br />
+    <br />
 
-  <form [formGroup]="vacunasCamadasForm">
-    <!-- <div class="form-group" > -->
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Identificacion camada*</label>
-        <br />
-        <input id="id_camada" *ngIf="isUpdate; else elseTemplateIdentificacionCamada" class="form-control"
-          formControlName="id_camada" [readOnly]="isUpdate">
-        <ng-template #elseTemplateIdentificacionCamada>
-          <select id="id_camada" class="custom-select custom-select-md mb-2" formControlName="id_camada">
+    <form [formGroup]="vacunasCamadasForm">
+        <!-- <div class="form-group" > -->
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Identificacion camada*</label>
+                <br />
+                <input id="id_camada" *ngIf="isUpdate; else elseTemplateIdentificacionCamada" class="form-control" formControlName="id_camada" [readOnly]="isUpdate">
+                <ng-template #elseTemplateIdentificacionCamada>
+                    <select id="id_camada" class="custom-select custom-select-md mb-2" formControlName="id_camada">
             <option selected disabled>Identificación de la camada</option>
             <option *ngFor="let item of partos" [value]="item.id_camada">{{ item.id_camada }}
             </option>
           </select>
 
-        </ng-template>
-      </div>
+                </ng-template>
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Vacuna* </label>
-        <br />
-        <input *ngIf="isUpdate; else elseTemplateVacuna" class="form-control" formControlName="vacuna"
-          [readOnly]="isUpdate">
-        <ng-template #elseTemplateVacuna>
-          <select class="custom-select custom-select-md mb-2" formControlName="vacuna">
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Vacuna* </label>
+                <br />
+                <input *ngIf="isUpdate; else elseTemplateVacuna" class="form-control" formControlName="vacuna" [readOnly]="isUpdate">
+                <ng-template #elseTemplateVacuna>
+                    <select class="custom-select custom-select-md mb-2" formControlName="vacuna">
             <option selected value="Baycorx">Baycorx</option>
             <option value="Primera Mycroplasma">Primera Mycroplasma</option>
             <option value="Segunda Mycroplasma">Segunda Mycroplasma</option>
           </select>
 
-        </ng-template>
+                </ng-template>
 
-      </div>
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Fecha programada*</label>
-        <input [readOnly]="isUpdate" type="date" class="form-control" id="fecha_programada"
-          placeholder="Fecha programada de aplicación" formControlName="fechaProgramada" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Fecha programada*</label>
+                <input [readOnly]="isUpdate" type="date" class="form-control" id="fecha_programada" placeholder="Fecha programada de aplicación" formControlName="fechaProgramada" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Evento*</label>
-        <input type="text" class="form-control" id="evento" placeholder="Evento de la vacuna"
-          formControlName="evento" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Evento*</label>
+                <input type="text" class="form-control" id="evento" placeholder="Evento de la vacuna" formControlName="evento" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Fecha de ejecución</label>
-        <input type="date" class="form-control" id="fecha_ejecucion" placeholder="Fecha de aplicación de vacuna"
-          formControlName="fechaEjecucion" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Fecha de ejecución</label>
+                <input type="date" class="form-control" id="fecha_ejecucion" placeholder="Fecha de aplicación de vacuna" formControlName="fechaEjecucion" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Via de aplicación* </label>
-        <br />
-        <select class="custom-select custom-select-md mb-2" formControlName="viaAplicacion">
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Via de aplicación* </label>
+                <br />
+                <select class="custom-select custom-select-md mb-2" formControlName="viaAplicacion">
           <option selected value="Intravenosa">Intravenosa</option>
           <option value="Muscular">Muscular</option>
           <option value="Subcutanea">Subcutanea</option>
         </select>
-      </div>
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Dosis*</label>
-        <input type="number" class="form-control" id="dosis" placeholder="Dosis de la vacuna" formControlName="dosis" />
-        <p class="text-danger" *ngIf="vacunasCamadasForm.errors && vacunasCamadasForm.errors.dosis">
-          {{ vacunasCamadasForm.errors.dosis }}</p>
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Dosis*</label>
+                <input type="number" class="form-control" id="dosis" placeholder="Dosis de la vacuna" formControlName="dosis" />
+                <p class="text-danger" *ngIf="vacunasCamadasForm.errors && vacunasCamadasForm.errors.dosis">
+                    {{ vacunasCamadasForm.errors.dosis }}</p>
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Laboratorio*</label>
-        <input type="text" class="form-control" id="laboratorio" placeholder="Laboratorio de la vacuna"
-          formControlName="laboratorio" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Laboratorio*</label>
+                <input type="text" class="form-control" id="laboratorio" placeholder="Laboratorio de la vacuna" formControlName="laboratorio" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Registro ICA*</label>
-        <input type="text" class="form-control" id="registro_ica" placeholder="Registro ICA"
-          formControlName="registroIca" />
-        <p class="text-danger" *ngIf="vacunasCamadasForm.errors && vacunasCamadasForm.errors.registroIca">
-          {{ vacunasCamadasForm.errors.registroIca }}</p>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Registro ICA*</label>
+                <input type="text" class="form-control" id="registro_ica" placeholder="Registro ICA" formControlName="registroIca" />
+                <p class="text-danger" *ngIf="vacunasCamadasForm.errors && vacunasCamadasForm.errors.registroIca">
+                    {{ vacunasCamadasForm.errors.registroIca }}</p>
 
-      </div>
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Número de lote* </label>
-        <input type="text" class="form-control" id="numero_lote" placeholder="Número de lote de la vacuna"
-          formControlName="numeroLote" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Número de lote* </label>
+                <input type="text" class="form-control" id="numero_lote" placeholder="Número de lote de la vacuna" formControlName="numeroLote" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Tiempo de retiro </label>
-        <input type="text" class="form-control" id="tiempo_retiro" placeholder="Días de retiro de la vacuna"
-          formControlName="tiempoRetiro" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Tiempo de retiro </label>
+                <input type="text" class="form-control" id="tiempo_retiro" placeholder="Días de retiro de la vacuna" formControlName="tiempoRetiro" />
+            </div>
 
-      <div class="form-group col-md-6">
-        <label for="exampleInputPassword1">Observación</label>
-        <input type="text" class="form-control" id="observacion" placeholder="Observación"
-          formControlName="observacion" />
-      </div>
+            <div class="form-group col-md-6">
+                <label for="exampleInputPassword1">Observación</label>
+                <input type="text" class="form-control" id="observacion" placeholder="Observación" formControlName="observacion" />
+            </div>
 
-      <br />
-      <br />
-      <br />
-      <br />
+            <br />
+            <br />
+            <br />
+            <br />
 
-      <button type="submit" (click)="saveVacunaCamada()" class="btn btn-primary"
-        [disabled]="!vacunasCamadasForm.valid">Guardar</button>
-    </div>
-  </form>
+            <button type="submit" (click)="saveVacunaCamada()" class="btn btn-primary" [disabled]="!vacunasCamadasForm.valid">Guardar</button>
+        </div>
+    </form>
 </div>
 
 <div *ngIf="showTable" id="tableVacunasPorcinos">
-  <h2 class="text-center" *ngIf="selectedIdentificacionCamada">Vacunas animal {{ selectedIdentificacionCamada }}</h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Identificación Animal</th>
-        <th scope="col">Vacuna</th>
-        <th scope="col">Fecha Programada</th>
-        <th scope="col">Via Aplicación</th>
-        <th scope="col">Fecha de ejecución</th>
-        <th scope="col">Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of vacunasCamadas; let itemIndex = index">
-        <th scope="row">{{ itemIndex + 1 }}</th>
-        <td>{{ item.id_camada }}</td>
-        <td>{{ item.vacuna }}</td>
-        <td>{{ item.fecha_programada | date }}</td>
-        <td>{{ item.via_aplicacion }}</td>
-        <td>{{ item.fecha_ejecucion? (item.fecha_ejecucion | date) : '-' }}</td>
-        <td><button class="btn btn-primary" title="editar vacuna"
-            (click)="updateVacunaCamada(item.id_camada, item.vacuna, item.fecha_programada)"><i
+    <h2 class="text-center" *ngIf="selectedIdentificacionCamada">Vacunas animal {{ selectedIdentificacionCamada }}</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Identificación Camada</th>
+                <th scope="col">Vacuna</th>
+                <th scope="col">Fecha Programada</th>
+                <th scope="col">Via Aplicación</th>
+                <th scope="col">Fecha de ejecución</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of vacunasCamadas; let itemIndex = index">
+                <th scope="row">{{ itemIndex + 1 }}</th>
+                <td>{{ item.id_camada }}</td>
+                <td>{{ item.vacuna }}</td>
+                <td>{{ item.fecha_programada | date }}</td>
+                <td>{{ item.via_aplicacion }}</td>
+                <td>{{ item.fecha_ejecucion? (item.fecha_ejecucion | date) : '-' }}</td>
+                <td><button class="btn btn-primary" title="editar vacuna" (click)="updateVacunaCamada(item.id_camada, item.vacuna, item.fecha_programada)"><i
               class="fa fa-edit"></i></button></td>
-      </tr>
-      <tr></tr>
-    </tbody>
-  </table>
+            </tr>
+            <tr></tr>
+        </tbody>
+    </table>
 </div>
 
 <br />
