@@ -145,21 +145,21 @@ export class PartosComponent implements OnInit {
     errors.fecha_monta = 'La fecha de monta no debe ser superior a la fecha actual';
   }
 
-  if (data.value.fecha_parto != null && new Date(data.value.fecha_parto).getTime() > fecha) {
+  if (data.value.fecha_parto != null) {
+     if (new Date(data.value.fecha_parto).getTime() > fecha) {
     errors.fecha_parto = 'La fecha del parto no puede ser mayor a la fecha actual';
+    } else if (data.value.fecha_parto < data.value.fecha_monta) {
+    errors.fecha_parto = 'La fecha del parto no puede ser menor a la fecha de la monta';
     }
+  }
 
-  if (data.value.fecha_parto != null && data.value.fecha_parto < data.value.fecha_monta) {
-    errors.fecha_parto_monta = 'La fecha del parto no puede ser menor a la fecha de la monta';
-    }
-
-    if (data.value.fecha_destete != null && new Date(data.value.fecha_destete).getTime() > fecha) {
+    if (data.value.fecha_destete != null) {
+      if (new Date(data.value.fecha_destete).getTime() > fecha) {
       errors.fecha_destete = 'La fecha de destete no puede ser mayor a la fecha actual';
+      } else if (data.value.fecha_destete < data.value.fecha_parto) {
+      errors.fecha_destete = 'La fecha de destete no puede ser menor a la fecha del parto';
       }
-
-    if (data.value.fecha_destete != null && data.value.fecha_destete < data.value.fecha_parto) {
-      errors.fecha_destete_parto = 'La fecha de destete no puede ser menor a la fecha del parto';
-      }
+    }
 
       if (data.value.fecha_probable_destete != null && data.value.fecha_probable_destete < data.value.fecha_parto) {
         errors.fecha_probable_destete = 'La fecha probable de destete no puede ser menor a la fecha del parto';

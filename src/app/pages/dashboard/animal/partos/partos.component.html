@@ -1,17 +1,17 @@
 <br>
 
 <div class="introduccion">
-    La trazabilidad de partos de los porcinos reproductores de la granja se gestiona desde 3 etapas, la monta, el
-    parto y el destete de camadas. En el sistema, la información se gestiona según ese orden.
+  La trazabilidad de partos de los porcinos reproductores de la granja se gestiona desde 3 etapas, la monta, el
+  parto y el destete de camadas. En el sistema, la información se gestiona según ese orden.
 </div>
 
 <br>
 
 <div class="btnListarApp">
-    <button *ngIf="showForm" type="button" class="btn btn-primary" (click)="mostrartablePartos()">
+  <button *ngIf="showForm" type="button" class="btn btn-primary" (click)="mostrartablePartos()">
     Listar partos</button>
-    <button type="button" class="btn btn-primary" (click)="searchParto()">Consultar</button>
-    <button *ngIf="mostrarTablaPartos" type="button" (click)="createParto()" class="btn btn-primary">Registrar</button>
+  <button type="button" class="btn btn-primary" (click)="searchParto()">Consultar</button>
+  <button *ngIf="mostrarTablaPartos" type="button" (click)="createParto()" class="btn btn-primary">Registrar</button>
 </div>
 
 <br>
@@ -19,197 +19,222 @@
 
 <div class="formApp" *ngIf="showForm" style="width: 730px">
 
-    <h2>Registro de Partos</h2>
-    <br>
+  <h2>Registro de Partos</h2>
+  <br>
 
-    <form [formGroup]="partosForm">
-        <div class="form-row">
+  <form [formGroup]="partosForm">
+    <div class="form-row">
 
 
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Identificación camada*</label>
-                <input [readonly]="isUpdate" formControlName="id_camada" type="number" class="form-control" id="identificacion_camada" placeholder="Identificación camada">
-                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.id_camada">{{ partosForm.errors.id_camada }}</p>
-            </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Identificación camada*</label>
+        <input [readonly]="isUpdate" formControlName="id_camada" type="number" class="form-control"
+          id="identificacion_camada" placeholder="Identificación camada">
+        <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.id_camada">
+          {{ partosForm.errors.id_camada }}</p>
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="inputEmail4">Identificación animal*</label>
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Identificación animal*</label>
 
-                <select formControlName="identificacion_animal" class="custom-select custom-select-md mb-2">
-          <option *ngFor="let item of animals" [value]="item.identificacion_animal" [selected]="selectedParto && (selectedParto.identificacion_animal === item.identificacion_animal)">{{ item.identificacion_animal }}</option>
+        <select formControlName="identificacion_animal" class="custom-select custom-select-md mb-2">
+          <option *ngFor="let item of animals" [value]="item.identificacion_animal"
+            [selected]="selectedParto && (selectedParto.identificacion_animal === item.identificacion_animal)">
+            {{ item.identificacion_animal }}</option>
         </select>
-            </div>
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Fecha de monta*</label>
-                <input formControlName="fecha_monta" type="date" class="form-control" id="fecha_monta" placeholder="Fecha de la monta">
-                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_monta">{{ partosForm.errors.fecha_monta }}</p>
-            </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Fecha de monta*</label>
+        <input formControlName="fecha_monta" type="date" class="form-control" id="fecha_monta"
+          placeholder="Fecha de la monta">
+        <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_monta">
+          {{ partosForm.errors.fecha_monta }}</p>
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="exampleInputPassword1">Tipo servicio* </label>
-                <select formControlName="tipo_servicio" class="custom-select custom-select-md mb-2">
+      <div class="form-group col-md-6">
+        <label for="exampleInputPassword1">Tipo servicio* </label>
+        <select formControlName="tipo_servicio" class="custom-select custom-select-md mb-2">
           <option selected value=Natural>Natural</option>
           <option value="Inseminacion">Inseminación</option>
         </select>
-            </div>
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Identificación macho</label>
-                <select formControlName="identificacion_macho" class="custom-select custom-select-md mb-2">
-          <option *ngFor="let item of animals" [value]="item.identificacion_animal" [selected]="selectedParto && (selectedParto.identificacion_macho === item.identificacion_animal)">{{ item.identificacion_animal }}</option>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Identificación macho</label>
+        <select formControlName="identificacion_macho" class="custom-select custom-select-md mb-2">
+          <option *ngFor="let item of animals" [value]="item.identificacion_animal"
+            [selected]="selectedParto && (selectedParto.identificacion_macho === item.identificacion_animal)">
+            {{ item.identificacion_animal }}</option>
         </select>
-            </div>
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Fecha prob. parto*</label>
-                <input formControlName="fecha_probable_parto" type="date" class="form-control" id="fecha_probable" placeholder="Fecha probable del parto">
-            </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Fecha prob. parto*</label>
+        <input formControlName="fecha_probable_parto" type="date" class="form-control" id="fecha_probable"
+          placeholder="Fecha probable del parto">
+      </div>
 
-            <div class="form-group col-md-12">
-                <label for="inputPassword4"> <b> Información del Parto </b> </label>
-            </div>
+      <div class="form-group col-md-12">
+        <label for="inputPassword4"> <b> Información del Parto </b> </label>
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Fecha de parto</label>
-                <input formControlName="fecha_parto" type="date" class="form-control" id="fecha_parto" placeholder="Fecha del parto">
-                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_parto">{{ partosForm.errors.fecha_parto }}</p>
-                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_parto_monta">{{ partosForm.errors.fecha_parto_monta }}</p>
-              </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Fecha de parto</label>
+        <input formControlName="fecha_parto" type="date" class="form-control" id="fecha_parto"
+          placeholder="Fecha del parto">
+        <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_parto">
+          {{ partosForm.errors.fecha_parto }}</p>
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Jaula de parto</label>
-                <input formControlName="jaula_parto" type="text" class="form-control" id="jaula_parto" placeholder="Jaula del parto">
-                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.jaula_parto">{{ partosForm.errors.jaula_parto }}</p>
-            </div>
-
-
-
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Lechones vivos</label>
-                <input formControlName="numero_lechones_vivos_parto" type="number" class="form-control" id="vivos_parto" placeholder="Lechones vivos">
-                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.lechones_vivos_parto">{{ partosForm.errors.lechones_vivos_parto }}</p>
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Lechones machos </label>
-                <input formControlName="numero_machos_parto" type="number" class="form-control" id="machos_parto" placeholder="Lechones machos">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label for="inputPassword4">Lechones hembras </label>
-                <input formControlName="numero_hembras_parto" type="number" class="form-control" id="hembras_parto" placeholder="Lechones hembras">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label for="inputPassword4">Lechones muertos </label>
-                <input formControlName="numero_lechones_muertos_parto" type="number" class="form-control" id="muertos_parto" placeholder="Lechones muertos">
-            </div>
-
-            <div class="form-group col-md-4">
-                <label for="inputPassword4">Lechones momias </label>
-                <input formControlName="numero_momias" type="number" class="form-control" id="momias" placeholder="Fecha del parto">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Peso total vivos</label>
-                <input formControlName="peso_total_vivos" type="number" class="form-control" id="peso_total_vivos" placeholder="Peso lechones vivos">
-            </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Fecha probable destete</label>
-                <input formControlName="fecha_probable_destete" type="date" class="form-control" id="fecha_probable_destete" placeholder="">
-                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_probable_destete">{{ partosForm.errors.fecha_probable_destete }}</p>
-              </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Jaula de parto</label>
+        <input formControlName="jaula_parto" type="text" class="form-control" id="jaula_parto"
+          placeholder="Jaula del parto">
+        <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.jaula_parto">
+          {{ partosForm.errors.jaula_parto }}</p>
+      </div>
 
 
-            <div class="form-group col-md-10">
-                <label for="inputPassword4"> <b> Información de la Camada </b></label>
-            </div>
+
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Lechones vivos</label>
+        <input formControlName="numero_lechones_vivos_parto" type="number" class="form-control" id="vivos_parto"
+          placeholder="Lechones vivos">
+        <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.lechones_vivos_parto">
+          {{ partosForm.errors.lechones_vivos_parto }}</p>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Lechones machos </label>
+        <input formControlName="numero_machos_parto" type="number" class="form-control" id="machos_parto"
+          placeholder="Lechones machos">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Lechones hembras </label>
+        <input formControlName="numero_hembras_parto" type="number" class="form-control" id="hembras_parto"
+          placeholder="Lechones hembras">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Lechones muertos </label>
+        <input formControlName="numero_lechones_muertos_parto" type="number" class="form-control" id="muertos_parto"
+          placeholder="Lechones muertos">
+      </div>
+
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Lechones momias </label>
+        <input formControlName="numero_momias" type="number" class="form-control" id="momias"
+          placeholder="Fecha del parto">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Peso total vivos</label>
+        <input formControlName="peso_total_vivos" type="number" class="form-control" id="peso_total_vivos"
+          placeholder="Peso lechones vivos">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Fecha probable destete</label>
+        <input formControlName="fecha_probable_destete" type="date" class="form-control" id="fecha_probable_destete"
+          placeholder="">
+        <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_probable_destete">
+          {{ partosForm.errors.fecha_probable_destete }}</p>
+      </div>
 
 
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Fecha destete</label>
-                <input formControlName="fecha_destete" type="date" class="form-control" id="fecha_destete" placeholder="">
-                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_destete">{{ partosForm.errors.fecha_destete }}</p>
-                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_destete_parto">{{ partosForm.errors.fecha_destete_parto }}</p>
-              </div>
+      <div class="form-group col-md-10">
+        <label for="inputPassword4"> <b> Información de la Camada </b></label>
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Días de lactancia</label>
-                <input formControlName="dias_lactancia" type="number" class="form-control" id="dias_lactancia" placeholder="Días de lactancia">
-            </div>
 
-            <div class="form-group col-md-4">
-                <label for="inputPassword4">Machos al destete</label>
-                <input formControlName="numero_machos_destete" type="number" class="form-control" id="machos_destete" placeholder="Lechones machos">
-                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.lechones_machos_destete">{{ partosForm.errors.lechones_machos_destete }}</p>
-            </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Fecha destete</label>
+        <input formControlName="fecha_destete" type="date" class="form-control" id="fecha_destete" placeholder="">
+        <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.fecha_destete">
+          {{ partosForm.errors.fecha_destete }}</p>
+      </div>
 
-            <div class="form-group col-md-4">
-                <label for="inputPassword4">Hembras al destete</label>
-                <input formControlName="numero_hembras_destete" type="number" class="form-control" id="hembras_destete" placeholder="Lechones hembras">
-                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.lechones_hembras_destete">{{ partosForm.errors.lechones_hembras_destete }}</p>
-            </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Días de lactancia</label>
+        <input formControlName="dias_lactancia" type="number" class="form-control" id="dias_lactancia"
+          placeholder="Días de lactancia">
+      </div>
 
-            <div class="form-group col-md-4">
-                <label for="inputPassword4">Muertos al destete</label>
-                <input formControlName="numero_muertos_destete" type="number" class="form-control" id="muertos_destete" placeholder="Lechones muertos">
-                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.cantidad_lechones">{{ partosForm.errors.cantidad_lechones }}</p>
-            </div>
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Machos al destete</label>
+        <input formControlName="numero_machos_destete" type="number" class="form-control" id="machos_destete"
+          placeholder="Lechones machos">
+        <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.lechones_machos_destete">
+          {{ partosForm.errors.lechones_machos_destete }}</p>
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Peso total al destete</label>
-                <input formControlName="peso_total_destete" type="number" class="form-control" id="peso_total_destete" placeholder="Peso total de lechones vivos">
-            </div>
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Hembras al destete</label>
+        <input formControlName="numero_hembras_destete" type="number" class="form-control" id="hembras_destete"
+          placeholder="Lechones hembras">
+        <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.lechones_hembras_destete">
+          {{ partosForm.errors.lechones_hembras_destete }}</p>
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Jaula de destete</label>
-                <input formControlName="jaula_destete" type="text" class="form-control" id="jaula_destete" placeholder="Jaula de destete">
-                <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.jaula_destete">{{ partosForm.errors.jaula_destete }}</p>
-            </div>
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Muertos al destete</label>
+        <input formControlName="numero_muertos_destete" type="number" class="form-control" id="muertos_destete"
+          placeholder="Lechones muertos">
+        <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.cantidad_lechones">
+          {{ partosForm.errors.cantidad_lechones }}</p>
+      </div>
 
-            <br>
-            <br>
-            <br>
-            <br>
-            <button type="button" [disabled]="!partosForm.valid" (click)="saveParto()" class="btn btn-primary">Guardar</button>
-        </div>
-    </form>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Peso total al destete</label>
+        <input formControlName="peso_total_destete" type="number" class="form-control" id="peso_total_destete"
+          placeholder="Peso total de lechones vivos">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Jaula de destete</label>
+        <input formControlName="jaula_destete" type="text" class="form-control" id="jaula_destete"
+          placeholder="Jaula de destete">
+        <p class="text-danger" *ngIf="partosForm.errors && partosForm.errors.jaula_destete">
+          {{ partosForm.errors.jaula_destete }}</p>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <button type="button" [disabled]="!partosForm.valid" (click)="saveParto()"
+        class="btn btn-primary">Guardar</button>
+    </div>
+  </form>
 </div>
 
 <div class="tableApp" *ngIf="mostrarTablaPartos">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Id Camada</th>
-                <th scope="col">Identificación animal</th>
-                <th scope="col">Tipo de servicio</th>
-                <th scope="col">Fecha del parto</th>
-                <th scope="col">Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of partos; let itemIndex = index">
-                <td scope="row">{{ itemIndex + 1 }}</td>
-                <td> {{ item.id_camada }} </td>
-                <td>{{ item.identificacion_animal }}</td>
-                <td>{{ item.tipo_servicio }}</td>
-                <td>{{ (item.fecha_parto | date)|| ((item.fecha_probable_parto | date) + " (probable)") }}</td>
-                <td><button (click)="updateParto(item.id_camada)" type="button" class="btn btn-primary" title="editar"><i
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id Camada</th>
+        <th scope="col">Identificación animal</th>
+        <th scope="col">Tipo de servicio</th>
+        <th scope="col">Fecha del parto</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of partos; let itemIndex = index">
+        <td scope="row">{{ itemIndex + 1 }}</td>
+        <td> {{ item.id_camada }} </td>
+        <td>{{ item.identificacion_animal }}</td>
+        <td>{{ item.tipo_servicio }}</td>
+        <td>{{ (item.fecha_parto | date)|| ((item.fecha_probable_parto | date) + " (probable)") }}</td>
+        <td><button (click)="updateParto(item.id_camada)" type="button" class="btn btn-primary" title="editar"><i
               class="fa fa-edit"></i></button></td>
-            </tr>
-        </tbody>
-    </table>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-<!--
-
-
-    <button type="submit" class="btn btn-primary">Registrar</button>
-    <button type="submit" class="btn btn-primary">Consultar</button>
-    <button type="submit" class="btn btn-primary">Modificar</button>
-    <button type="submit" class="btn btn-primary">Eliminar</button>
-
--->
+<br>
+<br>
+<br>

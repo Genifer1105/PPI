@@ -10,7 +10,7 @@
     height: 100%;
     margin-left: 8%;
   }
-  
+
   img {
     width: 25%;
     height: 25%;
@@ -23,11 +23,10 @@
   }
 
   a {
-    margin-left: 75%;
+    margin-left: 70%;
   }
 
 
- 
 #formCambioContrasena {
   box-shadow: 9px 9px 9px 9px rgba(133, 131, 131, 0.30);
   /*  text-align: center;

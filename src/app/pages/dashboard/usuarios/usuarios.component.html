@@ -1,7 +1,8 @@
 <br>
 
 <div class="introduccion">
-    Las personas que vayan a hacer uso del sistema, deben estar previamente registradas. En esta sección el administrador podrá crear dichos usuarios con su respectivo perfil.
+  Las personas que vayan a hacer uso del sistema, deben estar previamente registradas. En esta sección el administrador
+  podrá crear dichos usuarios con su respectivo perfil.
 </div>
 
 <br>
@@ -18,107 +19,118 @@
 
 <div id="formUsuarios" *ngIf="showForm">
 
-    <h2>Registro de Usuarios</h2>
-    <br>
+  <h2>Registro de Usuarios</h2>
+  <br>
 
-    <form [formGroup]="usersForm">
+  <form [formGroup]="usersForm">
 
-        <div class="form-row">
+    <div class="form-row">
 
-            <div class="form-group col-md-6">
-                <label for="exampleInputPassword1">Identificación*</label>
-                <input [readOnly]="isUpdate" formControlName="identificacion" type="number" class="form-control" id="exampleInputPassword1" placeholder="Identificación del usuario">
-                <p class="text-danger" *ngIf="usersForm.errors && usersForm.errors.identificacion">{{ usersForm.errors.identificacion }}</p>
-              </div>
+      <div class="form-group col-md-6">
+        <label for="exampleInputPassword1">Identificación*</label>
+        <input [readOnly]="isUpdate" formControlName="identificacion" type="number" class="form-control"
+          id="exampleInputPassword1" placeholder="Identificación del usuario">
+        <p class="text-danger" *ngIf="usersForm.errors && usersForm.errors.identificacion">
+          {{ usersForm.errors.identificacion }}</p>
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="exampleInputEmail1">Nombre Completo*</label>
-                <input formControlName="nombre" type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre del usuario" formControlName="nombre">
+      <div class="form-group col-md-6">
+        <label for="exampleInputEmail1">Nombre Completo*</label>
+        <input formControlName="nombre" type="text" class="form-control" id="exampleInputEmail1"
+          placeholder="Nombre del usuario" formControlName="nombre">
 
-            </div>
-            <div class="form-group col-md-6">
-                <label for="exampleInputPassword1">Primer Apellido*</label>
-                <input formControlName="apellido1" type="text" class="form-control" id="exampleInputPassword1" placeholder="Primer apellido del usuario" formControlName="apellido1">
-            </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="exampleInputPassword1">Primer Apellido*</label>
+        <input formControlName="apellido1" type="text" class="form-control" id="exampleInputPassword1"
+          placeholder="Primer apellido del usuario" formControlName="apellido1">
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="exampleInputPassword1">Segundo Apellido</label>
-                <input formControlName="apellido2" type="text" class="form-control" id="exampleInputPassword1" placeholder="Segundo apellido del usuario" formControlName="apellido2">
-            </div>
+      <div class="form-group col-md-6">
+        <label for="exampleInputPassword1">Segundo Apellido</label>
+        <input formControlName="apellido2" type="text" class="form-control" id="exampleInputPassword1"
+          placeholder="Segundo apellido del usuario" formControlName="apellido2">
+      </div>
 
 
-            <div class="form-group col-md-6">
-                <label for="exampleInputPassword1">Teléfono*</label>
-                <input formControlName="telefono" type="number" class="form-control" id="telefono" placeholder="Teléfono del usuario" formControlName="telefono">
-                <p class="text-danger" *ngIf="usersForm.errors && usersForm.errors.telefono">{{ usersForm.errors.telefono }}</p>
-              </div>
+      <div class="form-group col-md-6">
+        <label for="exampleInputPassword1">Teléfono*</label>
+        <input formControlName="telefono" type="number" class="form-control" id="telefono"
+          placeholder="Teléfono del usuario" formControlName="telefono">
+        <p class="text-danger" *ngIf="usersForm.errors && usersForm.errors.telefono">{{ usersForm.errors.telefono }}</p>
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="exampleInputPassword1">Contraseña*</label>
-                <input *ngIf="!isUpdate" formControlName="contrasena" type="password" class="form-control" id="contrsena" placeholder="Contraseña del usuario">
-                <p class="text-danger" *ngIf="usersForm.errors && usersForm.errors.contrasena">{{ usersForm.errors.contrasena }}</p>
-              </div>
+      <div class="form-group col-md-6">
+        <label for="exampleInputPassword1">Contraseña*</label>
+        <input *ngIf="!isUpdate" formControlName="contrasena" type="password" class="form-control" id="contrsena"
+          placeholder="Contraseña del usuario">
+        <p class="text-danger" *ngIf="usersForm.errors && usersForm.errors.contrasena">{{ usersForm.errors.contrasena }}
+        </p>
+      </div>
 
-              <div class="form-group col-md-6">
-                <label for="exampleInputPassword1">Confirmar contraseña*</label>
-                <input *ngIf="!isUpdate" formControlName="confirmar_contrasena" type="password" class="form-control" id="confirmar_contrasena" placeholder="Contraseña del usuario">
-                <p class="text-danger" *ngIf="usersForm.errors && usersForm.errors.confirmar_contrasena">{{ usersForm.errors.confirmar_contrasena }}</p>
-              </div>
+      <div class="form-group col-md-6">
+        <label for="exampleInputPassword1">Confirmar contraseña*</label>
+        <input *ngIf="!isUpdate" formControlName="confirmar_contrasena" type="password" class="form-control"
+          id="confirmar_contrasena" placeholder="Contraseña del usuario">
+        <p class="text-danger" *ngIf="usersForm.errors && usersForm.errors.confirmar_contrasena">
+          {{ usersForm.errors.confirmar_contrasena }}</p>
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="exampleInputPassword1">Correo electrónico</label>
-                <input [readOnly]="isUpdate" formControlName="correo" type="email" class="form-control" id="correo" placeholder="Correo electrónico del usuario" formControlName="correo">
-            </div>
+      <div class="form-group col-md-6">
+        <label for="exampleInputPassword1">Correo electrónico</label>
+        <input [readOnly]="isUpdate" formControlName="correo" type="email" class="form-control" id="correo"
+          placeholder="Correo electrónico del usuario" formControlName="correo">
+      </div>
 
-            <div class="form-group col-md-6">
-                <label for="exampleInputPassword1">Perfil* </label>
-                <select class="custom-select custom-select-md mb-2" formControlName="id_perfil">
-                            <option *ngFor="let item of profiles" [value]="item.id">{{item.name}}</option>
-                 </select>
-            </div>
+      <div class="form-group col-md-6">
+        <label for="exampleInputPassword1">Perfil* </label>
+        <select class="custom-select custom-select-md mb-2" formControlName="id_perfil">
+          <option *ngFor="let item of profiles" [value]="item.id">{{item.name}}</option>
+        </select>
+      </div>
 
-            <br>
-            <br>
-            <br>
-            <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
-        </div>
-        <button [disabled]="!usersForm.valid" type="submit" class="btn btn-primary" (click)="saveUser()">Guardar</button>
+    </div>
+    <button [disabled]="!usersForm.valid" type="submit" class="btn btn-primary" (click)="saveUser()">Guardar</button>
 
-    </form>
+  </form>
 </div>
 
 
 <div class="tableApp" *ngIf="mostrarTableUsu">
   <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Identificación</th>
-                <th scope="col">Nombre completo</th>
-                <th scope="col">Primer apellido</th>
-                <th scope="col">Segundo apellido</th>
-                <th scope="col">Teléfono</th>
-                <th scope="col">Correo</th>
-                <th scope="col">Perfil</th>
-                <th scope="col">Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let usuario of usuarios; let itemIndex = index">
-            <td>{{ itemIndex }}</td>
-            <td>{{ usuario.identificacion }}</td>
-            <td>{{ usuario.nombre }}</td>
-            <td>{{ usuario.apellido1 }}</td>
-            <td>{{ usuario.apellido2 }}</td>
-            <td>{{ usuario.telefono }}</td>
-            <td>{{ usuario.correo }}</td>
-            <td>{{ usuario.perfil }}</td>
-            <td><button (click)="updateUser(usuario.identificacion)" type="button" class="btn btn-primary"
-                title="editar"><i class="fa fa-edit"></i></button></td>
-          </tr>
-        </tbody>
-    </table>
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Identificación</th>
+        <th scope="col">Nombre completo</th>
+        <th scope="col">Primer apellido</th>
+        <th scope="col">Segundo apellido</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Perfil</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios; let itemIndex = index">
+        <td>{{ itemIndex }}</td>
+        <td>{{ usuario.identificacion }}</td>
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.apellido1 }}</td>
+        <td>{{ usuario.apellido2 }}</td>
+        <td>{{ usuario.telefono }}</td>
+        <td>{{ usuario.correo }}</td>
+        <td>{{ usuario.perfil }}</td>
+        <td><button (click)="updateUser(usuario.identificacion)" type="button" class="btn btn-primary" title="editar"><i
+              class="fa fa-edit"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <br>

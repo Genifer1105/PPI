@@ -66,8 +66,7 @@
         <input id="id_camada" *ngIf="isUpdate; else elseTemplateIdentificacionCamada" class="form-control"
           formControlName="id_camada" [readOnly]="isUpdate">
         <ng-template #elseTemplateIdentificacionCamada>
-          <select id="id_camada" class="custom-select custom-select-md mb-2"
-            formControlName="id_camada">
+          <select id="id_camada" class="custom-select custom-select-md mb-2" formControlName="id_camada">
             <option selected disabled>Identificación de la camada</option>
             <option *ngFor="let item of partos" [value]="item.id_camada">{{ item.id_camada }}
             </option>
@@ -123,7 +122,8 @@
       <div class="form-group col-md-6">
         <label for="exampleInputPassword1">Dosis*</label>
         <input type="number" class="form-control" id="dosis" placeholder="Dosis de la vacuna" formControlName="dosis" />
-        <p class="text-danger" *ngIf="vacunasCamadasForm.errors && vacunasCamadasForm.errors.dosis">{{ vacunasCamadasForm.errors.dosis }}</p>
+        <p class="text-danger" *ngIf="vacunasCamadasForm.errors && vacunasCamadasForm.errors.dosis">
+          {{ vacunasCamadasForm.errors.dosis }}</p>
       </div>
 
       <div class="form-group col-md-6">
@@ -136,7 +136,8 @@
         <label for="exampleInputPassword1">Registro ICA*</label>
         <input type="text" class="form-control" id="registro_ica" placeholder="Registro ICA"
           formControlName="registroIca" />
-          <p class="text-danger" *ngIf="vacunasCamadasForm.errors && vacunasCamadasForm.errors.registroIca">{{ vacunasCamadasForm.errors.registroIca }}</p>
+        <p class="text-danger" *ngIf="vacunasCamadasForm.errors && vacunasCamadasForm.errors.registroIca">
+          {{ vacunasCamadasForm.errors.registroIca }}</p>
 
       </div>
 

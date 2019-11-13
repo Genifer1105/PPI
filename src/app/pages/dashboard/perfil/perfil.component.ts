@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,7 +10,17 @@ export class PerfilComponent implements OnInit {
 
   public mostrarFormCambio = false;
 
-  constructor() { }
+  public cambioContrasenaForm: FormGroup;
+
+  constructor (
+   private fb: FormBuilder
+  ) {
+    this.cambioContrasenaForm = this.fb.group({
+     contrasena_actual: [" ", Validators.required],
+     contrasena_nueva: [" ", Validators.required],
+     confirmacion_contrasena: [" ", Validators.required]
+    });
+  }
 
   ngOnInit() {
   }
@@ -17,5 +28,24 @@ export class PerfilComponent implements OnInit {
     mostrarFormCambioContrasena() {
       this.mostrarFormCambio= !this.mostrarFormCambio;
   }
+
+
+private createForm() {
+  this.cambioContrasenaForm = this.fb.group(
+    {
+    contrasena_actual: [" ", Validators.required],
+    contrasena_nueva: [" ", Validators.required],
+    confirmacion_contrasena: [" ", Validators.required]
+    }, { validator: this.formValidator });
+}
+
+private formValidator(data) {
+  console.log(data);
+  const errors: any = {}
+  if (data.value.contrasena_nueva != null && data.value.contrasena_nueva  != data.value.confirmacion_contrasena){
+    errors.confirmacion_contrasena = 'Las contraseñas no coindicen';
+  }
+  return errors;
+}
 
 }
