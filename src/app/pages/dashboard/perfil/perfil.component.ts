@@ -16,9 +16,9 @@ export class PerfilComponent implements OnInit {
    private fb: FormBuilder
   ) {
     this.cambioContrasenaForm = this.fb.group({
-     contrasena_actual: [" ", Validators.required],
-     contrasena_nueva: [" ", Validators.required],
-     confirmacion_contrasena: [" ", Validators.required]
+     contrasena_actual: ["", Validators.required],
+     contrasena_nueva: ["", Validators.required],
+     confirmacion_contrasena: ["", Validators.required]
     });
   }
 
@@ -26,16 +26,16 @@ export class PerfilComponent implements OnInit {
   }
 
     mostrarFormCambioContrasena() {
-      this.mostrarFormCambio= !this.mostrarFormCambio;
+      this.mostrarFormCambio = !this.mostrarFormCambio;
   }
 
 
 private createForm() {
   this.cambioContrasenaForm = this.fb.group(
     {
-    contrasena_actual: [" ", Validators.required],
-    contrasena_nueva: [" ", Validators.required],
-    confirmacion_contrasena: [" ", Validators.required]
+    contrasena_actual: ["", Validators.required],
+    contrasena_nueva: ["", Validators.required],
+    confirmacion_contrasena: ["", Validators.required]
     }, { validator: this.formValidator });
 }
 
