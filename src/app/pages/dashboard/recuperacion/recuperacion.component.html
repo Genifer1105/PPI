@@ -1,3 +1,17 @@
-<p>
-  recuperacion works!
-</p>
+<body>
+
+    <div id="recuperacion">
+        <form class="recuperacionContrasenaForm" [formGroup]="recuperacionContrasenaForm">
+            <h2 class="card-title "> Recuperación de contraseña</h2>
+            <br>
+            <p> Enviaremos un correo electrónico para la recuperación de su contraseña </p>
+            <div class="form-group col-md-10">
+                <label for="exampleInputPassword1 ">Correo electrónico*</label>
+                <input type="number " class="form-control" placeholder="Ingrese su correo electrónico" formControlName="correo ">
+            </div>
+            <br>
+            <button type="submit " class="btn btn-primary ">Enviar</button>
+        </form>
+    </div>
+
+</body>
