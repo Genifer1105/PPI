@@ -9,6 +9,6 @@
         <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!profileForm.valid">Ingresar</button>
         <br>
-        <a href="#">¿Olvidaste tu contraseña?</a>
+        <a [routerLink]="['/', 'recuperacion']" routerLinkActive="active"> ¿Olvidaste tu contraseña? </a>
     </form>
 </body>

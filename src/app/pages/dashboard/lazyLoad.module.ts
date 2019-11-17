@@ -117,7 +117,7 @@ const admin_routes: Routes = [
     HomeComponent,
     AcercaComponent,
     PerfilComponent,
-    VacunasCamadaComponent
+    VacunasCamadaComponent,
   ],
   imports: [
     CommonModule,

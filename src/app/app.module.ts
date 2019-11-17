@@ -6,6 +6,7 @@ import { AppRoutingModule } from './router/app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RecuperacionComponent } from './pages/dashboard/recuperacion/recuperacion.component';
 
 
 /* Módulo principal donde se cargan todos los componentes y demás
@@ -16,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     LoginComponent,
+    RecuperacionComponent
+
   ],
   imports: [
     BrowserModule,
