@@ -35,3 +35,8 @@ button {
     height: 20%;
     width: 100%;
 }
+
+
+.form-signin a {
+    font-size: 20px;
+}
