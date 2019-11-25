@@ -11,7 +11,10 @@ export class AuthService {
   private static readonly AUTH_ROUTE = Constants.URL_SERVER + 'auth/';
 
   public static readonly AUTH_ROUTES = {
-    login: AuthService.AUTH_ROUTE + 'login'
+    login: AuthService.AUTH_ROUTE + 'login',
+    sendRecoveryMail: AuthService.AUTH_ROUTE + 'send_recovery_mail',
+    getLoggedUser: AuthService.AUTH_ROUTE + 'get_logged_user',
+    changePassword: AuthService.AUTH_ROUTE + 'change_password'
   };
 
   private jwtHelperService = new JwtHelperService();
@@ -40,6 +43,37 @@ export class AuthService {
       return result.data;
     } catch (error) {
       console.error('error on login', { error });
+      throw error;
+    }
+  }
+
+  public async sendRecoveryMail(email: string) {
+    try {
+      const data = { email };
+      const result: any = await this.http.post(AuthService.AUTH_ROUTES.sendRecoveryMail, data).toPromise();
+      return result;
+    } catch (error) {
+      console.error('error on sendRecoveryMail', { error });
+    }
+  }
+
+  public async getLoggedUser() {
+    try {
+      const result = await this.http.get(AuthService.AUTH_ROUTES.getLoggedUser).toPromise();
+      return result;
+    } catch (error) {
+      console.error('error on getLoggedUser', { error });
+      throw error;
+    }
+  }
+
+  public async changePassword(password: string, new_password: string) {
+    try {
+      const data = { password, new_password };
+      const result = await this.http.post(AuthService.AUTH_ROUTES.changePassword, data).toPromise();
+      return result;
+    } catch (error) {
+      console.error('error on getLoggedUser', { error });
       throw error;
     }
   }
